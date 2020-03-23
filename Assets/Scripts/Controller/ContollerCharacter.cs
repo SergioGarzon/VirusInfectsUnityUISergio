@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ContollerCharacter : MonoBehaviour
 {
+    /*
     public float horizontalMove;
     public float verticalMove;
     public CharacterController player;
@@ -46,10 +47,12 @@ public class ContollerCharacter : MonoBehaviour
     private void FixedUpdate() {
         
     }
+    */
 
     /*
         Este método es para que el personaje siga la cámara
     */
+    /*
     void direccionCamara() {
         camForward = mainCamara.transform.forward;
         camRight = mainCamara.transform.right;
@@ -59,5 +62,5 @@ public class ContollerCharacter : MonoBehaviour
 
         camForward = camForward.normalized;
         camRight = camRight.normalized;
-    }
+    }*/
 }
