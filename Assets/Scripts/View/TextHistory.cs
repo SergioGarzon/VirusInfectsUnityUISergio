@@ -11,7 +11,7 @@ public class TextHistory : MonoBehaviour
     private void Start() {
         int x = PlayerPrefs.GetInt("Language", 0);
 
-        if(x == 0) {
+        if(x == 1) {
             this.texto = "An CyberPunk City was attack for daemond virus was destroy the system all";
         }
         else {
