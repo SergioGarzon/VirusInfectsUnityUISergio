@@ -29,7 +29,7 @@ public class Hacker : MonoBehaviour
                 _states.Bug();
                 Debug.Log("OK");
                 BattleMachine.IsPlayerChoosing = false;
-                scoreData.shootingPoints = +25;
+                //scoreData.shootingPoints = scoreData.shootingPoints + 25;
                 BattleMachine.OnPlayerTurn = false;
             }
             else if (Input.GetKey(copyKey) && copyLimit > 0)//añadir condicion de 1 sola copia
