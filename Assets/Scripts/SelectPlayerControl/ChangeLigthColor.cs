@@ -13,13 +13,14 @@ public class ChangeLigthColor : MonoBehaviour
 
         this.color = Random.Range(-1, 3);
 
+        /*
         switch (this.color)
         {
             case (0): this.light.color = Color.black; break;
             case (1): this.light.color = Color.cyan; break;
             case (2): this.light.color = Color.green; break;
 
-        }
+        }*/
 
     }
 
