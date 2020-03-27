@@ -1936,7 +1936,7 @@ MonoBehaviour:
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
-    Dutch: 18
+    Dutch: -157
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
@@ -2469,7 +2469,7 @@ MonoBehaviour:
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
-    Dutch: 18
+    Dutch: -157
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
@@ -2486,7 +2486,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812051749}
-  m_LocalRotation: {x: 0.25839913, y: -0.16695213, z: 0.062127598, w: 0.949472}
+  m_LocalRotation: {x: 0.25839913, y: -0.16695216, z: 0.062127613, w: 0.949472}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4627,7 +4627,7 @@ MonoBehaviour:
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
-    Dutch: 18
+    Dutch: -157
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
@@ -11980,22 +11980,22 @@ PrefabInstance:
     - target: {fileID: 1276603737757889232, guid: b568adb846ca6614db0ca1de2439c5d7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20551437
+      value: 0.51129735
       objectReference: {fileID: 0}
     - target: {fileID: 1276603737757889232, guid: b568adb846ca6614db0ca1de2439c5d7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.50281155
+      value: 0.18338647
       objectReference: {fileID: 0}
     - target: {fileID: 1276603737757889232, guid: b568adb846ca6614db0ca1de2439c5d7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.28568646
+      value: -0.7762982
       objectReference: {fileID: 0}
     - target: {fileID: 1276603737757889232, guid: b568adb846ca6614db0ca1de2439c5d7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.789511
+      value: 0.31985244
       objectReference: {fileID: 0}
     - target: {fileID: 1276603737757889232, guid: b568adb846ca6614db0ca1de2439c5d7,
         type: 3}
@@ -12770,7 +12770,7 @@ MonoBehaviour:
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
-    Dutch: 18
+    Dutch: -157
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
