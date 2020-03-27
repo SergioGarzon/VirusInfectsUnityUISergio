@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+​
 public class Enemy : MonoBehaviour
 {
-    public GameObject  virus1, virus2;
-    public static bool IsVirus1Playing=false;
-
+    public GameObject virus1, virus2;
+    public static bool IsVirus1Playing = false;
+    public ScoreData scoreData;
+​
+    private int _damage;
+    
+​
     private int c = 0;
-
+​
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +24,7 @@ public class Enemy : MonoBehaviour
                 Virus1 virus1Controller = virus1.GetComponent<Virus1>();
                 IsVirus1Playing = true;
                 BattleMachine.IsEnemyChoosing = false;
-
+​
             }
             else
             {

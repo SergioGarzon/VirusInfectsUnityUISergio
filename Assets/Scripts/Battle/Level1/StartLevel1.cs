@@ -3,22 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+​
 public class StartLevel1 : MonoBehaviour
 {
     public GameObject level1;
-
-    private  bool startLevel=false;
-
+​
+    private bool startLevel = false;
+​
     private BattleMachine battleScript;
-
+​
     public Text dialogText;
     // Start is called before the first frame update
     void Start()
     {
         battleScript = level1.GetComponent<BattleMachine>();
     }
-
+​
     // Update is called once per frame
     void Update()
     {
@@ -39,9 +39,9 @@ public class StartLevel1 : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E))
         {
-           Debug.Log("abandonaste la batalla");
-           battleScript.enabled = false;
-           dialogText.text = "Virus Destroyer"; 
+            Debug.Log("abandonaste la batalla");
+            battleScript.enabled = false;
+            dialogText.text = "Virus Destroyer";
         }
     }
 }
