@@ -11,13 +11,13 @@ public class ScoreBarScript : MonoBehaviour
 
     public float time = 5f;//tiempo que dura
 
-     private float timeCounter;
+    private float timeCounter;
 
-     public Text scoreText;
+    public Text scoreText;
 
-     private ScoreData _scoreData;
+    public ScoreData scoreData;
      
-     [SerializeField] private int _allScore;
+    [SerializeField] private int _allScore;
 
 
      // Start is called before the first frame update
@@ -29,9 +29,9 @@ public class ScoreBarScript : MonoBehaviour
     void Update()
     {
 
-        if (_allScore != _scoreData.score)
+        if (_allScore != scoreData.score)
         {
-            scoreBar.fillAmount = _scoreData.score / _allScore;
+            scoreBar.fillAmount = scoreData.score / _allScore;
             scoreText.text = (Convert.ToInt32(100 * scoreBar.fillAmount)).ToString() + "%";
         }
     }

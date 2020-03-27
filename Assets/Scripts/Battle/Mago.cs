@@ -5,24 +5,24 @@ using System.Dynamic;
 using System.Xml.Schema;
 using UnityEngine;
 using Object = UnityEngine.Object;
+
 public class Mago : MonoBehaviour
 {
-
     [SerializeField] private KeyCode _electricityKey, _pixelKey, _LightingKey;
-    private int _electricityLimit;
-​
-    public ScoreData scoreData;
+    private int  _electricityLimit;
 
+    public ScoreData scoreData;
+    
     private States _states = new States();
-​
+
     private int _damage;
-​
+
     void Update()
     {
         if (Player.IsMagoPlaying)
         {
             Debug.Log("Choose an Action to Mago");
-​
+
             if (Input.GetKeyDown(_pixelKey))
             {
                 _damage = 10;
@@ -58,7 +58,7 @@ public class Mago : MonoBehaviour
                 scoreData.shootingPoints = 0;
             }
         }
-​
+
         IEnumerator ChooseVirus()
         {
             Debug.Log("Choose a virus to attack");
@@ -67,7 +67,7 @@ public class Mago : MonoBehaviour
                 Debug.Log("Attack to Virus 1");
                 BattleMachine.lifeBattleVirus1 = BattleMachine.lifeBattleVirus1 - _damage;
             }
-​
+
             if (Input.GetKeyDown(KeyCode.Keypad2))
             {
                 Debug.Log("Attack to Virus 2");

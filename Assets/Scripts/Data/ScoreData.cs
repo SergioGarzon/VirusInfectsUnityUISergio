@@ -13,6 +13,8 @@ public class ScoreData : ScriptableObject
     //puntos totales del juego
 
     [NonSerialized] public int score;
+    [NonSerialized] public int mLife;
+    [NonSerialized] public int hLife;
     [NonSerialized] public int shootingPoints;
     [NonSerialized] public int gamePoints;
 
@@ -39,6 +41,12 @@ public class SerializableShootingPoints {
 public class SerializableGamePoints {
     private int gamePoints;
 }
+public class SerializableMagoLife {
+    private int magoLife;
+}
+public class SerializableHackerLife {
+    private int hackerLife;
+}
 
 public class GameData : ScriptableObject
 {
@@ -59,4 +67,3 @@ public class GameData : ScriptableObject
         enemyDamage = enemysDamagePoints;
     }
 }
-

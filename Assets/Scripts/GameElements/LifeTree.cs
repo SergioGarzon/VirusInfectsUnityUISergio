@@ -2,17 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeTree : MonoBehaviour
 {
-    private int contador = 0;
     public ScoreData scoreData;
+    public Text dialogText;
 
-
-    void OnCollisionEnter(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
-        if (!col.gameObject.CompareTag("Player")) return;
-        Debug.Log("Tree");
-        scoreData.score++;
+
+        if (Input.GetKey(KeyCode.E))
+            {
+
+                scoreData.hLife = scoreData.hLife + 10;
+                scoreData.hLife = scoreData.hLife + 10;
+                dialogText.text = "Score++";
+            }
+            else
+            {
+                dialogText.text = "Score Full";
+            }
+        
+        
     }
 }

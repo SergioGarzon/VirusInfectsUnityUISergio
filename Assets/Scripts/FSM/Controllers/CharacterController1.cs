@@ -64,7 +64,7 @@ public class CharacterController1 : MonoBehaviour
         _navMeshAgent.acceleration = currentaceleration;
     }
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("LifeTree"))
         {
@@ -72,7 +72,7 @@ public class CharacterController1 : MonoBehaviour
             scoreData.score = scoreData.score++;
             Debug.Log("life tree");
         }
-    }
+    }*/
 
     public void GoBackCity()
     {
