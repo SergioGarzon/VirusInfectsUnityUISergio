@@ -37,4 +37,9 @@ public class ActivateHiddenMenu : MonoBehaviour
         this.panelUIBattle.SetActive(pn4);
 
     }
+
+    public void BtnContinuar()
+    {
+        this.ActivatePaneles(false, false, false, false);
+    }
 }
