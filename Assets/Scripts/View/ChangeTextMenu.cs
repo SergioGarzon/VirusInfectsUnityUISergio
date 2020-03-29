@@ -25,20 +25,25 @@ public class ChangeText : MonoBehaviour
         {
             switch(value)
             {
-                case(0): this.txtTextMeshPro.text = vecText[0]; break;
-                case(1): this.txtTextMeshPro.text = vecText[1]; break;
-                case(2): this.txtTextMeshPro.text = vecText[2]; break;
+                case(0): this.AgregarTextoTextMeshPro(vecText, 0); break;
+                case(1): this.AgregarTextoTextMeshPro(vecText, 1); break;
+                case(2): this.AgregarTextoTextMeshPro(vecText, 2); break;
             }
         }
         else
         {
             switch(value)
             {
-                case (0): this.txtTextMeshPro.text = vecText[4]; break;
-                case (1): this.txtTextMeshPro.text = vecText[5]; break;
-                case (2): this.txtTextMeshPro.text = vecText[6]; break;
+                case (0): this.AgregarTextoTextMeshPro(vecText, 3); break;
+                case (1): this.AgregarTextoTextMeshPro(vecText, 4); break;
+                case (2): this.AgregarTextoTextMeshPro(vecText, 5); break;
             }
         }
     }
 
+
+    private void AgregarTextoTextMeshPro(string[] vector, int number) 
+    {
+        this.txtTextMeshPro.text = vector[number];
+    }
 }

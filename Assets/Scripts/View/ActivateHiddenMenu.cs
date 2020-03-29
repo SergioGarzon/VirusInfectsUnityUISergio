@@ -24,7 +24,7 @@ public class ActivateHiddenMenu : MonoBehaviour
             this.ActivatePaneles(false, false, false, false);
         if (Input.GetKey(KeyCode.F12))
             this.ActivatePaneles(false, false, true, false);
-        if (Input.GetKey(KeyCode.F8))
+        if (Input.GetKey(KeyCode.F7))
             this.ActivatePaneles(false, false, false, true);
     }
 
@@ -35,7 +35,6 @@ public class ActivateHiddenMenu : MonoBehaviour
         this.panelController.SetActive(pn2);
         this.panelHideenMenu.SetActive(pn3);
         this.panelUIBattle.SetActive(pn4);
-
     }
 
     public void BtnContinuar()
