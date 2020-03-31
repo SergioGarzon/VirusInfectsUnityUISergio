@@ -9,27 +9,29 @@ public class ChangeLigthColor : MonoBehaviour
 
     void Start()
     {
-        this.light = GetComponent<Light>();
-
-        this.color = Random.Range(-1, 3);
-
-        /*
-        switch (this.color)
-        {
-            case (0): this.light.color = Color.black; break;
-            case (1): this.light.color = Color.cyan; break;
-            case (2): this.light.color = Color.green; break;
-
-        }*/
+        this.light = GetComponent<Light>();        
 
     }
 
     void Update()
     {
-
+        this.IniciarColor();
         
 
         StartCoroutine("AutoTimeCalculator");
+    }
+
+    private void IniciarColor()
+    {
+        this.color = Random.Range(-1, 2);
+
+
+        switch (this.color)
+        {
+            case (0): this.light.color = Color.green; break;
+            case (1): this.light.color = Color.red; break;
+
+        }
     }
 
     IEnumerable AutoTimeCalculator()
