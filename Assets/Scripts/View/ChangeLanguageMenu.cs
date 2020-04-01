@@ -11,8 +11,8 @@ public class ChangeLanguageMenu : MonoBehaviour
 
     void Start()
     {
-        texto = new string[] {"P L A Y  G A M E", "O P T I O N S", "S C O R E S", "C R E D I T S", "Q U I T  G A M E",
-            "I N I C I A R  J U E G O", "O P C I O N E S", "C R E D I T O S", "S A L I R"};
+        texto = new string[] {"PLAY GAME", "OPTIONS", "SCORES", "CREDITS", "QUIT GAME",
+            "INICIAR JUEGO", "OPCIONES", "CREDITOS", "SALIR"};
 
 
         if (!PlayerPrefs.HasKey("Language"))
