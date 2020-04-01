@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ChangeLanguageMenu : MonoBehaviour
 {
-    public UnityEngine.UI.Text txtBtnPlayGame, txtBtnOptions, txtBtnScores, txtBtnCredits, txtBtnQuitGame, txtBtnBack;
+    public UnityEngine.UI.Text txtBtnPlayGame, txtBtnOptions, txtBtnScores, txtBtnCredits, txtBtnQuitGame, txtBtnBack, txtBtnContinue;
     private string[] texto;
     private Text[] textoBotonesVector;
 
@@ -28,7 +28,7 @@ public class ChangeLanguageMenu : MonoBehaviour
     {
         int value = PlayerPrefs.GetInt("Language", 0);
 
-        if (this.txtBtnBack == null)
+        if (this.txtBtnBack == null && this.txtBtnContinue == null)
         {
             this.textoBotonesVector = new Text[] { this.txtBtnPlayGame, this.txtBtnOptions, this.txtBtnScores, this.txtBtnCredits, this.txtBtnQuitGame };
 
@@ -72,14 +72,28 @@ public class ChangeLanguageMenu : MonoBehaviour
 
     private void TextBackEnglishSpanish(int valorInglesEspanol)
     {
-        if (valorInglesEspanol == 0)
-            this.txtBtnBack.text = "B A C K";
-        else
-            this.txtBtnBack.text = "V O L V E R";
+
+        if (this.txtBtnBack != null)
+        {
+
+            if (valorInglesEspanol == 0)
+            {
+                this.txtBtnBack.text = "B A C K";
+            }
+            else
+                this.txtBtnBack.text = "V O L V E R";
 
 
+            if (this.txtBtnContinue != null)
+            {
+                this.txtBtnContinue.text = "C O N T I N U E";
+            }
+            else
+            {
+                this.txtBtnContinue.text = "C O N T I N U A R";
+            }
 
-
+        }
 
 
     }

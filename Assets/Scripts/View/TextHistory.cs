@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextHistory : MonoBehaviour
 {
     public UnityEngine.UI.Text textScene;
     private string texto;
     public UnityEngine.UI.Slider sldProgressBarChargeScene;
+    
 
     private void Start() {
         int x = PlayerPrefs.GetInt("Language", 0);
@@ -26,12 +28,8 @@ public class TextHistory : MonoBehaviour
     }
 
 
-    private void Update() {
-        this.sldProgressBarChargeScene.value += 0.05f;
-
-        if(this.sldProgressBarChargeScene.value >= 99) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("BodyPlayerSelect");
-        }
+    void Update() {
+        this.sldProgressBarChargeScene.value += 100;//0.05f;        
     }
 
     IEnumerator FraseTexto(string frase) {
@@ -44,8 +42,6 @@ public class TextHistory : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
-
-
 
 
 

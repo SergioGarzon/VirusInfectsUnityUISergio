@@ -15,7 +15,7 @@ public class ChangeLigthColor : MonoBehaviour
 
     void Update()
     {
-        this.IniciarColor();
+        //this.IniciarColor();
         
 
         StartCoroutine("AutoTimeCalculator");
