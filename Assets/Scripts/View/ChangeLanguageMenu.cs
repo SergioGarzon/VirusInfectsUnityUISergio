@@ -12,12 +12,14 @@ public class ChangeLanguageMenu : MonoBehaviour
     void Start()
     {
         texto = new string[] {"PLAY GAME", "OPTIONS", "SCORES", "CREDITS", "QUIT GAME",
-            "INICIAR JUEGO", "OPCIONES", "CREDITOS", "SALIR"};
+            "INICIAR JUEGO", "OPCIONES", "PUNTAJES", "CREDITOS","SALIR"};
 
 
-        if (!PlayerPrefs.HasKey("Language"))
+
+        if (!PlayerPrefs.HasKey("LenguajeGuardado"))
         {
-            PlayerPrefs.SetInt("Language", 0);
+            //No entra acá ya que si existe
+            PlayerPrefs.SetInt("LenguajeGuardado", 0);
         }
 
         CargarDatosBotones();
@@ -26,7 +28,8 @@ public class ChangeLanguageMenu : MonoBehaviour
 
     private void CargarDatosBotones()
     {
-        int value = PlayerPrefs.GetInt("Language", 0);
+        int value = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        Debug.Log(value);
 
         if (this.txtBtnBack == null && this.txtBtnContinue == null)
         {
@@ -59,7 +62,7 @@ public class ChangeLanguageMenu : MonoBehaviour
 
     private void TextButtonMethodSpanish()
     {
-        int j = 6;
+        int j = 5;
 
         for (int i = 0; i < this.textoBotonesVector.Length; i++)
         {
@@ -78,22 +81,25 @@ public class ChangeLanguageMenu : MonoBehaviour
 
             if (valorInglesEspanol == 0)
             {
-                this.txtBtnBack.text = "B A C K";
+                this.txtBtnBack.text = "VOLVER";
             }
             else
-                this.txtBtnBack.text = "V O L V E R";
-
-
-            if (this.txtBtnContinue != null)
-            {
-                this.txtBtnContinue.text = "C O N T I N U E";
-            }
-            else
-            {
-                this.txtBtnContinue.text = "C O N T I N U A R";
-            }
+                this.txtBtnBack.text = "BACK";                
 
         }
+
+        if (this.txtBtnContinue != null)
+        {
+            if(valorInglesEspanol == 0)
+            {
+                this.txtBtnContinue.text = "CONTINUE";
+            }
+            else
+            {
+                this.txtBtnContinue.text = "CONTINUAR";
+            }
+        }
+        
 
 
     }

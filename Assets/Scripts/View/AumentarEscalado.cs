@@ -8,7 +8,7 @@ public class AumentarEscalado : MonoBehaviour
    
     public void Aumentar_ButtonScale()
     {
-        scroll.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        scroll.localScale = new Vector3(1.05f, 1.05f, 1.05f);
     }
 
     public void BajarEscalado()
