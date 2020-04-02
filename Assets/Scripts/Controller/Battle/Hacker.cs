@@ -10,8 +10,8 @@ public class Hacker : MonoBehaviour
 
     public ScoreData scoreData;
 
-    private int copyLimit=3;
-    
+    private int copyLimit = 3;
+
     [SerializeField] private KeyCode bugKey, copyKey, stealKey;
     private int _damage;
 
@@ -21,40 +21,48 @@ public class Hacker : MonoBehaviour
         if (Player.IsHackerPlaying)
         {
             Debug.Log("Select a hacker action");
-                    
+
             if (Input.GetKey(bugKey))
             {
                 _damage = 10;
                 StartCoroutine(ChooseVirus());
                 _states.Bug();
-               Debug.Log("OK");
-               BattleMachine.IsPlayerChoosing=false;
-               scoreData.shootingPoints = +25;
-               BattleMachine.OnPlayerTurn = false;
+                Debug.Log("OK");
+                BattleMachine.IsPlayerChoosing = false;
+                scoreData.shootingPoints = +25;
+                BattleMachine.OnPlayerTurn = false;
             }
-            else if (Input.GetKey(copyKey)&&copyLimit>0)//añadir condicion de 1 sola copia
+            else if (Input.GetKey(copyKey) && copyLimit > 0)//añadir condicion de 1 sola copia
             {
                 _damage = 15;
                 StartCoroutine(ChooseVirus());
                 _states.Copy();
                 Debug.Log("OK");
-                BattleMachine.IsPlayerChoosing=false;
+                BattleMachine.IsPlayerChoosing = false;
                 scoreData.shootingPoints = +25;
                 BattleMachine.OnPlayerTurn = false;
                 copyKey--;
             }
-            else if ( Input.GetKey(stealKey))//añadir condicion de scoreData
+            else if (Input.GetKey(stealKey))//añadir condicion de scoreData
             {
                 _damage = 20;
                 StartCoroutine(ChooseVirus());
                 _states.Steal();
                 Debug.Log("OK");
-                BattleMachine.IsPlayerChoosing=false;
+                BattleMachine.IsPlayerChoosing = false;
                 scoreData.shootingPoints = +25;
                 BattleMachine.OnPlayerTurn = false;
             }
         }
+
+
+        if (scoreData.hLife <= 0)
+        {
+            _states.Die();
+        }
     }
+
+
     IEnumerator ChooseVirus()
     {
         Debug.Log("Choose a virus to attack");
@@ -72,5 +80,5 @@ public class Hacker : MonoBehaviour
         yield return new WaitForSeconds(1);
     }
 
-    
+
 }

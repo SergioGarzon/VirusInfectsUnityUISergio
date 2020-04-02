@@ -15,16 +15,23 @@ public class PickUpObject : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.P))
             {
-                objectToPickUp.SetActive(false);
+                //objectToPickUp.SetActive(false);
 
-                /*
                 PickedObject = objectToPickUp;
                 PickedObject.GetComponent<PickableObject>().isPickable = false;
                 PickedObject.transform.SetParent(interactionZone);
                 PickedObject.transform.position = interactionZone.position;
                 PickedObject.GetComponent<Rigidbody>().useGravity = false;
                 PickedObject.GetComponent<Rigidbody>().isKinematic = true;
-                //PickedObject.SetActive(false);*/
+            } else if (PickedObject != null)
+            {
+                PickedObject.GetComponent<PickableObject>().isPickable = true;
+                PickedObject.transform.SetParent(null);
+
+
+                PickedObject.GetComponent<Rigidbody>().useGravity = true;
+                PickedObject.GetComponent<Rigidbody>().isKinematic = false;
+
             }
         }
     }

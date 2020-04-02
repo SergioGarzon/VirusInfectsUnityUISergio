@@ -51,12 +51,12 @@ public class CharacterController1 : MonoBehaviour
             _followOne.enabled = false;
 
         }
-        else if (other.gameObject.CompareTag("GoBack"))
+        /*else if (other.gameObject.CompareTag("GoBack"))
         {
             Debug.Log("ola we");
             transform.position = _initialPosition.position;
             
-        }
+        }*/
         _simpleMovement._speed=0;
         _navMeshAgent.acceleration = 0f;
         _navMeshAgent.enabled = true;
