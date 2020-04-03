@@ -13,6 +13,13 @@ public class SimpleMovement : MonoBehaviour
 
 	private Vector3 _nextPosition;
 
+	private Animator animatorMago;
+	public GameObject mago;
+	   
+	void Start()
+	{
+		this.animatorMago = mago.GetComponent<Animator>();
+	}
 
 
 	// Update is called once per frame
@@ -38,6 +45,10 @@ public class SimpleMovement : MonoBehaviour
 			{
 				direction = Constants.Directions.kRight;
 			}
+
+			this.animatorMago.SetTrigger("MagoCamina");
+			StartCoroutine(CorrutinaMagoCaminaCorre());
+
 
 			CalculateStep(direction);
 		}
@@ -97,5 +108,13 @@ public class SimpleMovement : MonoBehaviour
 			kNone
 		}
 
+	}
+
+	IEnumerator CorrutinaMagoCaminaCorre()
+	{
+		
+		yield return new WaitForSeconds(3000f);
+		this.animatorMago.SetTrigger("MagoCorre");
+		
 	}
 }

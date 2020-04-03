@@ -44,7 +44,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4798337318697692820}
-    m_Position: {x: 1040, y: -380, z: 0}
+    m_Position: {x: 810, y: -340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 531459828190977895}
     m_Position: {x: 1200, y: -270, z: 0}
@@ -59,7 +59,7 @@ AnimatorStateMachine:
     m_Position: {x: 1080, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4936452895038254584}
-    m_Position: {x: 650, y: -340, z: 0}
+    m_Position: {x: 480, y: -370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2458304176845154602}
     m_Position: {x: 1320, y: -140, z: 0}
@@ -161,7 +161,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: MagoCorre
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4798337318697692820}
   m_Solo: 0
@@ -313,6 +316,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: MagoCorre
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: MagoCamina
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -493,7 +502,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: MagoCorre
+    m_ConditionEvent: MagoCamina
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4936452895038254584}

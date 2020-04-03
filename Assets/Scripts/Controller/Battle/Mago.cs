@@ -75,6 +75,7 @@ public class Mago : MonoBehaviour
         if(scoreData.mLife <= 0)
         {
             _states.Die();
+            animationMago.SetTrigger("MagoMuere");
         }
 
         IEnumerator ChooseVirus()

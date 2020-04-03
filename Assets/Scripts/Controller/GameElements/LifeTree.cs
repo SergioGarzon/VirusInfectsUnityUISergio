@@ -9,8 +9,21 @@ public class LifeTree : MonoBehaviour
     public ScoreData scoreData;
     public Text dialogText;
 
-    private void OnCollisionStay(Collision col)
+    private Animator animator;
+    public GameObject mago;
+     
+    void Start()
     {
+        animator = mago.GetComponent<Animator>();    
+    }
+
+    
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Hasta aqui llega");
+
 
         if (Input.GetKey(KeyCode.E))
         {
@@ -24,6 +37,10 @@ public class LifeTree : MonoBehaviour
                 scoreData.hLife = scoreData.hLife + 10;
                 dialogText.text = "Score++";
             }
+
+            animator.SetTrigger("MagoCargaVida");
         }
     }
+
+
 }

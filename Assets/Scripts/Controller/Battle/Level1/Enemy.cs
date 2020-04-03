@@ -13,6 +13,14 @@ public class Enemy : MonoBehaviour
 
     private int c = 0;
 
+    private Animator animatorMago;
+    public GameObject mago;
+
+    void Start()
+    {
+        this.animatorMago = mago.GetComponent<Animator>(); 
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     private void JugadaVirus()
     {
+        animatorMago.SetTrigger("MagoRecibeDano");
         IsVirus1Playing = true;
         BattleMachine.IsEnemyChoosing = false;
     }

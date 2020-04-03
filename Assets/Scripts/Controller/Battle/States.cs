@@ -17,7 +17,7 @@ public class States
 
     public void Die()
     {
-        Debug.Log(" State");
+        //Debug.Log(" State");
     }
 
     public void Copy()

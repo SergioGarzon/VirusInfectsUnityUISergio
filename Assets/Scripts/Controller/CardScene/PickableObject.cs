@@ -10,17 +10,19 @@ public class PickableObject : MonoBehaviour
     {
         if(other.tag == "PlayerInteraction")
         {
-            other.GetComponentInParent<PickUpObject>().objectToPickUp = this.gameObject;
+            Destroy(other.gameObject);
+            //other.GetComponentInParent<PickUpObject>().objectToPickUp = this.gameObject;
         }
     }
 
 
+    /*
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "PlayerInteraction")
         {
             other.GetComponentInParent<PickUpObject>().objectToPickUp = null;
         }
-    }
+    }*/
 
 }

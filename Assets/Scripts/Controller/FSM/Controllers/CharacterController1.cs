@@ -23,6 +23,7 @@ public class CharacterController1 : MonoBehaviour
     private FollowOne _followOne;
 
     public NavMeshAgent _navMeshAgent;
+
     // Start is called before the first frame update
     void Start()
     {
