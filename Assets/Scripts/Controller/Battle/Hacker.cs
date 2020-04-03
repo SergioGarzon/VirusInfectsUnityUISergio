@@ -15,13 +15,13 @@ public class Hacker : MonoBehaviour
     [SerializeField] private KeyCode bugKey, copyKey, stealKey;
     private int _damage;
 
+
     private Animator animator;
 
     void Start()
     {
-        this.animator = GetComponent<Animator>();   
+        this.animator = GetComponent<Animator>();
     }
-
 
     void Update()
     {
@@ -30,7 +30,7 @@ public class Hacker : MonoBehaviour
             Debug.Log("Select a hacker action");
 
             if (Input.GetKey(bugKey))
-            {                
+            {
                 _damage = 10;
                 StartCoroutine(ChooseVirus());
                 this.animator.SetTrigger("CharlieAtaca");
@@ -39,7 +39,6 @@ public class Hacker : MonoBehaviour
                 BattleMachine.IsPlayerChoosing = false;
                 scoreData.shootingPoints = +25;
                 BattleMachine.OnPlayerTurn = false;
-                
             }
             else if (Input.GetKey(copyKey) && copyLimit > 0)//añadir condicion de 1 sola copia
             {
@@ -66,15 +65,12 @@ public class Hacker : MonoBehaviour
             }
         }
 
-
         if (scoreData.hLife <= 0)
         {
             this.animator.SetTrigger("CharlieMuere");
             _states.Die();
         }
     }
-
-
     IEnumerator ChooseVirus()
     {
         Debug.Log("Choose a virus to attack");

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowOne : MonoBehaviour
 {
-    public float speed;
+    public float speed; //El speed era 10
     public float visionRadiosStop;
 
     private GameObject player;

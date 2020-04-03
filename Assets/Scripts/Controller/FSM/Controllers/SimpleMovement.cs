@@ -14,7 +14,7 @@ public class SimpleMovement : MonoBehaviour
 	private Vector3 _nextPosition;
 
 	private Animator animatorMago;
-	public GameObject mago;
+    public GameObject mago;
 
 	private Animator animatorHacker;
 	public GameObject hacker;
@@ -33,25 +33,25 @@ public class SimpleMovement : MonoBehaviour
 		{
 			Constants.Directions direction = Constants.Directions.kNone;
 
-			if (Input.GetAxis("Vertical") > 0)
+			if (Input.GetAxis("Horizontal") < 0) //Los horizontal abajo  y > 0
 			{
 				direction = Constants.Directions.kUp;
 			}
-			else if (Input.GetAxis("Vertical") < 0)
+			else if (Input.GetAxis("Horizontal") > 0) //Los horizontal abajo y < 0
 			{
 				direction = Constants.Directions.kDown;
 			}
-			else if (Input.GetAxis("Horizontal") < 0)
+			else if (Input.GetAxis("Vertical") < 0)
 			{
 				direction = Constants.Directions.kLeft;
 			}
-			else if (Input.GetAxis("Horizontal") > 0)
+			else if (Input.GetAxis("Vertical") > 0)
 			{
 				direction = Constants.Directions.kRight;
 			}
 
-			this.animatorMago.SetTrigger("MagoCamina");
-			this.animatorHacker.SetTrigger("CharlieCamina");
+			//this.animatorMago.SetTrigger("MagoCamina");
+			//this.animatorHacker.SetTrigger("CharlieCamina");
 			StartCoroutine(CorrutinaMagoCaminaCorre());
 
 
@@ -72,16 +72,16 @@ public class SimpleMovement : MonoBehaviour
 		switch (direction)
 		{
 			case Constants.Directions.kUp:
-				_nextPosition = transform.position + Vector3.forward * _step;
+				_nextPosition = transform.position + Vector3.forward;// * _step;
 				break;
 			case Constants.Directions.kDown:
-				_nextPosition = transform.position + Vector3.back * _step;
+				_nextPosition = transform.position + Vector3.back;// * _step;
 				break;
 			case Constants.Directions.kLeft:
-				_nextPosition = transform.position + Vector3.left * _step;
+				_nextPosition = transform.position + Vector3.left;// * _step;
 				break;
 			case Constants.Directions.kRight:
-				_nextPosition = transform.position + Vector3.right * _step;
+				_nextPosition = transform.position + Vector3.right;// * _step;
 				break;
 		}
 
@@ -119,8 +119,8 @@ public class SimpleMovement : MonoBehaviour
 	{
 		
 		yield return new WaitForSeconds(3000f);
-		this.animatorMago.SetTrigger("MagoCorre");
-		this.animatorHacker.SetTrigger("CharlieCorre");
+		//this.animatorMago.SetTrigger("MagoCorre");
+		//this.animatorHacker.SetTrigger("CharlieCorre");
 		
 	}
 }

@@ -19,10 +19,11 @@ public class Mago : MonoBehaviour
 
     private Animator animationMago;
 
-    private void Start()
+    void Start()
     {
         this.animationMago = GetComponent<Animator>();
     }
+
 
     void Update()
     {
@@ -72,7 +73,7 @@ public class Mago : MonoBehaviour
             }
         }
 
-        if(scoreData.mLife <= 0)
+        if (scoreData.mLife <= 0)
         {
             _states.Die();
             animationMago.SetTrigger("MagoMuere");

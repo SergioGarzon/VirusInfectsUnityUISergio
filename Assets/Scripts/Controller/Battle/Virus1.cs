@@ -9,6 +9,7 @@ public class Virus1 : MonoBehaviour
     public ScoreData scoreData;
     private int _damage;
 
+
     private Animator animatorMago;
     public GameObject mago;
 
@@ -18,10 +19,10 @@ public class Virus1 : MonoBehaviour
 
     void Start()
     {
+
         this.animatorMago = mago.GetComponent<Animator>();
         this.animatorCharlie = hacker.GetComponent<Animator>();
     }
-
 
     void Update()
     {
@@ -44,8 +45,8 @@ public class Virus1 : MonoBehaviour
                 case 2:
                     _damage = 15;
                     StartCoroutine(ChoosePlayerToAttack());
-                    _states.Invisibility();
-                    Debug.Log("2-Invisibility");
+                    _states.Doubling();
+                    Debug.Log("2-Double");
                     Enemy.IsVirus1Playing = false;
                     BattleMachine.IsEnemyChoosing = false;
                     BattleMachine.OnPlayerTurn = true;
