@@ -21,10 +21,8 @@ public class LifeTree : MonoBehaviour
         this.animator2 = hacker.GetComponent<Animator>();
     }
 
-    
 
-
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision collision)
     {
         Debug.Log("Hasta aqui llega");
 
@@ -46,6 +44,8 @@ public class LifeTree : MonoBehaviour
             this.animator2.SetTrigger("CharlieRecibeVida");
         }
     }
+
+
 
 
 }

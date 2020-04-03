@@ -81,10 +81,10 @@ public class ChangeLanguageMenu : MonoBehaviour
 
             if (valorInglesEspanol == 0)
             {
-                this.txtBtnBack.text = "VOLVER";
+                this.txtBtnBack.text = "BACK";
             }
             else
-                this.txtBtnBack.text = "BACK";                
+                this.txtBtnBack.text = "VOLVER";                
 
         }
 

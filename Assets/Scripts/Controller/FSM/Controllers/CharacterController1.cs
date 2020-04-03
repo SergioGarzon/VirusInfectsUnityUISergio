@@ -24,6 +24,8 @@ public class CharacterController1 : MonoBehaviour
 
     public NavMeshAgent _navMeshAgent;
 
+    public GameObject panelBattleUI;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class CharacterController1 : MonoBehaviour
         _simpleMovement = GetComponent<SimpleMovement>();
         _followOne = mago.GetComponent<FollowOne>();
         _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+        this.panelBattleUI = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -47,10 +50,13 @@ public class CharacterController1 : MonoBehaviour
         
         if (other.gameObject.CompareTag("Teleport1") )
         {
+            Debug.Log("Aqui entro en la batalla");
+
             transform.position = _panalBattle.position;
             mago.transform.position = _magoBattlePosition.position;
             _simpleMovement.enabled = false;
             _followOne.enabled = false;
+            this.panelBattleUI.SetActive(true);
 
         }
         /*else if (other.gameObject.CompareTag("GoBack"))
