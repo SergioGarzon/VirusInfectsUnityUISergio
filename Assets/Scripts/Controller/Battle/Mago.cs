@@ -17,6 +17,13 @@ public class Mago : MonoBehaviour
 
     private int _damage;
 
+    private Animator animationMago;
+
+    private void Start()
+    {
+        this.animationMago = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if (Player.IsMagoPlaying)
@@ -33,6 +40,8 @@ public class Mago : MonoBehaviour
                 Player.IsMagoPlaying = false;
                 scoreData.shootingPoints = +25;
                 BattleMachine.OnPlayerTurn = false;
+
+                animationMago.SetTrigger("MagoEfectoRayos");
             }
             else if (Input.GetKeyDown(_electricityKey) && _electricityLimit > 0)
             {
@@ -45,6 +54,8 @@ public class Mago : MonoBehaviour
                 BattleMachine.OnPlayerTurn = false;
                 scoreData.shootingPoints = +25;
                 _electricityLimit--;
+
+                animationMago.SetTrigger("MagoEfectoRayos");
             }
             else if (Input.GetKeyDown(_LightingKey) && scoreData.shootingPoints == 100)
             {
@@ -56,6 +67,8 @@ public class Mago : MonoBehaviour
                 Player.IsMagoPlaying = false;
                 BattleMachine.OnPlayerTurn = false;
                 scoreData.shootingPoints = 0;
+
+                animationMago.SetTrigger("MagoEfectoRayos");
             }
         }
 
