@@ -11,10 +11,14 @@ public class LifeTree : MonoBehaviour
 
     private Animator animator;
     public GameObject mago;
+
+    private Animator animator2;
+    public GameObject hacker;
      
     void Start()
     {
-        animator = mago.GetComponent<Animator>();    
+        animator = mago.GetComponent<Animator>();
+        this.animator2 = hacker.GetComponent<Animator>();
     }
 
     
@@ -39,6 +43,7 @@ public class LifeTree : MonoBehaviour
             }
 
             animator.SetTrigger("MagoCargaVida");
+            this.animator2.SetTrigger("CharlieRecibeVida");
         }
     }
 

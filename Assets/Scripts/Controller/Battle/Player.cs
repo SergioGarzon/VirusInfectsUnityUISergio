@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public GameObject mago, hacker;
     public static bool IsHackerPlaying=false;
     public static bool IsMagoPlaying=false;
+
+    
     void Update()
     {
         if (BattleMachine.IsPlayerChoosing)

@@ -24,6 +24,7 @@ public class CharacterController1 : MonoBehaviour
 
     public NavMeshAgent _navMeshAgent;
 
+
     // Start is called before the first frame update
     void Start()
     {

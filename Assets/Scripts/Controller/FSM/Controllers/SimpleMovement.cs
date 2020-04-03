@@ -15,10 +15,14 @@ public class SimpleMovement : MonoBehaviour
 
 	private Animator animatorMago;
 	public GameObject mago;
-	   
+
+	private Animator animatorHacker;
+	public GameObject hacker;
+
 	void Start()
 	{
 		this.animatorMago = mago.GetComponent<Animator>();
+		this.animatorHacker = hacker.GetComponent<Animator>();
 	}
 
 
@@ -47,6 +51,7 @@ public class SimpleMovement : MonoBehaviour
 			}
 
 			this.animatorMago.SetTrigger("MagoCamina");
+			this.animatorHacker.SetTrigger("CharlieCamina");
 			StartCoroutine(CorrutinaMagoCaminaCorre());
 
 
@@ -115,6 +120,7 @@ public class SimpleMovement : MonoBehaviour
 		
 		yield return new WaitForSeconds(3000f);
 		this.animatorMago.SetTrigger("MagoCorre");
+		this.animatorHacker.SetTrigger("CharlieCorre");
 		
 	}
 }
