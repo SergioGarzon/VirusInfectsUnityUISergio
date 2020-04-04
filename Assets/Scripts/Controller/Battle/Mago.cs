@@ -17,11 +17,11 @@ public class Mago : MonoBehaviour
 
     private int _damage;
 
-    private Animator animationMago;
+    //private Animator animationMago;
 
     void Start()
     {
-        this.animationMago = GetComponent<Animator>();
+        //this.animationMago = GetComponent<Animator>();
     }
 
 
@@ -42,7 +42,7 @@ public class Mago : MonoBehaviour
                 scoreData.shootingPoints = +25;
                 BattleMachine.OnPlayerTurn = false;
 
-                animationMago.SetTrigger("MagoEfectoRayos");
+                //animationMago.SetTrigger("MagoEfectoRayos");
             }
             else if (Input.GetKeyDown(_electricityKey) && _electricityLimit > 0)
             {
@@ -56,7 +56,7 @@ public class Mago : MonoBehaviour
                 scoreData.shootingPoints = +25;
                 _electricityLimit--;
 
-                animationMago.SetTrigger("MagoEfectoRayos");
+                //animationMago.SetTrigger("MagoEfectoRayos");
             }
             else if (Input.GetKeyDown(_LightingKey) && scoreData.shootingPoints == 100)
             {
@@ -69,14 +69,14 @@ public class Mago : MonoBehaviour
                 BattleMachine.OnPlayerTurn = false;
                 scoreData.shootingPoints = 0;
 
-                animationMago.SetTrigger("MagoEfectoRayos");
+                //animationMago.SetTrigger("MagoEfectoRayos");
             }
         }
 
         if (scoreData.mLife <= 0)
         {
             _states.Die();
-            animationMago.SetTrigger("MagoMuere");
+            //animationMago.SetTrigger("MagoMuere");
         }
 
         IEnumerator ChooseVirus()

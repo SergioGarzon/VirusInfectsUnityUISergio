@@ -16,11 +16,11 @@ public class Hacker : MonoBehaviour
     private int _damage;
 
 
-    private Animator animator;
+    //private Animator animator;
 
     void Start()
     {
-        this.animator = GetComponent<Animator>();
+        //this.animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,7 +33,7 @@ public class Hacker : MonoBehaviour
             {
                 _damage = 10;
                 StartCoroutine(ChooseVirus());
-                this.animator.SetTrigger("CharlieAtaca");
+                //this.animator.SetTrigger("CharlieAtaca");
                 _states.Bug();
                 Debug.Log("OK");
                 BattleMachine.IsPlayerChoosing = false;
@@ -44,7 +44,7 @@ public class Hacker : MonoBehaviour
             {
                 _damage = 15;
                 StartCoroutine(ChooseVirus());
-                this.animator.SetTrigger("CharlieAtaca");
+                //this.animator.SetTrigger("CharlieAtaca");
                 _states.Copy();
                 Debug.Log("OK");
                 BattleMachine.IsPlayerChoosing = false;
@@ -56,7 +56,7 @@ public class Hacker : MonoBehaviour
             {
                 _damage = 20;
                 StartCoroutine(ChooseVirus());
-                this.animator.SetTrigger("CharlieAtaca");
+                //this.animator.SetTrigger("CharlieAtaca");
                 _states.Steal();
                 Debug.Log("OK");
                 BattleMachine.IsPlayerChoosing = false;
@@ -67,7 +67,7 @@ public class Hacker : MonoBehaviour
 
         if (scoreData.hLife <= 0)
         {
-            this.animator.SetTrigger("CharlieMuere");
+            //this.animator.SetTrigger("CharlieMuere");
             _states.Die();
         }
     }

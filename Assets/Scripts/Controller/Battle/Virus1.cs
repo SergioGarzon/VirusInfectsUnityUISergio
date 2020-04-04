@@ -9,19 +9,19 @@ public class Virus1 : MonoBehaviour
     public ScoreData scoreData;
     private int _damage;
 
-
+    /*
     private Animator animatorMago;
     public GameObject mago;
 
 
     private Animator animatorCharlie;
-    public GameObject hacker;
+    public GameObject hacker;*/
 
     void Start()
     {
-
+        /*
         this.animatorMago = mago.GetComponent<Animator>();
-        this.animatorCharlie = hacker.GetComponent<Animator>();
+        this.animatorCharlie = hacker.GetComponent<Animator>();*/
     }
 
     void Update()
@@ -85,13 +85,13 @@ public class Virus1 : MonoBehaviour
         if (RandomState.StateE % 2 == 0)
         {
             Debug.Log("Attack to Mago");
-            animatorMago.SetTrigger("MagoRecibeDano");
+            //animatorMago.SetTrigger("MagoRecibeDano");
             scoreData.mLife = scoreData.mLife - _damage;
         }
 
         else
         {
-            animatorMago.SetTrigger("CharlieDaño");
+            //animatorMago.SetTrigger("CharlieDaño");
             Debug.Log("Attack to Hacker");
             scoreData.hLife = scoreData.hLife - _damage;
         }

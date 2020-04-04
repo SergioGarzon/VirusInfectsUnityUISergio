@@ -29,6 +29,8 @@ public class CharacterController1 : MonoBehaviour
     public GameObject camara1;
     public GameObject camara2;
 
+    //public GameObject panelAutorizacion;
+
     
 
 
@@ -49,23 +51,30 @@ public class CharacterController1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        //bool validar = false;
 
         _navMeshAgent.enabled = false;
         float currentaceleration=_navMeshAgent.acceleration;
         
         if (other.gameObject.CompareTag("Teleport1") )
         {
+            //validar = this.validarAutorizacion();
 
-            Debug.Log("Hasta aqui llega excelente");
-            transform.position = _panalBattle.position;
-            mago.transform.position = _magoBattlePosition.position;
-            _simpleMovement.enabled = false;
-            _followOne.enabled = false;
+            //if (!validar) return;
 
-            this.camara1.SetActive(false);
-            this.camara2.SetActive(true);
-            this.panelBattleUI.SetActive(true);
+            //if(validar)
+            //{
+                Debug.Log("Hasta aqui llega excelente");
+                transform.position = _panalBattle.position;
+                mago.transform.position = _magoBattlePosition.position;
+                _simpleMovement.enabled = false;
+                _followOne.enabled = false;
+
+                this.camara1.SetActive(false);
+                this.camara2.SetActive(true);
+                this.panelBattleUI.SetActive(true);
+            //}
+            
 
 
 
@@ -76,11 +85,16 @@ public class CharacterController1 : MonoBehaviour
             transform.position = _initialPosition.position;
             
         }*/
-        _simpleMovement._speed=0;
-        _navMeshAgent.acceleration = 0f;
-        _navMeshAgent.enabled = true;
-        _simpleMovement._speed=15;
-        _navMeshAgent.acceleration = currentaceleration;
+
+        //if(validar)
+        //{
+            _simpleMovement._speed = 0;
+            _navMeshAgent.acceleration = 0f;
+            _navMeshAgent.enabled = true;
+            _simpleMovement._speed = 15;
+            _navMeshAgent.acceleration = currentaceleration;
+        //}
+        
     }
 
     /*private void OnCollisionEnter(Collision other)
@@ -108,4 +122,18 @@ public class CharacterController1 : MonoBehaviour
         _simpleMovement._speed=15;
         _navMeshAgent.acceleration = currentaceleration;
     }
+
+    /*
+    private bool validarAutorizacion()
+    {
+        int valor = PlayerPrefs.GetInt("ValorGuardadoTarjeta", 0);
+
+        if (valor != 2)
+        {
+            this.panelAutorizacion.SetActive(true);
+            return false;
+        }
+
+        return true;
+    }*/
 }
