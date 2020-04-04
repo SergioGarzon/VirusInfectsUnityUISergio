@@ -91,7 +91,7 @@ public class Virus1 : MonoBehaviour
 
         else
         {
-            animatorMago.SetTrigger("CharlieRecibeDano");
+            animatorMago.SetTrigger("CharlieDaño");
             Debug.Log("Attack to Hacker");
             scoreData.hLife = scoreData.hLife - _damage;
         }

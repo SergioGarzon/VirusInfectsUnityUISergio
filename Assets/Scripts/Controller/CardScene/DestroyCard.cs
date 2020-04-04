@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DestroyCard : MonoBehaviour
 {
-    public int valorTarjeta; //Este es un valor que se asigna al crear la tarjeta
+    [SerializeField] [Range(1, 4)]public int valorTarjeta; //Este es un valor que se asigna al crear la tarjeta
     public GameObject panel;
     public Texture texturaEspanol;
     public Texture texturaIngles;
@@ -34,6 +34,8 @@ public class DestroyCard : MonoBehaviour
 
             panel.SetActive(true);
             Destroy(this.gameObject);
+
+            PlayerPrefs.SetInt("ValorGuardadoTarjeta", valorTarjeta);
 
         }
     }
