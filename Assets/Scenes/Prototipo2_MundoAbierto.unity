@@ -1260,6 +1260,8 @@ GameObject:
   - component: {fileID: 94679867}
   - component: {fileID: 94679866}
   - component: {fileID: 94679865}
+  - component: {fileID: 94679868}
+  - component: {fileID: 94679869}
   m_Layer: 5
   m_Name: BtnPixel
   m_TagString: Untagged
@@ -1329,7 +1331,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 94679866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 94679868}
+        m_MethodName: ActivarBtnVirus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &94679866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1379,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94679863}
   m_CullTransparentMesh: 0
+--- !u!114 &94679868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94679863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
+--- !u!114 &94679869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94679863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 0}
+  BtnCharlie: {fileID: 0}
+  BtnAtif: {fileID: 0}
+  BtnBack: {fileID: 0}
+  BtnBug: {fileID: 0}
+  BtnSteal: {fileID: 0}
+  BtnPixel: {fileID: 0}
+  BtnShock: {fileID: 0}
+  BtnLighning: {fileID: 0}
+  BtnElectricity: {fileID: 0}
+  BtnVirusOne: {fileID: 0}
+  BtnVirusTwo: {fileID: 0}
 --- !u!1 &94712934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,8 +2522,8 @@ RectTransform:
   m_Father: {fileID: 322740975}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2726,6 +2787,7 @@ GameObject:
   - component: {fileID: 228177914}
   - component: {fileID: 228177913}
   - component: {fileID: 228177912}
+  - component: {fileID: 228177915}
   m_Layer: 5
   m_Name: BtnVirusOne
   m_TagString: Untagged
@@ -2795,7 +2857,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 228177913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 228177915}
+        m_MethodName: BotonesIniciales
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &228177913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,7 +2882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2832,6 +2905,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228177910}
   m_CullTransparentMesh: 0
+--- !u!114 &228177915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228177910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1001 &235289393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3134,6 +3231,7 @@ GameObject:
   - component: {fileID: 275819937}
   - component: {fileID: 275819936}
   - component: {fileID: 275819935}
+  - component: {fileID: 275819938}
   m_Layer: 5
   m_Name: BtnBug
   m_TagString: Untagged
@@ -3203,7 +3301,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 275819936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275819938}
+        m_MethodName: ActivarBtnVirus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &275819936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,6 +3349,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275819933}
   m_CullTransparentMesh: 0
+--- !u!114 &275819938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275819933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1 &301358712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,7 +3556,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1732240714}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4108,7 +4241,7 @@ RectTransform:
   - {fileID: 199312439}
   - {fileID: 1400597387}
   m_Father: {fileID: 1732240714}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4426,7 +4559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &460558003
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4460,7 +4593,7 @@ RectTransform:
   - {fileID: 228177911}
   - {fileID: 2012660978}
   m_Father: {fileID: 1732240714}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4512,13 +4645,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 460558002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e922dba0dc2c3664a90f8e9f6a1a0177, type: 3}
+  m_Script: {fileID: 11500000, guid: 24ca68831d752264aa57e9288f7252bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sldEnergyPrincipal: {fileID: 1123450900}
-  sldEnergySecondary: {fileID: 817706688}
-  sldEnergyVirus1: {fileID: 902804676}
-  sldEnergyVirus2: {fileID: 500554951}
+  EnergyPlayerOne: {fileID: 1123450900}
+  EnergyPlayerTwo: {fileID: 817706688}
+  EnergyEnemyOne: {fileID: 902804676}
+  EnergyEnemyTwo: {fileID: 500554951}
 --- !u!1 &469063589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5429,6 +5562,8 @@ GameObject:
   - component: {fileID: 563409174}
   - component: {fileID: 563409173}
   - component: {fileID: 563409172}
+  - component: {fileID: 563409175}
+  - component: {fileID: 563409176}
   m_Layer: 5
   m_Name: BtnLightning
   m_TagString: Untagged
@@ -5498,7 +5633,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 563409173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 563409175}
+        m_MethodName: ActivarBtnVirus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563409173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5535,6 +5681,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563409170}
   m_CullTransparentMesh: 0
+--- !u!114 &563409175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563409170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
+--- !u!114 &563409176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563409170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 0}
+  BtnCharlie: {fileID: 0}
+  BtnAtif: {fileID: 0}
+  BtnBack: {fileID: 0}
+  BtnBug: {fileID: 0}
+  BtnSteal: {fileID: 0}
+  BtnPixel: {fileID: 0}
+  BtnShock: {fileID: 0}
+  BtnLighning: {fileID: 0}
+  BtnElectricity: {fileID: 0}
+  BtnVirusOne: {fileID: 0}
+  BtnVirusTwo: {fileID: 0}
 --- !u!1001 &566237307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5941,7 +6135,6 @@ MonoBehaviour:
   panelBattleUI: {fileID: 460558002}
   camara1: {fileID: 1369761335}
   camara2: {fileID: 1157207042}
-  panelAutorizacion: {fileID: 1546764862}
 --- !u!54 &588518628
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6548,6 +6741,7 @@ GameObject:
   - component: {fileID: 650422046}
   - component: {fileID: 650422045}
   - component: {fileID: 650422044}
+  - component: {fileID: 650422047}
   m_Layer: 5
   m_Name: BtnBack
   m_TagString: Untagged
@@ -6617,7 +6811,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 650422045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 650422047}
+        m_MethodName: BotonesIniciales
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &650422045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6654,6 +6859,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650422042}
   m_CullTransparentMesh: 0
+--- !u!114 &650422047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650422042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1 &658772133
 GameObject:
   m_ObjectHideFlags: 0
@@ -7509,6 +7738,7 @@ GameObject:
   - component: {fileID: 788769391}
   - component: {fileID: 788769390}
   - component: {fileID: 788769389}
+  - component: {fileID: 788769392}
   m_Layer: 5
   m_Name: BtnAtif
   m_TagString: Untagged
@@ -7578,7 +7808,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 788769390}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788769392}
+        m_MethodName: ActivarAtif
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &788769390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7615,6 +7856,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788769387}
   m_CullTransparentMesh: 0
+--- !u!114 &788769392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788769387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1 &791432328
 GameObject:
   m_ObjectHideFlags: 3
@@ -9075,7 +9340,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9424,6 +9689,7 @@ GameObject:
   - component: {fileID: 978298614}
   - component: {fileID: 978298613}
   - component: {fileID: 978298612}
+  - component: {fileID: 978298615}
   m_Layer: 5
   m_Name: BtnSteal
   m_TagString: Untagged
@@ -9493,7 +9759,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 978298613}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 978298615}
+        m_MethodName: ActivarBtnVirus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &978298613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9530,6 +9807,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978298610}
   m_CullTransparentMesh: 0
+--- !u!114 &978298615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978298610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1 &986944909
 GameObject:
   m_ObjectHideFlags: 0
@@ -9628,6 +9929,8 @@ GameObject:
   - component: {fileID: 989915599}
   - component: {fileID: 989915598}
   - component: {fileID: 989915597}
+  - component: {fileID: 989915600}
+  - component: {fileID: 989915601}
   m_Layer: 5
   m_Name: BtnShock
   m_TagString: Untagged
@@ -9697,7 +10000,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 989915598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 989915600}
+        m_MethodName: ActivarBtnVirus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &989915598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9734,6 +10048,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989915595}
   m_CullTransparentMesh: 0
+--- !u!114 &989915600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989915595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
+--- !u!114 &989915601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989915595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 0}
+  BtnCharlie: {fileID: 0}
+  BtnAtif: {fileID: 0}
+  BtnBack: {fileID: 0}
+  BtnBug: {fileID: 0}
+  BtnSteal: {fileID: 0}
+  BtnPixel: {fileID: 0}
+  BtnShock: {fileID: 0}
+  BtnLighning: {fileID: 0}
+  BtnElectricity: {fileID: 0}
+  BtnVirusOne: {fileID: 0}
+  BtnVirusTwo: {fileID: 0}
 --- !u!1 &1005376941
 GameObject:
   m_ObjectHideFlags: 0
@@ -10794,6 +11156,8 @@ GameObject:
   - component: {fileID: 1074901588}
   - component: {fileID: 1074901587}
   - component: {fileID: 1074901586}
+  - component: {fileID: 1074901589}
+  - component: {fileID: 1074901590}
   m_Layer: 5
   m_Name: BtnElectricity
   m_TagString: Untagged
@@ -10863,7 +11227,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1074901587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1074901589}
+        m_MethodName: ActivarBtnVirus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1074901587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10900,6 +11275,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074901584}
   m_CullTransparentMesh: 0
+--- !u!114 &1074901589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074901584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
+--- !u!114 &1074901590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074901584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 0}
+  BtnCharlie: {fileID: 0}
+  BtnAtif: {fileID: 0}
+  BtnBack: {fileID: 0}
+  BtnBug: {fileID: 0}
+  BtnSteal: {fileID: 0}
+  BtnPixel: {fileID: 0}
+  BtnShock: {fileID: 0}
+  BtnLighning: {fileID: 0}
+  BtnElectricity: {fileID: 0}
+  BtnVirusOne: {fileID: 0}
+  BtnVirusTwo: {fileID: 0}
 --- !u!1 &1079109733
 GameObject:
   m_ObjectHideFlags: 0
@@ -11165,7 +11588,7 @@ GameObject:
   - component: {fileID: 1123450899}
   - component: {fileID: 1123450900}
   m_Layer: 5
-  m_Name: SldPlayerEnergy
+  m_Name: SldPlayerEnergyOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11600,7 +12023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1157207043
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13215,7 +13638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1369761336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15578,7 +16001,7 @@ RectTransform:
   - {fileID: 830362604}
   - {fileID: 1432258748}
   m_Father: {fileID: 1732240714}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -15654,7 +16077,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15837,6 +16260,7 @@ GameObject:
   - component: {fileID: 1567965086}
   - component: {fileID: 1567965085}
   - component: {fileID: 1567965084}
+  - component: {fileID: 1567965087}
   m_Layer: 5
   m_Name: BtnCharlie
   m_TagString: Untagged
@@ -15906,7 +16330,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1567965085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1567965087}
+        m_MethodName: ActivarCharlie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1567965085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15943,6 +16378,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567965082}
   m_CullTransparentMesh: 0
+--- !u!114 &1567965087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567965082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1 &1575184886
 GameObject:
   m_ObjectHideFlags: 0
@@ -16972,10 +17431,10 @@ RectTransform:
   - {fileID: 301358713}
   - {fileID: 1497242577}
   - {fileID: 195629687}
-  - {fileID: 460558003}
   - {fileID: 322231037}
   - {fileID: 409134407}
   - {fileID: 1546764863}
+  - {fileID: 460558003}
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22963,8 +23422,8 @@ RectTransform:
   m_Father: {fileID: 16329367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -2.151, y: 0.49}
   m_SizeDelta: {x: 14.302, y: 0.98}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -23831,6 +24290,7 @@ GameObject:
   - component: {fileID: 2012660981}
   - component: {fileID: 2012660980}
   - component: {fileID: 2012660979}
+  - component: {fileID: 2012660982}
   m_Layer: 5
   m_Name: BtnVirusTwo
   m_TagString: Untagged
@@ -23900,7 +24360,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2012660980}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2012660982}
+        m_MethodName: BotonesIniciales
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2012660980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23914,7 +24385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -23937,6 +24408,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012660977}
   m_CullTransparentMesh: 0
+--- !u!114 &2012660982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012660977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df2e0d01f8edb043b4be631bc158c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnEscapeBack: {fileID: 572227919}
+  BtnCharlie: {fileID: 1567965084}
+  BtnAtif: {fileID: 788769389}
+  BtnBack: {fileID: 650422044}
+  BtnBug: {fileID: 275819935}
+  BtnSteal: {fileID: 978298612}
+  BtnPixel: {fileID: 94679865}
+  BtnShock: {fileID: 989915597}
+  BtnLighning: {fileID: 563409172}
+  BtnElectricity: {fileID: 1074901586}
+  BtnVirusOne: {fileID: 228177912}
+  BtnVirusTwo: {fileID: 2012660979}
 --- !u!1 &2014779132
 GameObject:
   m_ObjectHideFlags: 0
