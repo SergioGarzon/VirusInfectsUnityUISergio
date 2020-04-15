@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Este Script ya no hace falta, se tiene que borrar a la brevedad
 public class ChangeLigthColor : MonoBehaviour
 {
     public Light light;

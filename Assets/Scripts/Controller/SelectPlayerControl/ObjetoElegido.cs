@@ -18,9 +18,9 @@ public class ObjetoElegido : MonoBehaviour
         int x = PlayerPrefs.GetInt("ObjetoElegido", 0);
 
         if (x == 0)
-            this.valorElegidoText.text = "ALQUIMIST";
+            this.valorElegidoText.text = "ATIF";
         else
-            this.valorElegidoText.text = "HACKER";
+            this.valorElegidoText.text = "CHARLIE";
 
     }
 }

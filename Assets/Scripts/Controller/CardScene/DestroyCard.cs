@@ -12,18 +12,10 @@ public class DestroyCard : MonoBehaviour
     public RawImage imagen;
 
 
-    void Start()
-    {
-    }
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-
-            Debug.Log("hasta aca llega");
-            
             if(this.VerificarLenguaje() == 0) {
                 this.imagen.texture = this.texturaIngles;
             }
@@ -35,7 +27,9 @@ public class DestroyCard : MonoBehaviour
             panel.SetActive(true);
             Destroy(this.gameObject);
 
-            PlayerPrefs.SetInt("ValorGuardadoTarjeta", valorTarjeta);
+
+            if(this.valorTarjeta == 2)
+                PlayerPrefs.SetInt("ValorGuardadoTarjeta", valorTarjeta);
 
         }
     }

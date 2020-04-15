@@ -8,15 +8,22 @@ using Object = UnityEngine.Object;
 
 public class Mago : MonoBehaviour
 {
+
+    //Aqui lo que hace es declarar el poder el personaje mago
     [SerializeField] private KeyCode _electricityKey, _pixelKey, _LightingKey;
+
+    //Aca lo que hace es poner una variable entera donde pone el Limite de electricidad
     private int _electricityLimit;
 
     public ScoreData scoreData;
 
     private States _states = new States();
 
+    //Variable de daño del personaje
     private int _damage;
 
+
+    //Lo de animator lo vamos a estar excluyendo el dia de hoy
     //private Animator animationMago;
 
     void Start()
@@ -25,6 +32,8 @@ public class Mago : MonoBehaviour
     }
 
 
+
+    //Metodo UPDATE
     void Update()
     {
         if (Player.IsMagoPlaying)
