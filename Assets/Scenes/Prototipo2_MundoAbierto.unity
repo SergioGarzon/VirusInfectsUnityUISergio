@@ -33115,6 +33115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ad3dd42ad03584996d4a5fcb867e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card1: {fileID: 11400000, guid: c6919e0812dc3e34e94425c5f46fe110, type: 2}
+  card2: {fileID: 11400000, guid: 368ab10765758224eb7dae613095dbc2, type: 2}
+  card3: {fileID: 11400000, guid: 941884cc9788ceb458a08c3e7e53b90e, type: 2}
+  card4: {fileID: 11400000, guid: c1c6a3aa647da684183b5e5b026f1ca2, type: 2}
   shopItems:
   - {fileID: 11400000, guid: 0ce103d89b00d144aa6688ef4e119d0c, type: 2}
   - {fileID: 11400000, guid: 8535adb4bf4eda94d852662315ec9b40, type: 2}

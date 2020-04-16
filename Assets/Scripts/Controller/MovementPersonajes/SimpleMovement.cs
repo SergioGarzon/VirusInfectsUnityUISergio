@@ -14,8 +14,8 @@ public class SimpleMovement : MonoBehaviour
 		this.nextPosition = this.transform.position;
 
 		GameObject camera = GameObject.Find("Main Camera");
-		camera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
-		camera.transform.SetParent(this.transform);
+//		camera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
+		//camera.transform.SetParent(this.transform);
 
 	}
 
