@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy3 : MonoBehaviour
 {
+
+    /*
     public GameObject  virus3, virus2;
     public static bool IsVirus3Playing=false;
     public static bool IsVirus2Playing=false;
@@ -32,5 +34,5 @@ public class Enemy3 : MonoBehaviour
             }
         }
         c++;
-    }
+    }*/
 }

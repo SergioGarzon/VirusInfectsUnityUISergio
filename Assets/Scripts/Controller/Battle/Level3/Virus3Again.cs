@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Virus3Again : MonoBehaviour
 {
+    /*
     public GameObject  virus3;
     private States _states;
     // Start is called before the first frame update
@@ -57,5 +58,5 @@ public class Virus3Again : MonoBehaviour
                     break;
             }
         }
-    }
+    }*/
 }

@@ -12,6 +12,11 @@ public class SimpleMovement : MonoBehaviour
 	void Start()
 	{
 		this.nextPosition = this.transform.position;
+
+		GameObject camera = GameObject.Find("Main Camera");
+		camera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
+		camera.transform.SetParent(this.transform);
+
 	}
 
 
@@ -32,6 +37,8 @@ public class SimpleMovement : MonoBehaviour
 		StartCoroutine(CorrutinaMagoCaminaCorre());
 
 		transform.position = Vector3.MoveTowards(this.transform.position, this.nextPosition, Time.deltaTime * speed);
+
+
 
 	
 	}

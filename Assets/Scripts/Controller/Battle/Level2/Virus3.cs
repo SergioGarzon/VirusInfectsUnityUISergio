@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Virus3 : MonoBehaviour
 {
+    /*
     public GameObject  virus3;
     private States _states;
     
@@ -42,5 +43,5 @@ public class Virus3 : MonoBehaviour
             BattleMachine2.IsEnemyChoosing = false;
             BattleMachine2.OnPlayerTurn = true;
         }
-    }
+    }*/
 }

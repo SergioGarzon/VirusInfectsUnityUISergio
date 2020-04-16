@@ -6,18 +6,68 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 
+
 //Aqui hace una clase Enum para poner el estado de la batalla
 public enum BattleStates{
-    Start, 
-    PlayerTurn, 
-    Enemyturn, 
-    Won, 
-    Lost 
+    START, 
+    PLAYERTURN, 
+    ENEMYTURN, 
+    WON, 
+    LOST
 }
+
+
 
 //La clase Battle Machine, que es la maquina de batalla de los objetos
 public class BattleMachine : MonoBehaviour
 {
+
+    /*
+    public BattleStates states;
+
+    public GameObject playerHacker;
+    public GameObject playerWizzard;
+    public GameObject enemyOne;
+    public GameObject enemyTwo;
+
+    public Unit playerUnit;
+    public Unit playerTwoUnit;
+    public Unit enemyOneUnit;
+    public Unit enemyTwoUnit;
+
+
+    void Start()
+    {
+        this.states = BattleStates.START;
+        SetupBattle();
+    }
+
+
+    void SetupBattle()
+    {
+        this.playerUnit = playerHacker.GetComponent<Unit>();
+        this.playerTwoUnit = playerWizzard.GetComponent<Unit>();
+
+
+    }
+
+
+
+
+
+
+    */
+
+
+    
+
+
+
+
+
+
+
+
 
     //La referencia de los objetos
     public GameObject mago, hacker, virus1, virus2;
@@ -36,9 +86,10 @@ public class BattleMachine : MonoBehaviour
     private Unit Enemy1Unit;
     private Unit Enemy2Unit;
 
+    private BattleStates states;
 
-    //Estos son los estados
-     public BattleStates states;
+    
+    
      
     //aqui pone el objeto booleano de batalla en verdadero
     private bool _battle = true;
@@ -85,7 +136,7 @@ public class BattleMachine : MonoBehaviour
     void Start()
     {
         this.accesoBattlePanal = GetComponent<AccessBattlePanal>();
-        states = BattleStates.Start; 
+        states = BattleStates.START; 
         
         _startLevel2 = collisionZone2.GetComponent<StartLevel2>();
        StartCoroutine(SetUpBattle());
@@ -96,12 +147,12 @@ public class BattleMachine : MonoBehaviour
         
         if (OnPlayerTurn)
         {
-            states = BattleStates.PlayerTurn;
+            states = BattleStates.ENEMYTURN;
             StartCoroutine(PlayerTurn());
         }
         else if (!OnPlayerTurn)
         {
-            states = BattleStates.Enemyturn;
+            states = BattleStates.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
     }
@@ -131,7 +182,7 @@ public class BattleMachine : MonoBehaviour
         
         if (scoreData.score==0) //el score es la vida de los players
         {
-            states = BattleStates.Lost;
+            states = BattleStates.LOST;
             EndBattle();
         }
         yield return new WaitForSeconds(2f);
@@ -141,7 +192,7 @@ public class BattleMachine : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         
-        if (states != BattleStates.PlayerTurn)
+        if (states != BattleStates.PLAYERTURN)
         {
             yield break;
         }
@@ -153,7 +204,7 @@ public class BattleMachine : MonoBehaviour
 
         if (lifeBattleVirus1 == 0&& lifeBattleVirus2==0)
         {
-            states = BattleStates.Won;
+            states = BattleStates.WON;
             EndBattle();
         }
 
@@ -163,7 +214,7 @@ public class BattleMachine : MonoBehaviour
     void EndBattle()
     
     {
-        if (states == BattleStates.Won)
+        if (states == BattleStates.WON)
         {
             dialogText.text = "You won the battle!";
             //activa el script que detecta la colision para entrar a la segunda zona de batalla(teletransportador)
@@ -171,11 +222,11 @@ public class BattleMachine : MonoBehaviour
             _startLevel2.enabled = true;
             
         }
-        else if (states == BattleStates.Lost)
+        else if (states == BattleStates.LOST)
         {
             dialogText.text = "You loose";
         }
     }
-
     
+
 }

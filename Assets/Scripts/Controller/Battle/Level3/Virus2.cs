@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Virus2 : MonoBehaviour
 {
+    /*
     private Vector3 _initialPosition;
     
     private States _states;
@@ -47,5 +48,5 @@ public class Virus2 : MonoBehaviour
                     break;
             }
         }
-    }
+    }*/
 }

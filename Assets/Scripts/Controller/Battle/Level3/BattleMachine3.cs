@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
     public class BattleMachine3 : MonoBehaviour
     {
+    /*
         public GameObject mago, hacker, virus2, virus3;
 
         public static bool OnPlayerTurn = true;
@@ -118,6 +119,7 @@ using UnityEngine.UI;
                 dialogText.text = "You loose";
             }
         }
+        */
     }
 
 

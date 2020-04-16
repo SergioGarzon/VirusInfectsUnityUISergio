@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class BattleMachine2 : MonoBehaviour
 {
+
+    /*
     public GameObject mago, hacker, virus3;
 
     public static bool OnPlayerTurn = true;
@@ -33,7 +35,7 @@ public class BattleMachine2 : MonoBehaviour
     // Start is called before the first frame update
       void Start()
     {
-        states = BattleStates.Start;
+        states = BattleStates.START;
         _startLevel3 = collisionZone3.GetComponent<StartLevel3>();
         StartCoroutine(SetUpBattle());
     }
@@ -120,6 +122,6 @@ public class BattleMachine2 : MonoBehaviour
             dialogText.text = "You loose";
         }
     }
-
+    */
     
 }
