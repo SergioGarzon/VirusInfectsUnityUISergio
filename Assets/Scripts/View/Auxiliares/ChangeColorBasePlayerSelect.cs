@@ -6,21 +6,10 @@ using UnityEngine.UI;
 
 public class ChangeColorBasePlayerSelect : MonoBehaviour
 {
-
-
     void Awake()
     {
         this.GenerarColor();
     }
-
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-    }
-
 
     private void ColorPorDefecto()
     {

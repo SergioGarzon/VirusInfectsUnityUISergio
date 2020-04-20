@@ -10,57 +10,73 @@ public class AccessBattlePanal : MonoBehaviour
     [SerializeField] private Transform initialPosition;  //Objeto posicion inicial
 
     public GameObject objetoMago;
-    private SimpleMovement movimientoSimple;
+    //private SimpleMovement movimientoSimple;
     private FollowOne seguirMagoAPlayer;
-    private NavMeshAgent navMeshPlayer;
+    //private NavMeshAgent navMeshPlayer;
+    public GameObject objetoActivarBattleMachine;
+    public GameObject playerPersonaje;
 
     private bool activatePanelUIBattle;
     private bool activatePanelAccessNoAutorized;
 
     void Start()
     {
-        this.movimientoSimple = this.GetComponent<SimpleMovement>();
+        //this.movimientoSimple = this.GetComponent<SimpleMovement>();
         this.seguirMagoAPlayer = this.objetoMago.GetComponent<FollowOne>();
-        this.navMeshPlayer = this.gameObject.GetComponent<NavMeshAgent>();
+        //this.navMeshPlayer = this.gameObject.GetComponent<NavMeshAgent>();
+
+        //this.movimientoSimple = this.playerPersonaje.GetComponent<SimpleMovement>();
+        
 
         this.activatePanelUIBattle = false;
         this.activatePanelAccessNoAutorized = false;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        this.navMeshPlayer.enabled = false; //Deshabilito el NavMesh
 
-        float actualAceleracion = this.navMeshPlayer.acceleration;
+
+    public void OnCollisionEnter(Collision other)
+    {
+
+
+        //this.navMeshPlayer.enabled = false; //Deshabilito el NavMesh
+
+        //float actualAceleracion = this.navMeshPlayer.acceleration;
+
+        Debug.Log("Antes de la colision llega");
 
         if(other.gameObject.CompareTag("Teleport1"))
         {
+            Debug.Log("Despues de la colision no llega");
+
             if(ValidadorTarjetaAcceso())
             {
                 this.activatePanelUIBattle = true;
                 this.activatePanelAccessNoAutorized = false;
+                this.objetoActivarBattleMachine.gameObject.SetActive(true); 
                 this.SetearDatos();
             } else
             {
                 this.activatePanelUIBattle = false;
                 this.activatePanelAccessNoAutorized = true;
             }
+
+            
         }
 
         if(this.ValidadorTarjetaAcceso())
         {
-            this.movimientoSimple.speed = 0;
-            this.navMeshPlayer.acceleration = 0f;
-            this.navMeshPlayer.enabled = true;
+            //this.movimientoSimple.speed = 0;
+            //this.navMeshPlayer.acceleration = 0f;
+            //this.navMeshPlayer.enabled = true;
 
-            this.movimientoSimple.speed = 15;
-            this.navMeshPlayer.acceleration = actualAceleracion;
+            //this.movimientoSimple.speed = 15;
+            //this.navMeshPlayer.acceleration = actualAceleracion;
         }
         
 
     }
 
-    public void OnTriggerExit(Collider other)
+    public void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Teleport1"))
         {
@@ -75,7 +91,7 @@ public class AccessBattlePanal : MonoBehaviour
         this.objetoMago.transform.position = this.magoBattlePosition.position;
         
         //Deshabilita el movimiento del player y el mago
-        this.movimientoSimple.enabled = false;
+        //this.movimientoSimple.enabled = false;
         this.seguirMagoAPlayer.enabled = false;
     }
 

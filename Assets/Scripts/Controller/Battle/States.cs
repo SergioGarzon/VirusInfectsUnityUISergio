@@ -5,18 +5,18 @@ using UnityEngine;
 public class States 
 {
     public string _currentEvent;
-    
+
     public ScoreData scoreData;
-    
-    public int _copyLimit=3;
-     public void Iddle()
+
+    public int _copyLimit = 3;
+    public void Iddle()
     {
         Debug.Log(" State");
     }
 
     public void Die()
     {
-        //Debug.Log(" State");
+        Debug.Log(" State");
     }
 
     public void Copy()
@@ -53,10 +53,10 @@ public class States
             case "doubling":
                 Doubling();
                 break;
-            case"pixel":
+            case "pixel":
                 Pixeling();
                 break;
-            case"electricity":
+            case "electricity":
                 Electricity();
                 break;
             default:
@@ -82,64 +82,64 @@ public class States
         Debug.Log(" State");
     }
 
-     public void Shoot()
-     {
-         _currentEvent = "shoot";
-         Debug.Log(" State");
-     }
+    public void Shoot()
+    {
+        _currentEvent = "shoot";
+        Debug.Log(" State");
+    }
 
-     public void Electricity()
-     {
-         _currentEvent = "electricity";
-         Debug.Log(" State");
-     }
+    public void Electricity()
+    {
+        _currentEvent = "electricity";
+        Debug.Log(" State");
+    }
 
-     public void Block()
-     {
-         _currentEvent = "block";
-         Debug.Log(" State");
-     }
+    public void Block()
+    {
+        _currentEvent = "block";
+        Debug.Log(" State");
+    }
 
-     public void Attack()
-     {
-         _currentEvent = "attack";
-         Debug.Log(" State");
-     }
+    public void Attack()
+    {
+        _currentEvent = "attack";
+        Debug.Log(" State");
+    }
 
-     public void Invisibility()
-     {
-         _currentEvent = "invisibility";
-         Debug.Log(" State");
-     }
+    public void Invisibility()
+    {
+        _currentEvent = "invisibility";
+        Debug.Log(" State");
+    }
 
-     public void Doubling()
-     {
-         _currentEvent = "doubling";
-         Debug.Log(" State");
-     }
+    public void Doubling()
+    {
+        _currentEvent = "doubling";
+        Debug.Log(" State");
+    }
 
-     public void Pixeling()
-     {
-         _currentEvent = "pixeling";
-         Debug.Log(" State");
-         return;
-     }
+    public void Pixeling()
+    {
+        _currentEvent = "pixeling";
+        Debug.Log(" State");
+        return;
+    }
 
-     public void Scanner()
-     {
-         _currentEvent = "scanner";
-         Debug.Log(" State");
-     }
+    public void Scanner()
+    {
+        _currentEvent = "scanner";
+        Debug.Log(" State");
+    }
 
-     public void Light()
-     {
-         _currentEvent = "light";
-         Debug.Log(" State");
-     }
+    public void Light()
+    {
+        _currentEvent = "light";
+        Debug.Log(" State");
+    }
 
-     public void Fight()
-     {
-         _currentEvent = "fight";
-         Debug.Log(" State");
-     }
+    public void Fight()
+    {
+        _currentEvent = "fight";
+        Debug.Log(" State");
+    }
 }

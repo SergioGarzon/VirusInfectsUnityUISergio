@@ -14,18 +14,9 @@ public class ChangeRawImageTexture : MonoBehaviour
         this.imagen.texture = this.textureOriginal;
     }
 
-    private void Update()
-    {
-        /*
-        if(this.imagen.texture == null)
-            this.imagen.texture = this.textureButton1;*/
-    }
-
     public void volverImagenMouseExit()
     {
-        //this.imagen.texture = this.textureButton1;
         this.imagen.texture = this.textureOriginal;
-
     }
 
     

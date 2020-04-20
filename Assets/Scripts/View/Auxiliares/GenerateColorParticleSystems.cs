@@ -7,11 +7,6 @@ public class GenerateColorParticleSystems : MonoBehaviour
 {
     public ParticleSystem particulas;
 
-    void Start()
-    {
-    }
-
-
 
     public void ActualizarColorParticulas()
     {
@@ -24,10 +19,7 @@ public class GenerateColorParticleSystems : MonoBehaviour
         
 
         this.StartCoroutine(CorrutinaParar());
-
-        
     }
-
 
     IEnumerator CorrutinaParar()
     {

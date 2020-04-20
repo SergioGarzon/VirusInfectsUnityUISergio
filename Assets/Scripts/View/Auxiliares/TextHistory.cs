@@ -46,8 +46,6 @@ public class TextHistory : MonoBehaviour
 
         StartCoroutine(FraseTexto(this.texto));
 
-        
-
     }
 
 
@@ -66,32 +64,6 @@ public class TextHistory : MonoBehaviour
         }
 
     }
-
-
-    public void CargarDatosArchivos(string nameFile)
-    {
-        StreamReader sr = new StreamReader(nameFile);
-
-
-        while(!sr.EndOfStream)
-        {
-            string line = sr.ReadLine();
-            this.texto += line;
-        }
-
-
-        sr.Close();
-
-    }
-
-
-    private bool verificarExistencia(string existe)
-    {
-        Debug.Log(existe);
-
-
-        return File.Exists(Application.persistentDataPath + "/" + existe);
-    } 
 
 
 }

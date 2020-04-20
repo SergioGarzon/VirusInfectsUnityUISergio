@@ -9,7 +9,6 @@ public class ChangeImageLanguage : MonoBehaviour
     public Texture imagenIngles;
     public RawImage imagenCorrespondiente;
 
-
     void Start()
     {
         int valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
@@ -26,9 +25,4 @@ public class ChangeImageLanguage : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

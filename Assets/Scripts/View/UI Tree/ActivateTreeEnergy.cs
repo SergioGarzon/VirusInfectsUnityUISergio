@@ -12,7 +12,6 @@ public class ActivateTreeEnergy : MonoBehaviour
     public ScoreData scorePuntaje;
     private bool ActivarBarraEnergia;
     public Text textoPressE;
-    
 
     void Start()
     {

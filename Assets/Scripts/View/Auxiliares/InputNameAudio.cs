@@ -17,6 +17,4 @@ public class InputNameAudio : MonoBehaviour
         if (resultado) audioKeyBoard.Play(0);
     }
 
-
-
 }

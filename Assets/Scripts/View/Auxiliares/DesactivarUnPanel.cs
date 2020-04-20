@@ -5,8 +5,6 @@ using UnityEngine;
 public class DesactivarUnPanel : MonoBehaviour
 {
     public GameObject panel1;
-
-
     public void ActivarPanelSolicitado()
     {
         this.panel1.SetActive(true);

@@ -12,32 +12,92 @@ public class HabilitarBotones : MonoBehaviour
     public static bool activarParticulaVirus;
 
     private int valorParaActivar;
+    public static int valorVirusAtacado;
+
+    public GameObject objetoVirus1;
+    public GameObject objetoVirus2;
+
+    private int valorRetornarActivarTexto;
+
+    public GameObject objetoBattleMachine;
+    public BattleMachine battleMachine;
+
+    public GameObject playerObject;
+    public Player clasePlayer;
+    public GameObject objetoPlayer;
+    public Hacker hackerDatos;
+    public GameObject objetoMago;
+    public Mago magoDatos;
+
 
     void Start()
     {
         HabilitarBotones.particulasActivador = 0;
         HabilitarBotones.activarParticulaVirus = false;
+        this.valorRetornarActivarTexto = 0;
+
+        this.battleMachine = this.objetoBattleMachine.GetComponent<BattleMachine>();
+        this.clasePlayer = this.playerObject.GetComponent<Player>();
+        this.hackerDatos = this.objetoPlayer.GetComponent<Hacker>();
+        this.magoDatos = this.objetoMago.GetComponent<Mago>();
     }
+
+
+    void Update()
+    {
+        /*
+        if (this.battleMachine.isActiveAndEnabled && this.battleMachine.ActivateButtonStatePlayerEnemy() == 1)
+        {
+            
+        }*/
+        if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 1)
+        {
+            BotonesIniciales();
+        }
+
+
+        if(this.battleMachine.getActivateButtonStatePlayerEnemy() == 2)
+        {
+            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);          
+        }
+    }
+
+
 
     public void BotonesIniciales()
     {
-        this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false, false, false);
+        if (this.objetoVirus1.activeSelf && this.objetoVirus2.activeSelf)
+        {
+            this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false, false, false);
+        }
+        else
+        {
+            this.PanelesVeracidadActivacion(false, false, false, false, false, false, false, false, false, false, false, false);
+        }
+        
     }
+
 
     public void ActivarCharlie()
     {
-        this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false, false, false);
+        ActivarBotonesVirus(1);
     }
 
     public void ActivarAtif()
     {
-        this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true, false, false);
+        ActivarBotonesVirus(2);
     }
 
-    public void ActivarBtnVirus()
+    private void ActivarBotonesVirus(int valor)
     {
-        this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);
+        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
+        {
+            Debug.Log("Hasta aqui ingresa!");
+            this.battleMachine.setBotonPresionado(valor);
+        }        
     }
+
+
 
 
     public void PanelesVeracidadActivacion(bool pnlEsc, bool pnlCharlie, bool pnlAtif, bool pnlBack, bool pnlBug,
@@ -57,11 +117,171 @@ public class HabilitarBotones : MonoBehaviour
         this.BtnVirusTwo.gameObject.SetActive(pnlVirus2);
     }
 
+}
+
+
+            
+        /*
+
+        if(this.battleMachine.habilitarComandoPlayer == 0)
+        {
+            if (!this.objetoVirus1.activeSelf && !this.objetoVirus2.activeSelf)
+            {               
+                this.PanelesVeracidadActivacion(false, false, false, false, false, false, false, false, false, false, false, false);
+                Debug.Log("Deshabilita los botones");
+            }
+                
+        }*/
+       
+  
+
+/*
+    public void ActivarCharlie()
+    {
+        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
+        {
+            Debug.Log("Activa a Charlie");
+            this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false, false, false);
+            this.clasePlayer.setActivadoresMagoHacker(1);
+            
+        }
+            
+    }
+
+    public void ActivarAtif()
+    {
+        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
+        {
+            Debug.Log("Activar a Atif");
+            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true, false, false);
+            this.clasePlayer.setActivadoresMagoHacker(2);
+        }
+    }
+
+    public void ActivarAtaqueHacker(int ataqueValor)
+    {
+
+        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
+        {
+
+            Debug.Log("Hasta aqui llega, y da el valor: " + ataqueValor);
+
+            switch (ataqueValor)
+            {
+                case 1: this.hackerDatos.setAttackHacker(ataqueValor);                        
+                        break;  //Bug
+                case 2: this.hackerDatos.setAttackHacker(ataqueValor);
+                        break;  //Bugbreak;  //Steal
+                case 3: this.hackerDatos.setAttackHacker(ataqueValor); 
+                        break;  //Bugbreak;  //Pixel
+            }
+
+            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);
+        }
+        
+        
+    }
+
+
+    public void ActivarAtaqueVirus(int valor, int personajeSeleccionado)
+    {
+        
+        Debug.Log("Valor: " + valor);
+        Debug.Log("Personaje Seleccionado: " + personajeSeleccionado);
+
+
+        if(personajeSeleccionado == 1)
+        {
+            //Ataque del hacker
+            this.hackerDatos.setVirusAttack(valor);
+        }
+        
+        if(personajeSeleccionado == 2)
+        {
+            
+            //Aqui falta traer la clase mago
+        }
+
+        BotonesIniciales();
+    }
+
+
+
+    /*
+
+    public void BotonesInicialesVirus1()
+    {
+        if (this.objetoVirus1.activeSelf) {
+            this.BotonesIniciales();
+        }
+
+    }
+
+    public void BotonesInicialesVirus2()
+    {
+        if (this.objetoVirus2.activeSelf)
+        {
+            this.BotonesIniciales();
+        }
+
+    }
+
+    
+    public void ActivarBtnVirus()
+    {
+        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
+            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);
+        if (!this.objetoVirus1.activeSelf && !this.objetoVirus2.activeSelf)
+            this.PanelesVeracidadActivacion(false, false, false, false, false, false, false, false, false, false, false, false);
+
+    }
+
     public void ActivarParticulasRayo(int valor)
     {
         HabilitarBotones.particulasActivador = valor;
     }
 
+    public void virusAtacado(int virusAtacado)
+    {
+        if (virusAtacado == 1 && this.objetoVirus1.activeSelf)
+        {
+            HabilitarBotones.valorVirusAtacado = virusAtacado;
+            virusAtacado = 0;
+            this.SetearValorVirusNoExiste(0);
+        }
 
 
-}
+        if (virusAtacado == 2 && this.objetoVirus2.activeSelf)
+        {
+
+            HabilitarBotones.valorVirusAtacado = virusAtacado;
+            virusAtacado = 0;
+            this.SetearValorVirusNoExiste(0);
+        }
+
+
+        if (!this.objetoVirus1.activeSelf)
+            this.SetearValorVirusNoExiste(1);
+
+        if (!this.objetoVirus2.activeSelf)
+            this.SetearValorVirusNoExiste(2);
+
+
+        if (!this.objetoVirus1.activeSelf && !this.objetoVirus2.activeSelf)
+            this.SetearValorVirusNoExiste(3);
+
+    }
+
+    public void SetearValorVirusNoExiste(int valorVirusNoEsta)
+    {
+        this.valorRetornarActivarTexto = valorVirusNoEsta;
+    }
+
+    public int getRetornarValorVirusNoExiste()
+    {
+        return this.valorRetornarActivarTexto;
+    }
+
+    */
+
+   

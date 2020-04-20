@@ -5,57 +5,75 @@ using UnityEngine;
 public class FollowOne : MonoBehaviour
 {
 
-    //Aqui declaro la velocidad que le pongo por defecto
     public float speed;
-
-    //Esto es una distancia de vision
     public float visionRadiosStop;
 
+    private GameObject player;
 
-    //Aqui declaro el personaje al que estoy siguiendo
-    public GameObject player;
-
-    //Declaro el objeto del mago, ya que es mejor que lo inserte directamente
-    public GameObject mago;
-
-
-    //Aqui declaro la posición inicial del Mago
     private Vector3 initialPosition;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+        initialPosition = transform.position;
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //target mas distancia 
+        Vector3 target = initialPosition;
+        float distance = Vector3.Distance(player.transform.position, transform.position);
+        if (distance >= visionRadiosStop)
+        {
+            target = player.transform.position;
+        }
+
+        float fixedSpeed = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
+
+        Debug.DrawLine(transform.position, target, Color.green);
+
+    }
+
+    private void OnDrawGizmos()
+    {
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, visionRadiosStop);
+    }
+
+
+    /*
+    public float speed;
+    public float visionRadiosStop;
+
+    public GameObject player;
+    public GameObject mago;
+
+    private Vector3 initialPosition;
     private Vector3 target;
 
 
     void Start()
     {
-        //Declaro la posición inicial del mago
         initialPosition = transform.position;
-
-        //target mas distancia 
         target = initialPosition;
 
     }
 
-
-
     void Update()
     {
-
-        //Acá trae la distancia entre el jugador y el mago
         float distance = Vector3.Distance(this.player.transform.position, this.mago.transform.position);
 
-
-        //Si la distancia es mayor a 
         if (distance >= visionRadiosStop)
         {
-            //Setea la posición del Mago
             target = player.transform.position;
         }
 
-
-        //Acá lo que va haciendo es seteando la posición del Mago
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
-
-
     }
+    */
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class BiowareController : CharacterController
 {
+    /*
     public int position;
 
     public int shootingPoints;
@@ -70,6 +71,6 @@ public class BiowareController : CharacterController
         CanPlay = false;
         Debug.Log("Bioware - Fight");
         //pasar de turno//Battle.ChangeTurn();
-    }
+    }*/
 
 }
