@@ -132,6 +132,8 @@ public class BattleMachine : MonoBehaviour
 
                 this.dialogText.text = "Select an action  \n\n ScoreData ShootPoint: " + scoreData.shootingPoints;
 
+                
+
                 if (Player.IsMagoPlaying)
                 {
                     if (Input.GetKey(KeyCode.H))
@@ -167,6 +169,8 @@ public class BattleMachine : MonoBehaviour
                     {
                         states = BattleStates.Won;
                     }
+
+                    this.setActivateButtonStatePlayerEnemy(3);
                 }
                 else if (Player.IsHackerPlaying)
                 {
@@ -190,6 +194,8 @@ public class BattleMachine : MonoBehaviour
                         Debug.Log("3");
                         states = BattleStates.Enemyturn;
                     }
+
+                    this.setActivateButtonStatePlayerEnemy(4);
                 }
                 break;
             case BattleStates.EnemySelection:
@@ -198,14 +204,14 @@ public class BattleMachine : MonoBehaviour
 
                 this.setActivateButtonStatePlayerEnemy(2);
 
-                if (Input.GetKey(KeyCode.V))
+                if (Input.GetKey(KeyCode.V) || this.botonPresionado == 3)
                 {
                     this.dialogText.text = ("Attack to Virus 1");
                     virus1Choosed = true;
                     states = BattleStates.SkillSelection;
                 }
 
-                else if (Input.GetKey(KeyCode.B))
+                else if (Input.GetKey(KeyCode.B) || this.botonPresionado == 4)
                 {
                     this.dialogText.text = ("Attack to Virus 2");
                     virus2Choosed = true;

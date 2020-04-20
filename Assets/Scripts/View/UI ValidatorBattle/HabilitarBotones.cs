@@ -49,6 +49,7 @@ public class HabilitarBotones : MonoBehaviour
         if (this.battleMachine.isActiveAndEnabled && this.battleMachine.ActivateButtonStatePlayerEnemy() == 1)
         {
             
+
         }*/
         if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 1)
         {
@@ -60,6 +61,17 @@ public class HabilitarBotones : MonoBehaviour
         {
             this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);          
         }
+
+        if(this.battleMachine.getActivateButtonStatePlayerEnemy() == 3)
+        {
+            this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false, false, false);
+        }
+
+        if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 4)
+        {
+            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true, false, false);
+        }
+
     }
 
 
@@ -88,11 +100,24 @@ public class HabilitarBotones : MonoBehaviour
         ActivarBotonesVirus(2);
     }
 
+    public void ActivarVirusAtacar1()
+    {
+        ActivarBotonesVirus(3);
+    }
+
+    public void ActivarVirusAtacar2()
+    {
+        ActivarBotonesVirus(4);
+    }
+
+
+
+
+
     private void ActivarBotonesVirus(int valor)
     {
         if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
         {
-            Debug.Log("Hasta aqui ingresa!");
             this.battleMachine.setBotonPresionado(valor);
         }        
     }
