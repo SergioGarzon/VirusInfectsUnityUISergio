@@ -49,10 +49,6 @@ public class HabilitarBotones : MonoBehaviour
         if (this.battleMachine.isActiveAndEnabled && this.battleMachine.ActivateButtonStatePlayerEnemy() == 1)
         {
             
-<<<<<<< HEAD
-=======
-
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
         }*/
         if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 1)
         {
@@ -64,20 +60,6 @@ public class HabilitarBotones : MonoBehaviour
         {
             this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);          
         }
-<<<<<<< HEAD
-=======
-
-        if(this.battleMachine.getActivateButtonStatePlayerEnemy() == 3)
-        {
-            this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false, false, false);
-        }
-
-        if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 4)
-        {
-            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true, false, false);
-        }
-
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
     }
 
 
@@ -106,7 +88,6 @@ public class HabilitarBotones : MonoBehaviour
         ActivarBotonesVirus(2);
     }
 
-<<<<<<< HEAD
     private void ActivarBotonesVirus(int valor)
     {
         if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
@@ -114,36 +95,11 @@ public class HabilitarBotones : MonoBehaviour
             Debug.Log("Hasta aqui ingresa!");
             this.battleMachine.setBotonPresionado(valor);
         }        
-=======
-    public void ActivarVirusAtacar1()
-    {
-        ActivarBotonesVirus(3);
-    }
-
-    public void ActivarVirusAtacar2()
-    {
-        ActivarBotonesVirus(4);
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
     }
 
 
 
 
-<<<<<<< HEAD
-=======
-
-    private void ActivarBotonesVirus(int valor)
-    {
-        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
-        {
-            this.battleMachine.setBotonPresionado(valor);
-        }        
-    }
-
-
-
-
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
     public void PanelesVeracidadActivacion(bool pnlEsc, bool pnlCharlie, bool pnlAtif, bool pnlBack, bool pnlBug,
         bool pnlSteal, bool pnlPixel, bool pnlShock, bool pnlLight, bool pnlElect, bool pnlVirus1, bool pnlVirus2)
     {
@@ -293,20 +249,11 @@ public class HabilitarBotones : MonoBehaviour
             virusAtacado = 0;
             this.SetearValorVirusNoExiste(0);
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
 
         if (virusAtacado == 2 && this.objetoVirus2.activeSelf)
         {
 
-<<<<<<< HEAD
-        if (virusAtacado == 2 && this.objetoVirus2.activeSelf)
-        {
-
-=======
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
             HabilitarBotones.valorVirusAtacado = virusAtacado;
             virusAtacado = 0;
             this.SetearValorVirusNoExiste(0);

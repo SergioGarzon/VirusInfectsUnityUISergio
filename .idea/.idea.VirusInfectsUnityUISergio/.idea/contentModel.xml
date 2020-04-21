@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\usuario\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -41,7 +41,6 @@
                 <e p="Controllers" t="Include">
                   <e p="Battle.cs" t="Include" />
                   <e p="BiowareController.cs" t="Include" />
-                  <e p="CharacterController.cs" t="Include" />
                   <e p="MagoController.cs" t="Include" />
                   <e p="MovementVirus2.cs" t="Include" />
                   <e p="Pointer.cs" t="Include" />
@@ -112,11 +111,11 @@
               <e p="ChargeLifeTree.cs" t="Include" />
             </e>
             <e p="MovementPersonajes" t="Include">
+              <e p="CameraPlayer.cs" t="Include" />
               <e p="FollowOne.cs" t="Include" />
               <e p="SimpleMovement.cs" t="Include" />
             </e>
             <e p="SelectPlayerControl" t="Include">
-              <e p="ChangeLigthColor.cs" t="Include" />
               <e p="CharacterSelection.cs" t="Include" />
               <e p="ObjetoElegido.cs" t="Include" />
               <e p="SaveDataSelectPlayer.cs" t="Include" />
@@ -134,6 +133,7 @@
           <e p="Shop" t="Include">
             <e p="CloseShop.cs" t="Include" />
             <e p="Shop.cs" t="Include" />
+            <e p="ShopData.cs" t="Include" />
             <e p="ShopItem.cs" t="Include" />
           </e>
           <e p="View" t="Include">
@@ -157,6 +157,8 @@
               <e p="ValidatorNamePlayer.cs" t="Include" />
             </e>
             <e p="BattleUI" t="Include">
+              <e p="ActivatorPanelGameOver.cs" t="Include" />
+              <e p="ButtonSelectPlayerAttack.cs" t="Include" />
               <e p="SliderEnergy.cs" t="Include" />
             </e>
             <e p="Eventos" t="Include">
@@ -179,6 +181,7 @@
               <e p="ActivateTreeEnergy.cs" t="Include" />
             </e>
             <e p="UI ValidatorBattle" t="Include">
+              <e p="ActivatePanelGameOver.cs" t="Include" />
               <e p="ActivatePanelUIBattle.cs" t="Include" />
               <e p="ActivateParticleSystem.cs" t="Include" />
               <e p="HabilitarBotones.cs" t="Include" />
@@ -187,6 +190,7 @@
             </e>
           </e>
         </e>
+        <e p="xpText.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

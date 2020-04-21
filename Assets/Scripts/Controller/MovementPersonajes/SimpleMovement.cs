@@ -19,11 +19,7 @@ public class SimpleMovement : MonoBehaviour
 
     void Start()
     {
-<<<<<<< HEAD
         controlerPlayer = GetComponent<CharacterController>();
-=======
-        this.controlerPlayer = GetComponent<CharacterController>();
->>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
         this.verticalMove = 0;
         this.horizontalMove = 0;
     }
