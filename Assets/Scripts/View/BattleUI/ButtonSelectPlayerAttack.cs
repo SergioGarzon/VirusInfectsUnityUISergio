@@ -23,6 +23,19 @@ public class ButtonSelectPlayerAttack : MonoBehaviour
         this.botones.ActivarAtif();
     }
 
+<<<<<<< HEAD
+=======
+    public void SelectVirusOne()
+    {
+        this.botones.ActivarVirusAtacar1(); 
+    }
+
+    public void SelectVirusTwo()
+    {
+        this.botones.ActivarVirusAtacar2();
+    }
+
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
     /*
     public void SelectMago()
     {

@@ -83,7 +83,10 @@ public class BattleMachine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         scoreData.mana = 100;
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
         _characterController1 = GetComponent<CharacterController1>();
         states = BattleStates.Start;
         _startLevel2 = collisionZone2.GetComponent<StartLevel2>();
@@ -111,7 +114,11 @@ public class BattleMachine : MonoBehaviour
                 this.dialogText.text = "Select Hacker H o E ,  Life energy Hacker: " + this.scoreData.hLife + ", Mago: " + this.scoreData.mLife +
                     "\n Vida del enemigo 1 " + lifeBattleVirus1 + " Vida del enemigo 2: " + lifeBattleVirus2;
 
+<<<<<<< HEAD
                 Debug.Log("H o E");
+=======
+                
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
 
                 if (Input.GetKeyDown(KeyCode.H) || this.botonPresionado == 1)
                 {
@@ -134,9 +141,17 @@ public class BattleMachine : MonoBehaviour
 
                 this.dialogText.text = "Select an action  \n\n ScoreData ShootPoint: " + scoreData.shootingPoints;
 
+<<<<<<< HEAD
                 if (Player.IsMagoPlaying)
                 {
                     if (Input.GetKeyDown(KeyCode.H))
+=======
+                
+
+                if (Player.IsMagoPlaying)
+                {
+                    if (Input.GetKey(KeyCode.H))
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     {
                         _damage = 5;
                         // _states.Pixeling();
@@ -145,10 +160,16 @@ public class BattleMachine : MonoBehaviour
                         RestScore();
                         states = BattleStates.Enemyturn;
                     }
+<<<<<<< HEAD
                     else if (Input.GetKeyDown(KeyCode.K) && Mago.Instance._electricityLimit > 0)
                     {
                         _damage = 10;
                         scoreData.xp +=10;
+=======
+                    else if (Input.GetKey(KeyCode.K) && Mago.Instance._electricityLimit > 0)
+                    {
+                        _damage = 10;
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                         //_states.Electricity();
                         Debug.Log("Electricity");
                         Player.IsMagoPlaying = false;
@@ -156,11 +177,16 @@ public class BattleMachine : MonoBehaviour
                         RestScore();
                         states = BattleStates.Enemyturn;
                     }
+<<<<<<< HEAD
                     else if (Input.GetKeyDown(KeyCode.L) && scoreData.mana>=25)
+=======
+                    else if (Input.GetKey(KeyCode.L) && scoreData.shootingPoints == 100)
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     {
                         //_states.Light();
                         Debug.Log("Light");
                         _damage = 15;
+<<<<<<< HEAD
                         scoreData.mana -= 25;
                         Player.IsMagoPlaying = false;
                         RestScore();
@@ -196,11 +222,22 @@ public class BattleMachine : MonoBehaviour
                         Player.IsMagoPlaying = false;
                         RestScore();
                         states = BattleStates.Enemyturn;
+=======
+                        Player.IsMagoPlaying = false;
+                        RestScore();
+                        states = BattleStates.Enemyturn;
+                        scoreData.shootingPoints = 0;
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     }
                     if (lifeBattleVirus1 <= 0 & lifeBattleVirus2 <= 0)
                     {
                         states = BattleStates.Won;
                     }
+<<<<<<< HEAD
+=======
+
+                    this.setActivateButtonStatePlayerEnemy(3);
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                 }
                 else if (Player.IsHackerPlaying)
                 {
@@ -208,8 +245,11 @@ public class BattleMachine : MonoBehaviour
                     {
                         _damage = 5;
                         Debug.Log("1");
+<<<<<<< HEAD
                         Player.IsHackerPlaying = false;
                         RestScore();
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                         states = BattleStates.Enemyturn;
 
                     }
@@ -217,6 +257,7 @@ public class BattleMachine : MonoBehaviour
                     {
                         _damage = 10;
                         Debug.Log("2");
+<<<<<<< HEAD
                         Player.IsHackerPlaying = false;
                         scoreData.xp += 5;
                         RestScore();
@@ -259,23 +300,47 @@ public class BattleMachine : MonoBehaviour
                         RestScore();
                         states = BattleStates.Enemyturn;
                     }
+=======
+                        Hacker.Instance._damage = 10;
+                        states = BattleStates.Enemyturn;
+                    }
+                    else if (Input.GetKey(KeyCode.L))//añadir condicion 
+                    {
+                        _damage = 15;
+                        Debug.Log("3");
+                        states = BattleStates.Enemyturn;
+                    }
+
+                    this.setActivateButtonStatePlayerEnemy(4);
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                 }
                 break;
             case BattleStates.EnemySelection:
 
                 this.dialogText.text = "Select an anemy to attack";
+<<<<<<< HEAD
                 Debug.Log("B o V");
 
                 this.setActivateButtonStatePlayerEnemy(2);
 
                 if (Input.GetKey(KeyCode.V))
+=======
+
+                this.setActivateButtonStatePlayerEnemy(2);
+
+                if (Input.GetKey(KeyCode.V) || this.botonPresionado == 3)
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                 {
                     this.dialogText.text = ("Attack to Virus 1");
                     virus1Choosed = true;
                     states = BattleStates.SkillSelection;
                 }
 
+<<<<<<< HEAD
                 else if (Input.GetKey(KeyCode.B))
+=======
+                else if (Input.GetKey(KeyCode.B) || this.botonPresionado == 4)
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                 {
                     this.dialogText.text = ("Attack to Virus 2");
                     virus2Choosed = true;
@@ -289,13 +354,21 @@ public class BattleMachine : MonoBehaviour
                 break;
 
             case BattleStates.Enemyturn:
+<<<<<<< HEAD
                 Debug.Log("Enemy Turn");
+=======
+
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                 dialogText.text = "Enemy Turn";
 
                 if (c % 2 == 0)
                 {
                     this.dialogText.text = ("Enemy 1 Selected");
+<<<<<<< HEAD
                     Debug.Log("enemy 1");
+=======
+
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     Virus1 virus1Controller = virus1.GetComponent<Virus1>();
                     Enemy.IsVirus1Playing = true;
                     dialogText.text = "Virus 1 Attacking! \n\n" + virus1Controller.ToString();
@@ -305,7 +378,10 @@ public class BattleMachine : MonoBehaviour
                 else
                 {
                     this.dialogText.text = ("Enemy 2 Selected");
+<<<<<<< HEAD
                     Debug.Log("enemy 2");
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     Virus1 virus2Controller = virus2.GetComponent<Virus1>();
                     Enemy.IsVirus1Playing = true;
                     this.dialogText.text = "" + virus2Controller.ToString();
@@ -313,7 +389,12 @@ public class BattleMachine : MonoBehaviour
                     states = BattleStates.EnemySelect;
                     //states = BattleStates.Enemyturn;
                 }
+<<<<<<< HEAD
                 c++;
+=======
+                c = 2;
+                //c++;
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
 
                 break;
             case BattleStates.EnemySelect:
@@ -327,7 +408,10 @@ public class BattleMachine : MonoBehaviour
                         //_states.Attack();
                         _damage = 5;
                         this.dialogText.text = ("2-Invisibility");
+<<<<<<< HEAD
                         Debug.Log("enemy");
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                         Enemy.IsVirus1Playing = false;
                         states = BattleStates.EnemySelectPlayer;
                         break;
@@ -335,7 +419,10 @@ public class BattleMachine : MonoBehaviour
                         //_states.Attack();
                         _damage = 10;
                         this.dialogText.text = ("2-Attack");
+<<<<<<< HEAD
                         Debug.Log("enemy");
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                         Enemy.IsVirus1Playing = false;
                         states = BattleStates.EnemySelectPlayer;
                         break;
@@ -343,7 +430,10 @@ public class BattleMachine : MonoBehaviour
                         //_states.Scanner();
                         _damage = 15;
                         this.dialogText.text = ("2-Scanner");
+<<<<<<< HEAD
                         Debug.Log("enemy");
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                         Enemy.IsVirus1Playing = false;
                         states = BattleStates.EnemySelectPlayer;
                         break;
@@ -363,14 +453,20 @@ public class BattleMachine : MonoBehaviour
                 if (RandomState.StateE % 2 == 0)
                 {
                     this.dialogText.text = ("Attack to Hacker");
+<<<<<<< HEAD
                     Debug.Log("to hacker");
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     scoreData.hLife = scoreData.hLife - _damage;
                     //states = BattleStates.PlayerSelection;
                 }
                 else
                 {
                     this.dialogText.text = ("Attack to Mago");
+<<<<<<< HEAD
                     Debug.Log("to mago");
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                     scoreData.mLife = scoreData.mLife - Virus1.Instance._damage;
                     //states = BattleStates.PlayerSelection;
                 }
@@ -423,14 +519,20 @@ public class BattleMachine : MonoBehaviour
         if (states == BattleStates.Won)
         {
             dialogText.text = "You won the battle!";
+<<<<<<< HEAD
             scoreData.xp += 50;
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
             _characterController1.GoBackCity();
             _startLevel2.enabled = true;
 
         }
         else if (states == BattleStates.Lost)
         {
+<<<<<<< HEAD
             scoreData.xp -= 50;
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
             dialogText.text = "You loose";
             this.lostGame = true;
         }

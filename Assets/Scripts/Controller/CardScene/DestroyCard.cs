@@ -10,7 +10,10 @@ public class DestroyCard : MonoBehaviour
     public Texture texturaEspanol;
     public Texture texturaIngles;
     public RawImage imagen;
+<<<<<<< HEAD
     public InventoryItem Card;
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,7 +30,10 @@ public class DestroyCard : MonoBehaviour
 
                 this.gameObject.SetActive(true);
                 panel.SetActive(true);
+<<<<<<< HEAD
                 Card.amount++;
+=======
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
                 Destroy(this.gameObject);
 
 
