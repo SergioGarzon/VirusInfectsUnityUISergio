@@ -4,12 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
-/// <summary>
-/// Esta clase pertenece a las opciones del juego, lo que hace es cambiar el idioma de Inglés a Español
-/// Tenemos un DropDown que lo hace, cuando vos seleccionas el idioma la cambia automaticamente y
-/// guarda en un playerPrefs
-/// </summary>
 public class DropDownLanguage : MonoBehaviour
 {
     public Text txtOptionsPanel,_lblLabelLanguage, _txtSound, _lblActivateSound,
@@ -51,9 +45,6 @@ public class DropDownLanguage : MonoBehaviour
         this.txtButtonText.text = "VOLVER";
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void TextoIngles()
     {
         this.txtOptionsPanel.text = "OPTIONS";

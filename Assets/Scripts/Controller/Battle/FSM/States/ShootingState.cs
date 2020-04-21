@@ -32,7 +32,7 @@ public class ShootingState : State
     void Play()
     {
         float distance = Vector3.Distance(enemy.transform.position, thisPlayer.transform.position);
-        if (bullet.CompareTag("Enemy"))
+       /* if (bullet.CompareTag("Enemy"))
         {
             _scoreData.score = _scoreData.score + 5;
 
@@ -40,7 +40,7 @@ public class ShootingState : State
             {
                 _scoreData.score = _scoreData.score + 5;
             }
-        }
+        }*/
     }
 
     private void OnDrawGizmos()

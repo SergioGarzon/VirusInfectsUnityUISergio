@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BodyPlayerSelect.unity
     guid: 3fa80ca81b7c04341b82859390357192
-  - enabled: 0
-    path: Assets/Scenes/OpenWorld.unity
-    guid: 84e5258dac5dffa4e85bb0259ddb5077
-  - enabled: 0
-    path: Assets/Scenes/Gameplay.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Prototipo2_MundoAbierto.unity
     guid: b77d741c5f95a2749bce227ac356e883

@@ -15,7 +15,6 @@ public class AttackingState : State
     public Text texto;
     
     public override void InitState() {
-        Fight.InFight();
         new WaitForSecondsRealtime(2);
     }
 

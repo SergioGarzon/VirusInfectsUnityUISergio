@@ -39,39 +39,21 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
 
-    //Variable donde declara el nombre del unidad
     public string unitName;
-
-    //Variable string del daño recibido
     public string damage;
-
-    //Variable entera del nivel de la unidad
     public int unitLevel;
-
-    //Aqui tiene valor MAX HP
     public int maxHP;
-
-    //Aqui tiene actual HP
     public int currentHP;
 
-
-    //Metodo que retorna booleano verdadero o falso
-    //Tomar daño, recibe por parametro un valor entero
     public bool TakeDamage(int dmg)
     {
-        //variable actual HP
-        currentHP -= dmg; //descuenta el daño sera
-        //HP significa HEALT BAR
-        
-        //si la variable es menor o igual a 0(cero)
+        currentHP -= dmg;
         if (currentHP <= 0)
         {
-            //retorna verdadero
             return true;
         }
         else
         {
-            //retorna falso
             return false;
         }
     }

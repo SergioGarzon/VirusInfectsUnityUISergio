@@ -7,10 +7,6 @@ public class HiddenMenuPanelCard : MonoBehaviour
 {
     public GameObject objetoPanel;
 
-    void Start()
-    {  
-    }
-
     public void OcultarPanel()
     {
         this.objetoPanel.SetActive(false);

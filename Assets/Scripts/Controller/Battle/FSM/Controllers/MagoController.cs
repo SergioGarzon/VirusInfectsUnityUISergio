@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MagoController : CharacterController
 {
+    /*
     private int  _electricityLimit;
 
     private ScoreData _scoreData;
@@ -75,5 +76,5 @@ public class MagoController : CharacterController
         //Battle.ChangeTurn();
         CanPlay = false;
         Debug.Log("Mago-light");
-    }
+    }*/
 }

@@ -45,11 +45,11 @@ public class NPCShop : MonoBehaviour
             }
             else if (_counter == 2)
             {
-                _textNpc = "I see that you are looking for something...";
+                _textNpc = "I do not know you, if I do not know you do not pass Long! You do not interest me.";
             }
             else if (_counter == 3)
             {
-                _textNpc = "What are you looking for? Maybe i can help you";
+                _textNpc = "What are you looking for?";
                 //StartCoroutine(Waiting());
                 //shopPanel.SetActive(true);
             }

@@ -12,6 +12,7 @@ public class NPCOther : MonoBehaviour
     private int _counter = 0;
     private Button[] options;
     private int optionNumber = 0;
+    public InventoryItem blackCard;
 
     private void Start()
     {
@@ -105,6 +106,7 @@ public class NPCOther : MonoBehaviour
             optionNumber = 3;
             _textNpc = "Yes...take this to buy you something";
             Debug.Log("Yes, take this"); 
+            blackCard.amount+=1;
         }
     }
     

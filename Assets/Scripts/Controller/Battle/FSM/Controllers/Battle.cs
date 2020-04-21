@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 
 public class Battle : MonoBehaviour
 {
+    /*
     public GameObject pointer; //señala el personaje
     public static Battle PlayerBattle; //para acceder desde otros scripts
     public static bool goAttack = false;
@@ -95,6 +96,6 @@ public class TurnManager: MonoBehaviour
         {
             _virus.CanAttack = true;
         }
-    }
+    }*/
 
 }

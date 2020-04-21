@@ -14,7 +14,6 @@ public class ActivateSound : MonoBehaviour
         this.objetoScriptArbol = this.objetoTree.GetComponent<ActivateTreeEnergy>();
     }
 
-
     void Update()
     {
         if (this.objetoScriptArbol.getActivarBarraEnergia() && audioActivar.isPlaying)

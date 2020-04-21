@@ -10,13 +10,14 @@ public class DestroyCard : MonoBehaviour
     public Texture texturaEspanol;
     public Texture texturaIngles;
     public RawImage imagen;
-
+    public InventoryItem Card;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if(this.VerificarLenguaje() == 0) {
+            if (this.VerificarLenguaje() == 0)
+            {
                 this.imagen.texture = this.texturaIngles;
             }
             else
@@ -24,14 +25,20 @@ public class DestroyCard : MonoBehaviour
                 this.imagen.texture = this.texturaEspanol;
             }
 
-            panel.SetActive(true);
-            Destroy(this.gameObject);
+                this.gameObject.SetActive(true);
+                panel.SetActive(true);
+                Card.amount++;
+                Destroy(this.gameObject);
 
 
-            if(this.valorTarjeta == 2)
-                PlayerPrefs.SetInt("ValorGuardadoTarjeta", valorTarjeta);
+                if (this.valorTarjeta == 2)
+                    PlayerPrefs.SetInt("ValorGuardadoTarjeta", valorTarjeta);
 
-        }
+                
+            }
+
+               
+
     }
 
         private int VerificarLenguaje()

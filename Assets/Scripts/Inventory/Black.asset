@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black
   sprite: {fileID: 0}
-  value: 1000
+  value: 100
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   amount: 4
   cardType: 2

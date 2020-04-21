@@ -7,33 +7,34 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ScoreData : ScriptableObject
 {
-    [SerializeField] private int initialScore=150;
+    [SerializeField] private int initialScore=0;
     //score del nivel, vida
     [SerializeField] private int initialShootingPoints=0;
     //puntos a cargarse para ataques especiales
     [SerializeField] private int initialGamePoints = 0;
     //puntos totales del juego
 
-    [NonSerialized] public int score;
+    [NonSerialized] public int xp;
     [NonSerialized] public int mLife;
     [NonSerialized] public int hLife;
     [NonSerialized] public int shootingPoints;
-    [NonSerialized] public int gamePoints;
+    [NonSerialized] public int mana;
 
-    public void UpdateScore(int multiplier) {
-        score += initialScore * multiplier;
+    public void UpdateScore() {
+        xp += initialScore;
+        initialScore = xp;
     }
     public void UpdatePoints(int multiplier) {
         shootingPoints = initialShootingPoints;
     }
     public void UpdateGamePoints(int multiplier) {
-        gamePoints += initialGamePoints * multiplier;
+        mana += initialGamePoints * multiplier;
     }
 
 }
 [Serializable]
 public class SerializableScoreData {
-    private int score;
+    private int xp;
 }
 [Serializable]
 public class SerializableShootingPoints {
@@ -41,7 +42,7 @@ public class SerializableShootingPoints {
 }
 [Serializable]
 public class SerializableGamePoints {
-    private int gamePoints;
+    private int mana;
 }
 public class SerializableMagoLife {
     private int magoLife;

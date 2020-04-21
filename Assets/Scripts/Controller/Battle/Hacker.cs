@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using UnityEngine.UI;
 
 public class Hacker : MonoBehaviour
 {
@@ -10,83 +11,56 @@ public class Hacker : MonoBehaviour
 
     public ScoreData scoreData;
 
-    private int copyLimit = 3;
+    public int copyLimit = 3;
+
+    public int _damage;
+
+    public static Hacker Instance;
 
     [SerializeField] private KeyCode bugKey, copyKey, stealKey;
-    private int _damage;
 
+    [SerializeField] private KeyCode _electricityKey, _pixelKey, _LightingKey;
 
-    //private Animator animator;
-
-    void Start()
+    private void Awake()
     {
-        //this.animator = GetComponent<Animator>();
+        Instance = this;
     }
 
-    void Update()
+
+
+    /*
+     * VER COMO INDEXAR ESTOS METODOS
+     * 
+    public void setAttackHacker(int valor)
     {
-        if (Player.IsHackerPlaying)
-        {
-            Debug.Log("Select a hacker action");
-
-            if (Input.GetKey(bugKey))
-            {
-                _damage = 10;
-                StartCoroutine(ChooseVirus());
-                //this.animator.SetTrigger("CharlieAtaca");
-                _states.Bug();
-                Debug.Log("OK");
-                BattleMachine.IsPlayerChoosing = false;
-                scoreData.shootingPoints = +25;
-                BattleMachine.OnPlayerTurn = false;
-            }
-            else if (Input.GetKey(copyKey) && copyLimit > 0)//añadir condicion de 1 sola copia
-            {
-                _damage = 15;
-                StartCoroutine(ChooseVirus());
-                //this.animator.SetTrigger("CharlieAtaca");
-                _states.Copy();
-                Debug.Log("OK");
-                BattleMachine.IsPlayerChoosing = false;
-                scoreData.shootingPoints = +25;
-                BattleMachine.OnPlayerTurn = false;
-                copyKey--;
-            }
-            else if (Input.GetKey(stealKey))//añadir condicion de scoreData
-            {
-                _damage = 20;
-                StartCoroutine(ChooseVirus());
-                //this.animator.SetTrigger("CharlieAtaca");
-                _states.Steal();
-                Debug.Log("OK");
-                BattleMachine.IsPlayerChoosing = false;
-                scoreData.shootingPoints = +25;
-                BattleMachine.OnPlayerTurn = false;
-            }
-        }
-
-        if (scoreData.hLife <= 0)
-        {
-            //this.animator.SetTrigger("CharlieMuere");
-            _states.Die();
-        }
-    }
-    IEnumerator ChooseVirus()
-    {
-        Debug.Log("Choose a virus to attack");
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            Debug.Log("Attack to Virus 1");
-            BattleMachine.lifeBattleVirus1 = BattleMachine.lifeBattleVirus1 - _damage;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            Debug.Log("Attack to Virus 2");
-            BattleMachine.lifeBattleVirus1 = BattleMachine.lifeBattleVirus2 - _damage;
-        }
-        yield return new WaitForSeconds(1);
+        this.ataqueHacker = valor;
     }
 
+    public void setVirusAttack(int valorVirus)
+    {
+        this.valorVirus = valorVirus;
+    }
+
+    /*
+    private string textoInglesEspanol(string texto)
+    {
+        int valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+
+        string textoDevolver = texto;
+
+        if (valor == 0)
+        {
+            //0 es en Ingles
+            textoDevolver = "";
+        }
+        else
+        {
+            //1 en Español
+            textoDevolver = "";
+        }
+
+        return "";
+    }
+    */
 
 }

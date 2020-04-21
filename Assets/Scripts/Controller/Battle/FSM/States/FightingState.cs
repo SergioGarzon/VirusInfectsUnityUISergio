@@ -5,7 +5,6 @@ using UnityEngine;
 public class FightingState : State
 {
     public override void InitState() {
-        Fight.InFight();
         new WaitForSecondsRealtime(2);
     }
 

@@ -22,7 +22,7 @@ public class GamePointsBar : MonoBehaviour
     {
         if (_allGamePoints >= _scoreData.shootingPoints)
         {
-            gamePointsBar.fillAmount = _scoreData.gamePoints/ _allGamePoints;
+            gamePointsBar.fillAmount = _scoreData.xp/ _allGamePoints;
             gamePointsText.text = (Convert.ToInt32(100 * gamePointsBar.fillAmount)).ToString() + "%";
         }
         

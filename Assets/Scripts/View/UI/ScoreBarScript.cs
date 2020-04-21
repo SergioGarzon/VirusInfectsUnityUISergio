@@ -17,7 +17,7 @@ public class ScoreBarScript : MonoBehaviour
 
     public ScoreData scoreData;
      
-    [SerializeField] private int _allScore;
+    [SerializeField] private int _allScore=100;
 
 
      // Start is called before the first frame update
@@ -29,9 +29,9 @@ public class ScoreBarScript : MonoBehaviour
     void Update()
     {
 
-        if (_allScore != scoreData.score)
+        if (_allScore != scoreData.mana)
         {
-            scoreBar.fillAmount = scoreData.score / _allScore;
+            scoreBar.fillAmount = scoreData.mana / _allScore;
             scoreText.text = (Convert.ToInt32(100 * scoreBar.fillAmount)).ToString() + "%";
         }
     }

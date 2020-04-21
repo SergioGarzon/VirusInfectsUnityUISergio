@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 public class Virus4Controller : Virus
 {
+    /*
     private Vector3 _initialPosition;
     
     private bool _isNear; //cercania
@@ -165,5 +166,5 @@ public class Virus4Controller : Virus
                 CanAttack = false;
                 break;
         }
-    }
+    }*/
 }

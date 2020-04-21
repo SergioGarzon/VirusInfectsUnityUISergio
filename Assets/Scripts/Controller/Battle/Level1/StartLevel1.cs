@@ -27,12 +27,12 @@ public class StartLevel1 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("estás en el nivel 1");            
-            this.BattleScriptEnabled(true);
+            Debug.Log("estás en el nivel 1");
+            battleScript.enabled = true;
         }
         else
         {
-            this.BattleScriptEnabled(false);            
+            battleScript.enabled = false;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -40,13 +40,8 @@ public class StartLevel1 : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("abandonaste la batalla");
-            this.BattleScriptEnabled(false);            
+            battleScript.enabled = false;
             dialogText.text = "Virus Destroyer";
         }
-    }
-
-    private void BattleScriptEnabled(bool valor)
-    {
-        this.battleScript.enabled = valor;
     }
 }

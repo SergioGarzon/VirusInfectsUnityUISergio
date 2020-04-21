@@ -9,6 +9,8 @@ public class CharacterSelection : MonoBehaviour
     //Creo un vector de GameObject
     public GameObject[] characterList; 
     private int index;
+    private int activarCharlieAtif;
+
 
     private void Start()
     {
@@ -18,28 +20,31 @@ public class CharacterSelection : MonoBehaviour
 
         //Fill the array with out model
         //Recorrer el transform.childCount es igual a vector.length pero en C#
-        for (int i = 0; i < transform.childCount ; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             //Esto es asignar al vector[posicion] = transform.get(i).toString()
             characterList[i] = transform.GetChild(i).gameObject;
         }
 
         //We toggle of their renderer
-        foreach(GameObject go in characterList)
+        foreach (GameObject go in characterList)
         {
             go.SetActive(false);
         }
 
         //We toggle on the first index
-        if(characterList[0])
+        if (characterList[0])
         {
             characterList[0].SetActive(true);
         }
+
+        this.activarCharlieAtif = 0;
     }
 
 
     public void ToggleLeft()
     {
+      
 
         characterList[index].SetActive(false);
 
