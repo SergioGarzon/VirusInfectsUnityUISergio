@@ -6,6 +6,10 @@
     <e p="C:\Users\usuario\VirusInfectsUnityUISergio" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="bu.cs" t="Include" />
+        <e p="CardsController.cs" t="Include" />
+        <e p="loading.cs" t="Include" />
+        <e p="References.cs" t="Include" />
         <e p="Resources" t="Include">
           <e p="Files" t="Include">
             <e p="DatosEspanol.txt" t="Include" />
@@ -121,6 +125,7 @@
               <e p="SaveDataSelectPlayer.cs" t="Include" />
             </e>
           </e>
+          <e p="DESEncryption.cs" t="Include" />
           <e p="Inventory" t="Include">
             <e p="InventoryItem.cs" t="Include" />
             <e p="InventoryScript.cs" t="Include" />
@@ -130,6 +135,12 @@
             <e p="NPCOther.cs" t="Include" />
             <e p="NPCShop.cs" t="Include" />
           </e>
+          <e p="SaveData" t="Include">
+            <e p="SaveDataPlayer.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
+            <e p="ToSave.cs" t="Include" />
+          </e>
+          <e p="SessionData.cs" t="Include" />
           <e p="Shop" t="Include">
             <e p="CloseShop.cs" t="Include" />
             <e p="Shop.cs" t="Include" />
@@ -190,6 +201,7 @@
             </e>
           </e>
         </e>
+        <e p="ShopController.cs" t="Include" />
         <e p="xpText.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   itemName: Green
+  id: 1
   sprite: {fileID: 0}
   value: 0
   backgroundColor: {r: 0.3458173, g: 0.7735849, b: 0.31016377, a: 0}

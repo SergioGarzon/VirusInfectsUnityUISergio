@@ -3,10 +3,11 @@
 public class InventoryItem : ScriptableObject
 {
     public string itemName;
+    public int id;
     public Sprite sprite;
     public int value;
     public Color backgroundColor;
-    public int amount;
+    public int amount=0;
     public CardType cardType;
     private int _finalValue1;
     private int _finalValue2;
@@ -14,31 +15,20 @@ public class InventoryItem : ScriptableObject
     private int _finalValue4;
     private int _gameMoney;
 
-    public void CalculateCardsValue()
-    {
+    public void Load() {
+        amount = SessionData.Data.cardsAmount[id];
+        SessionData.LoadData();
+    }
+    
+    public void Upgrade() {
 
-        if (value == 1)
-        {
-             _finalValue1 = value * amount;
-        }
-
-        if (value == 10)
-        {
-             _finalValue2 = value * amount;
-        }
-
-        if (value == 100)
-        { 
-            _finalValue3 = value * amount;
-        }
-
-        if (value == 1000)
-        {
-            _finalValue4 = value * amount;
-        }
-
-        _gameMoney = _finalValue1 + _finalValue2 + _finalValue3 + _finalValue4;
+        SessionData.Data.cardsAmount[id] = amount;
+        SessionData.SaveData();
     }
 
+}
+[System.Serializable]
+public class InventoryItemSerializable {
+    public int cardsAmount;
 }
 public enum CardType{HISTORY, INFO, BLACK, ID}
