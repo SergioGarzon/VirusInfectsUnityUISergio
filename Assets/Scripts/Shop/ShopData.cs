@@ -27,6 +27,24 @@ public class ShopData : ScriptableObject
         deleteSold = controlzSoldBool;
         updateSold = updateSoldBool;
     }
+    public void Load() {
+        resettingSold = SessionData.Data.resettingSold;
+        healSold = SessionData.Data.healSold;
+        electroshockSold = SessionData.Data.electroshockSold;
+        deleteSold = SessionData.Data.deleteSold;
+        controlzSold = SessionData.Data.controlzSold;
+        SessionData.LoadData();
+        Debug.Log("primer valor"+resettingSold);
+    }
+
+    public void Upgrade() {
+        SessionData.Data.resettingSold = resettingSold;
+        SessionData.Data.healSold = healSold;
+        SessionData.Data.electroshockSold = electroshockSold;
+        SessionData.Data.deleteSold = deleteSold;
+        SessionData.Data.controlzSold = controlzSold;
+        SessionData.SaveData();
+    }
 }
 [Serializable]
 public class SerializableFlags {

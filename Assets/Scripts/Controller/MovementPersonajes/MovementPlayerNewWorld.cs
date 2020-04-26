@@ -9,6 +9,8 @@ public class MovementPlayerNewWorld : MonoBehaviour
     public float horizontalMove;
     public float verticalMove;
     public float speed;
+    public float gravity;
+    public float fallVelocity;
 
     public Camera camara;
 
@@ -22,6 +24,7 @@ public class MovementPlayerNewWorld : MonoBehaviour
         controlerPlayer = GetComponent<CharacterController>();
         this.verticalMove = 0;
         this.horizontalMove = 0;
+        this.gravity = 9.8f;
     }
 
     void Update()
@@ -36,7 +39,12 @@ public class MovementPlayerNewWorld : MonoBehaviour
 
         this.movePlayer = playerInput.x * camRight + playerInput.z * camaraForward;
 
+        //Aqui esto no va
+        //this.movePlayer = this.movePlayer * this.speed;
+
         this.controlerPlayer.transform.LookAt(this.controlerPlayer.transform.position + movePlayer);
+
+        SetGravity();
 
         this.controlerPlayer.Move(this.movePlayer * speed * Time.deltaTime);
     }
@@ -53,6 +61,15 @@ public class MovementPlayerNewWorld : MonoBehaviour
         camRight = camRight.normalized;
     }
 
+    public void SetGravity()
+    {        
+        if(this.controlerPlayer.isGrounded)
+            this.fallVelocity = -gravity * Time.deltaTime;       
+        else
+            this.fallVelocity -= gravity * Time.deltaTime;
+
+        this.movePlayer.y = this.fallVelocity;
+    }
 
 
 

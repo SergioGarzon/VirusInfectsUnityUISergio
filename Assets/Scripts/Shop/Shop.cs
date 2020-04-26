@@ -5,19 +5,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Panel SHOP es una clase que muestra los datos
 public class Shop : MonoBehaviour
 {
-    [Header("List of cards to buy")] 
-    public InventoryItem blackCard;
+    [Header("List of cards to buy")]   //Esto es un texto que se coloca arriba, una etiqueta en el editor
+    public InventoryItem blackCard;   
     public InventoryItem goldenCard;
     
 
-    [Header("List of the items sold")] 
+    [Header("List of the items sold")] //
     [SerializeField]private ShopItem[] shopItems;
 
     [Header("References")] 
     [SerializeField] private Transform shopContainer;
-
     [SerializeField]private GameObject shopItemPrefab;
     
     public ShopData shopData;

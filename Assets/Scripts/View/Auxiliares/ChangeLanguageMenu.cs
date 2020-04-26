@@ -8,19 +8,22 @@ public class ChangeLanguageMenu : MonoBehaviour
     public UnityEngine.UI.Text txtBtnPlayGame, txtBtnOptions, txtBtnScores, txtBtnCredits, txtBtnQuitGame, txtBtnBack, txtBtnContinue;
     private string[] texto;
     private Text[] textoBotonesVector;
+    private int value;
 
     void Start()
     {
-        texto = new string[] {"PLAY GAME", "OPTIONS", "SCORES", "CREDITS", "QUIT GAME",
-            "INICIAR JUEGO", "OPCIONES", "PUNTAJES", "CREDITOS","SALIR"};
+        texto = new string[] {"PLAY GAME", "OPTIONS", "LOAD GAME", "CREDITS", "QUIT GAME",
+            "INICIAR JUEGO", "OPCIONES", "CARGAR JUEGO", "CREDITOS","SALIR"};
 
 
-
+        value = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        /*
         if (!PlayerPrefs.HasKey("LenguajeGuardado"))
         {
             //No entra acá ya que si existe
             PlayerPrefs.SetInt("LenguajeGuardado", 0);
-        }
+            PlayerPrefs.Save();
+        }*/
 
         CargarDatosBotones();
     }
@@ -28,7 +31,7 @@ public class ChangeLanguageMenu : MonoBehaviour
 
     private void CargarDatosBotones()
     {
-        int value = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        
         Debug.Log(value);
 
         if (this.txtBtnBack == null && this.txtBtnContinue == null)

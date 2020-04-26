@@ -2,60 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class DropDownLanguage : MonoBehaviour
 {
-    public Text txtOptionsPanel,_lblLabelLanguage, _txtSound, _lblActivateSound,
-        _txtVolumeSound, _txtTextSoundAux, _txtTextVolumeAux, _txtTextActiveSoundAux, txtButtonText;
+    public Text lblLabelLanguage, txtSound, lblActivateSound,
+        txtVolumeSound, txtTextSoundAux, txtTextVolumeAux, txtTextActiveSoundAux, txtButtonText;
+    public Dropdown ddLanguage;
     private int valor;
-    public TMP_Dropdown drpDownLanguage;
-    
 
 
-    public void CambiarValorComboBox()
+    void Start()
     {
-
-        valor = drpDownLanguage.value;
-
+        this.valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
 
         if (this.valor == 0)
-            this.TextoIngles();
+            TextoIngles();
+        else
+            TextoEspanol();        
+    }
 
-        if (this.valor == 1)
+    void Update()
+    {
+        if (this.ddLanguage.value == 0)        
+            this.TextoIngles();        
+        else
             this.TextoEspanol();
-
-
-        PlayerPrefs.SetInt("LenguajeGuardado", valor);
-        PlayerPrefs.Save();
-
 
     }
 
+
+
     private void TextoEspanol()
     {
-        this.txtOptionsPanel.text = "OPCIONES";
-        this._lblLabelLanguage.text = "Lenguaje";
-        this._txtSound.text = "Sonido";
-        this._lblActivateSound.text = "Activar";
-        this._txtVolumeSound.text = "Volumen Sonido";
-        this._txtTextSoundAux.text = "Sonido Auxiliar";
-        this._txtTextVolumeAux.text = "Volumen Auxiliar";
-        this._txtTextActiveSoundAux.text = "Activar";
+        this.lblLabelLanguage.text = "Lenguaje";
+        this.txtSound.text = "Sonido";
+        this.lblActivateSound.text = "Activar";
+        this.txtVolumeSound.text = "Volumen Sonido";
+        this.txtTextSoundAux.text = "Sonido Auxiliar";
+        this.txtTextVolumeAux.text = "Volumen Auxiliar";
+        this.txtTextActiveSoundAux.text = "Activar";
         this.txtButtonText.text = "VOLVER";
+
+        PlayerPrefs.SetInt("LenguajeGuardado", 1);
+        PlayerPrefs.Save();
+
     }
 
     private void TextoIngles()
     {
-        this.txtOptionsPanel.text = "OPTIONS";
-        this._lblLabelLanguage.text = "Languague";
-        this._txtSound.text = "Sound";
-        this._lblActivateSound.text = "Activate";
-        this._txtVolumeSound.text = "Volume Sound";
-        this._txtTextSoundAux.text = "Sound Aux";
-        this._txtTextVolumeAux.text = "Volume Aux";
-        this._txtTextActiveSoundAux.text = "Activate";
+        this.lblLabelLanguage.text = "Languague";
+        this.txtSound.text = "Sound";
+        this.lblActivateSound.text = "Activate";
+        this.txtVolumeSound.text = "Volume Sound";
+        this.txtTextSoundAux.text = "Sound Aux";
+        this.txtTextVolumeAux.text = "Volume Aux";
+        this.txtTextActiveSoundAux.text = "Activate";
         this.txtButtonText.text = "BACK";
+
+        PlayerPrefs.SetInt("LenguajeGuardado", 0);
+        PlayerPrefs.Save();
     }
 
 

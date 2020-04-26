@@ -3,15 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu]
 public class ScoreData : ScriptableObject
 {
-    [SerializeField] private int initialScore=0;
+    //[SerializeField] private int initialScore=0;
     //score del nivel, vida
-    [SerializeField] private int initialShootingPoints=0;
+    //[SerializeField] private int initialShootingPoints=0;
     //puntos a cargarse para ataques especiales
-    [SerializeField] private int initialGamePoints = 0;
+    //[SerializeField] private int initialGamePoints = 0;
     //puntos totales del juego
 
     [NonSerialized] public int xp;
@@ -19,16 +18,31 @@ public class ScoreData : ScriptableObject
     [NonSerialized] public int hLife;
     [NonSerialized] public int shootingPoints;
     [NonSerialized] public int mana;
+    
+    public void Load() {
+        xp = SessionData.Data.xp;
+        mLife= SessionData.Data.lifeWizard;
+        hLife = SessionData.Data.lifeHacker;
+        Debug.Log(SessionData.Data.lifeHacker);
+        SessionData.LoadData();
+    }
+    
+    public void Upgrade() {
+        SessionData.Data.xp = xp;
+        SessionData.Data.lifeWizard = mLife;
+        SessionData.Data.lifeHacker = hLife;
+        //to save
+        SessionData.SaveData();
+    }
 
     public void UpdateScore() {
-        xp += initialScore;
-        initialScore = xp;
+        xp =xp;
     }
     public void UpdatePoints(int multiplier) {
-        shootingPoints = initialShootingPoints;
+        shootingPoints = shootingPoints;
     }
     public void UpdateGamePoints(int multiplier) {
-        mana += initialGamePoints * multiplier;
+        mana =mana;
     }
 
 }
@@ -44,13 +58,14 @@ public class SerializableShootingPoints {
 public class SerializableGamePoints {
     private int mana;
 }
+[Serializable]
 public class SerializableMagoLife {
     private int magoLife;
 }
+[Serializable]
 public class SerializableHackerLife {
     private int hackerLife;
 }
-
 public class GameData : ScriptableObject
 {
     [SerializeField] private State currentState;

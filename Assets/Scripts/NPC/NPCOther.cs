@@ -7,10 +7,19 @@ public class NPCOther : MonoBehaviour
 {
     public GameObject dialogPanelNPC;
     public GameObject buttonPanelNPC;
+
+    //objeto text del PANEL
     private Text dialogText;
+
+
     private string _textNpc;
+
+
     private int _counter = 0;
+
+    //Vector de botones
     private Button[] options;
+
     private int optionNumber = 0;
     public InventoryItem blackCard;
 

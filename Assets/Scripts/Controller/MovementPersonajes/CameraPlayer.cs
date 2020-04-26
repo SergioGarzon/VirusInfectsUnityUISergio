@@ -20,7 +20,7 @@ public class CameraPlayer : MonoBehaviour
     void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, lerpValue);
-        this.distanceCamera = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensibilidad, Vector3.up) * this.distanceCamera;
+        this.distanceCamera = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * + sensibilidad, Vector3.up) * this.distanceCamera;
 
         transform.LookAt(this.targetPlayer);
     }

@@ -40,7 +40,7 @@ public class ValidatorNamePlayer : MonoBehaviour
         }
 
 
-        SceneManager.LoadScene("Prototipo2_MundoAbierto");
+        SceneManager.LoadScene("SampleScene");
             
     }
 

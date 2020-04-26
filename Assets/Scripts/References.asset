@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30f250698abc4f40b67c0bdeb613946, type: 3}
+  m_Name: References
+  m_EditorClassIdentifier: 
+  scoreData: {fileID: 0}
+  shopData: {fileID: 0}
+  blueCard: {fileID: 0}
+  greenCard: {fileID: 0}
+  violetCard: {fileID: 0}
+  blackCard: {fileID: 0}
+  goldenCard: {fileID: 0}
+  xp: 0
+  lifeHacker: 0
+  lifeWizard: 0
+  battlesWon: 0
+  blueCardsamount: 0
+  violetCardsamount: 0
+  greenCardsamount: 0
+  blackCardsamount: 0
+  goldenCardsamount: 0
+  resettingSold: 0
+  healSold: 0
+  electroshockSold: 0
+  deleteSold: 0
+  controlzSold: 0
+  updateSold: 0

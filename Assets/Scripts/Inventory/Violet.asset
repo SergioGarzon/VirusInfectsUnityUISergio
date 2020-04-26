@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Violet
   m_EditorClassIdentifier: 
   itemName: Violet
+  id: 0
   sprite: {fileID: 0}
-  value: 0
+  value: 1
   backgroundColor: {r: 0.8490566, g: 0.30838373, b: 0.72451055, a: 0}
-  amount: 0
+  amount: 7
   cardType: 0
