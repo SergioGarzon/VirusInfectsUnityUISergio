@@ -17,5 +17,5 @@ MonoBehaviour:
   sprite: {fileID: 0}
   value: 1
   backgroundColor: {r: 0.8490566, g: 0.30838373, b: 0.72451055, a: 0}
-  amount: 7
+  amount: 0
   cardType: 0

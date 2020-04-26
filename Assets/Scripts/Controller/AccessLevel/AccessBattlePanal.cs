@@ -92,7 +92,7 @@ public class AccessBattlePanal : MonoBehaviour
         
         //Deshabilita el movimiento del player y el mago
         //this.movimientoSimple.enabled = false;
-        this.seguirMagoAPlayer.enabled = false;
+       //this.seguirMagoAPlayer.enabled = false;
     }
 
     public bool RetornarActivacionPanelUIBattle()
