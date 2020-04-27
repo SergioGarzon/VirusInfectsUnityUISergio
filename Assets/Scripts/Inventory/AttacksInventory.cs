@@ -5,10 +5,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryScript: MonoBehaviour
+public class AttacksInventory: MonoBehaviour
 {
-    [Header("List of the items sold")] 
-    [SerializeField]private InventoryItem[] inventoryItem;
+    [Header("List of the attacks")] 
+    [SerializeField]private AttackItem[] inventoryItem;
 
     [Header("References")] 
     [SerializeField] private Transform inventoryContainer;
@@ -24,21 +24,20 @@ public class InventoryScript: MonoBehaviour
     {
         for (int i = 0; i < inventoryItem.Length; i++)
         {
-            InventoryItem si = inventoryItem[i];
+            AttackItem si = inventoryItem[i];
             GameObject itemObject = Instantiate(cardItemPrefab, inventoryContainer);
 
             itemObject.transform.GetChild(0).GetComponent<Image>().sprite= si.sprite;
             
             itemObject.transform.GetChild(1).GetComponent<Text>().text = si.itemName;
-            
-            itemObject.transform.GetChild(2).GetComponent<Text>().text = ""+si.amount;
-            
+
             itemObject.GetComponent<Button>().onClick.AddListener(()=>OnButtonClick(si));
 
         }
     }
+    
 
-    private void OnButtonClick(InventoryItem item)
+    private void OnButtonClick(AttackItem item)
     {
         Debug.Log(item.name);
     }

@@ -6,6 +6,11 @@
     <e p="C:\Users\usuario\VirusInfectsUnityUISergio" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="cardCounter.cs" t="Include" />
+        <e p="GoInicio.cs" t="Include" />
+        <e p="OpenInventory.cs" t="Include" />
+        <e p="OpenMenu.cs" t="Include" />
+        <e p="PanelInventoryController.cs" t="Include" />
         <e p="Resources" t="Include">
           <e p="Files" t="Include">
             <e p="NPC Guardia" t="Include">
@@ -139,6 +144,8 @@
             </e>
           </e>
           <e p="Inventory" t="Include">
+            <e p="AttackItem.cs" t="Include" />
+            <e p="AttacksInventory.cs" t="Include" />
             <e p="InventoryItem.cs" t="Include" />
             <e p="InventoryScript.cs" t="Include" />
             <e p="OpenCards.cs" t="Include" />
