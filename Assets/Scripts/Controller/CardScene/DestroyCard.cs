@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,12 @@ public class DestroyCard : MonoBehaviour
     public Texture texturaIngles;
     public RawImage imagen;
     public InventoryItem Card;
+    private InventoryScript _inventoryScript;
+
+    private void Start()
+    {
+        _inventoryScript=new InventoryScript();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

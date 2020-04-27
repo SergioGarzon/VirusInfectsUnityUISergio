@@ -146,8 +146,10 @@
           <e p="Inventory" t="Include">
             <e p="AttackItem.cs" t="Include" />
             <e p="AttacksInventory.cs" t="Include" />
+            <e p="DragDrop.cs" t="Include" />
             <e p="InventoryItem.cs" t="Include" />
             <e p="InventoryScript.cs" t="Include" />
+            <e p="ItemSlotDrop.cs" t="Include" />
             <e p="OpenCards.cs" t="Include" />
           </e>
           <e p="NPC" t="Include">
