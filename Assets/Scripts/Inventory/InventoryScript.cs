@@ -8,36 +8,48 @@ using UnityEngine.UI;
 public class InventoryScript: MonoBehaviour
 {
     [Header("List of the items sold")] 
-    [SerializeField]private InventoryItem[] inventoryItem;
+    public InventoryItem[] inventoryItem;
 
     [Header("References")] 
-    [SerializeField] private Transform inventoryContainer;
+    public Transform inventoryContainer;
 
-    [SerializeField]private GameObject cardItemPrefab;
+    public GameObject cardItemPrefab;
+
+    public string amount;
 
     private void Start()
     {
         PopulateShop();
     }
+    
 
-    private void PopulateShop()
+    public void PopulateShop()
     {
         for (int i = 0; i < inventoryItem.Length; i++)
         {
             InventoryItem si = inventoryItem[i];
             GameObject itemObject = Instantiate(cardItemPrefab, inventoryContainer);
 
-            itemObject.transform.GetChild(0).GetComponent<Image>().sprite= si.sprite;
+             itemObject.transform.GetChild(0).GetComponent<Image>().sprite= si.sprite;
             
-            itemObject.transform.GetChild(1).GetComponent<Text>().text = si.itemName;
+             itemObject.transform.GetChild(1).GetComponent<Text>().text = si.itemName;
             
-            itemObject.transform.GetChild(2).GetComponent<Text>().text = si.amount.ToString();
+             amount = itemObject.transform.GetChild(2).GetComponent<Text>().text = ""+si.amount;
             
             itemObject.GetComponent<Button>().onClick.AddListener(()=>OnButtonClick(si));
 
         }
     }
 
+    public void Update()
+    {
+        for (int i = 0; i < inventoryItem.Length; i++)
+        {
+            InventoryItem si = inventoryItem[i];
+            amount = ""+si.amount;
+        }
+    }
+    
     private void OnButtonClick(InventoryItem item)
     {
         Debug.Log(item.name);

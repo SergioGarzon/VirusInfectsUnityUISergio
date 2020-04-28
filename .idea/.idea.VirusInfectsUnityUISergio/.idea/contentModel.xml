@@ -6,18 +6,30 @@
     <e p="C:\Users\usuario\VirusInfectsUnityUISergio" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="bu.cs" t="Include" />
-        <e p="CardsController.cs" t="Include" />
-        <e p="loading.cs" t="Include" />
-        <e p="References.cs" t="Include" />
+        <e p="cardCounter.cs" t="Include" />
+        <e p="GoInicio.cs" t="Include" />
+        <e p="OpenInventory.cs" t="Include" />
+        <e p="OpenMenu.cs" t="Include" />
+        <e p="PanelInventoryController.cs" t="Include" />
         <e p="Resources" t="Include">
           <e p="Files" t="Include">
-            <e p="DatosEspanol.txt" t="Include" />
-            <e p="DatosIngles.txt" t="Include" />
+            <e p="NPC Guardia" t="Include">
+              <e p="textNPCGuardEnglish.txt" t="Include" />
+              <e p="TextoNPCGuardiaEspanol.txt" t="Include" />
+            </e>
+            <e p="NPC text" t="Include">
+              <e p="textNPCEnglish.txt" t="Include" />
+              <e p="textoNPCEspanol.txt" t="Include" />
+            </e>
           </e>
           <e p="TextFiles" t="Include">
             <e p="espanolTextoHistoria.txt" t="Include" />
           </e>
+        </e>
+        <e p="Saving" t="Include">
+          <e p="CardsController.cs" t="Include" />
+          <e p="References.cs" t="Include" />
+          <e p="ShopController.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Controller" t="Include">
@@ -30,6 +42,7 @@
             </e>
             <e p="Battle" t="Include">
               <e p="BattleHUD.cs" t="Include" />
+              <e p="BattleMachineStreet.cs" t="Include" />
               <e p="Bioware.cs" t="Include" />
               <e p="Data" t="Include">
                 <e p="Enums.cs" t="Include" />
@@ -115,9 +128,14 @@
               <e p="ChargeLifeTree.cs" t="Include" />
             </e>
             <e p="MovementPersonajes" t="Include">
+              <e p="ActivateAudio.cs" t="Include" />
               <e p="CameraPlayer.cs" t="Include" />
               <e p="FollowOne.cs" t="Include" />
+              <e p="MovementPlayerNewWorld.cs" t="Include" />
               <e p="SimpleMovement.cs" t="Include" />
+            </e>
+            <e p="NPC-World" t="Include">
+              <e p="ActivateText.cs" t="Include" />
             </e>
             <e p="SelectPlayerControl" t="Include">
               <e p="CharacterSelection.cs" t="Include" />
@@ -125,10 +143,16 @@
               <e p="SaveDataSelectPlayer.cs" t="Include" />
             </e>
           </e>
-          <e p="DESEncryption.cs" t="Include" />
           <e p="Inventory" t="Include">
+            <e p="AddToInventory.cs" t="Include" />
+            <e p="AttackItem.cs" t="Include" />
+            <e p="AttacksInventory.cs" t="Include" />
+            <e p="DragDrop.cs" t="Include" />
+            <e p="DropDownController.cs" t="Include" />
             <e p="InventoryItem.cs" t="Include" />
             <e p="InventoryScript.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+            <e p="ItemSlotDrop.cs" t="Include" />
             <e p="OpenCards.cs" t="Include" />
           </e>
           <e p="NPC" t="Include">
@@ -136,11 +160,12 @@
             <e p="NPCShop.cs" t="Include" />
           </e>
           <e p="SaveData" t="Include">
+            <e p="DESEncryption.cs" t="Include" />
             <e p="SaveDataPlayer.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
+            <e p="SessionData.cs" t="Include" />
             <e p="ToSave.cs" t="Include" />
           </e>
-          <e p="SessionData.cs" t="Include" />
           <e p="Shop" t="Include">
             <e p="CloseShop.cs" t="Include" />
             <e p="Shop.cs" t="Include" />
@@ -177,6 +202,9 @@
               <e p="AumentarEscalado.cs" t="Include" />
               <e p="CambiarColorTexto.cs" t="Include" />
             </e>
+            <e p="NPC-UI" t="Include">
+              <e p="TextBoxManager.cs" t="Include" />
+            </e>
             <e p="Panel" t="Include">
               <e p="ChangeScene.cs" t="Include" />
               <e p="OpenPanel.cs" t="Include" />
@@ -201,7 +229,6 @@
             </e>
           </e>
         </e>
-        <e p="ShopController.cs" t="Include" />
         <e p="xpText.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />

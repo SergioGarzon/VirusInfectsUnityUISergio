@@ -10,6 +10,7 @@ public class OpenCards : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public Button _buttonBack;
+    
 
     private void Start()
     {

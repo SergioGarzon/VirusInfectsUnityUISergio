@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7800be3af2892c7458b6cd9fd3de7232, type: 3}
-  m_Name: Violet
+  m_Script: {fileID: 11500000, guid: bce96c4164e1afa498a79bacc4f5d519, type: 3}
+  m_Name: Update
   m_EditorClassIdentifier: 
-  itemName: Violet
-  id: 0
+  itemName: To Update
+  description: 
+  player: Atif
+  id: 10
   sprite: {fileID: 0}
-  value: 1
-  backgroundColor: {r: 0.8490566, g: 0.30838373, b: 0.72451055, a: 0}
-  amount: 7
-  cardType: 0
+  isSelected: 0
