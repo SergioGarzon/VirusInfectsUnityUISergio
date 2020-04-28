@@ -17,4 +17,5 @@ public class ObjetoElegido : MonoBehaviour
             this.valorElegidoText.text = "CHARLIE";
 
     }
+
 }

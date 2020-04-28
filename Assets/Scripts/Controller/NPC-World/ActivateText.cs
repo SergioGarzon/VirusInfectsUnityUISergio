@@ -63,6 +63,7 @@ public class ActivateText : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			waitingClick = false;
+			DesactivatePanel();
 		}
 	}
 
@@ -97,5 +98,10 @@ public class ActivateText : MonoBehaviour
 	public void setTipoNPC(int valor)
 	{
 		this.tipoNPC = valor;
+	}
+
+	private void DesactivatePanel()
+	{
+		this.theTextBox.DesactivatePanelDialog();
 	}
 }

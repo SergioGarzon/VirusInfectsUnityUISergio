@@ -44,37 +44,50 @@ public class CharacterSelection : MonoBehaviour
 
     public void ToggleLeft()
     {
-      
 
-        characterList[index].SetActive(false);
-
-        index--;
-        
-        if(index < 0)
+        if (this.activarCharlieAtif == 1)
         {
-            index = characterList.Length - 1;
+            characterList[index].SetActive(false);
+
+            index--;
+
+            if (index < 0)
+            {
+                index = characterList.Length - 1;
+            }
+
+            characterList[index].SetActive(true);
+
+            GuardarPlayerPref(0);
+
+            this.activarCharlieAtif = 0;
         }
 
-        characterList[index].SetActive(true);
-
-        GuardarPlayerPref(0);
+       
 
     }
 
     public void ToggleRight()
     {
-        characterList[index].SetActive(false);
-
-        index++;
-
-        if (index == characterList.Length)
+        if(this.activarCharlieAtif == 0)
         {
-            index = characterList.Length - 1;
+            characterList[index].SetActive(false);
+
+            index++;
+
+            if (index == characterList.Length)
+            {
+                index = characterList.Length - 1;
+            }
+
+            characterList[index].SetActive(true);
+
+            GuardarPlayerPref(1);
+            
+            this.activarCharlieAtif = 1;
         }
 
-        characterList[index].SetActive(true);
-
-        GuardarPlayerPref(1);
+        
     }
 
 
