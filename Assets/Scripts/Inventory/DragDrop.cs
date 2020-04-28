@@ -4,58 +4,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,IDragHandler, IDropHandler
-{
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
-    private Canvas canvas;
-    public GameObject container;
-
-    private void Awake()
-    {
-        canvas = container.GetComponent<Canvas>();
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
+    public class DragDrop : MonoBehaviour {
+        public static Item item = null;
+        public static bool  toolSelected = false; //<-- I don't know what this is for.
+        public static int textureSize = 64;
+        public static bool contained = false;
+ 
+        private bool  mouseDown = false;
+        private float rightdown = 0.0f;
+ 
+        void CaptureMouse (){
+            if (Input.GetMouseButtonDown (0)) {
+                mouseDown = true;
+            }
+ 
+            if(Input.GetMouseButtonUp(0) && mouseDown)
+            {
+                mouseDown = false;
+                toolSelected = false;
+            }
+        }
+ 
+        void Update (){
+            CaptureMouse();
+        }
+ 
+        void OnGUI (){
+            if(item != null)
+            {
+                GUI.depth = -1;
+                Vector3 mousePos = Input.mousePosition;
+                Rect pos = new Rect(mousePos.x  - textureSize / 2,
+                    Screen.height - mousePos.y - textureSize / 2,
+                    textureSize, textureSize);
+                GUI.Label(pos, item.texture);
+            }
+        }
     }
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-       Debug.Log("OnPointerDown");
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        canvasGroup.alpha =.6f;
-        canvasGroup.blocksRaycasts = false;
-
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-    }
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        canvasGroup.alpha =1f;
-        canvasGroup.blocksRaycasts = true;
-    }
-
-
-    public void OnDrop(PointerEventData eventData)
-    {
-        throw new NotImplementedException();
-    }
-}

@@ -144,11 +144,14 @@
             </e>
           </e>
           <e p="Inventory" t="Include">
+            <e p="AddToInventory.cs" t="Include" />
             <e p="AttackItem.cs" t="Include" />
             <e p="AttacksInventory.cs" t="Include" />
             <e p="DragDrop.cs" t="Include" />
+            <e p="DropDownController.cs" t="Include" />
             <e p="InventoryItem.cs" t="Include" />
             <e p="InventoryScript.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
             <e p="ItemSlotDrop.cs" t="Include" />
             <e p="OpenCards.cs" t="Include" />
           </e>
