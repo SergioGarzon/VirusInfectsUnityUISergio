@@ -7,7 +7,9 @@ public class SeteoDatos : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("ValorGuardadoTarjeta", 0);
-        PlayerPrefs.SetInt("ObjetoElegido", 0);
+        PlayerPrefs.SetInt("ObjetoElegido", 0); 
+        PlayerPrefs.SetInt("TarjetaShop", 0);
+        PlayerPrefs.SetInt("TarjetaAccesoArcade", 0);
     }
 
 }

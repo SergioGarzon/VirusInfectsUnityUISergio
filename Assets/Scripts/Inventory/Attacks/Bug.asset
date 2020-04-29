@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Bug
   description: 
   player: Charlie
-  id: 7
+  id: 0
   sprite: {fileID: 0}
   isSelected: 0

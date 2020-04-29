@@ -10,6 +10,10 @@ public class PanelValidatorArcade : MonoBehaviour
     public GameObject objetoValidadorPanel;
     private ValidatorArcade validArcade;
     public Text textoArcade;
+    public Texture texturaEspanol;
+    public Texture texturaIngles;
+    public Texture texturaComun;
+    public RawImage imagenInformation;
 
     void Start()
     {
@@ -22,36 +26,35 @@ public class PanelValidatorArcade : MonoBehaviour
 
         if (this.validArcade.getValidatorArcade())
         {
-            Debug.Log("Ingresa a la colision al menos");
-
-
-
             int valorTarjeta = PlayerPrefs.GetInt("TarjetaAccesoArcade", 0);
 
             if (valorTarjeta == 4)
             {
-                Debug.Log("No ingresa aqui");
                 if (lenguaje == 0) //Ingles 
                 {
-                    this.textoArcade.text = "COMMING SOON";
+                    this.textoArcade.text = "The Mini Games Arcade is currently " +
+                        "\nunder renovation, please come back soon \nto enjoy the updates";
                 }
-                else
+                
+                if(lenguaje == 1)
                 {
-                    this.textoArcade.text = "PROXIMAMENTE";
+                    this.textoArcade.text = "El Arcade de Mini Juegos se encuentra \n" +
+                        "momentáneamente en remodelación, \n" +
+                        "por favor vuelva pronto para disfrutar \nde las actualizaciones. ";
                 }
 
-
-
+                this.imagenInformation.texture = this.texturaComun;
             }
             else
             {
                 if (lenguaje == 0) //Ingles 
                 {
-                    this.textoArcade.text = "AUTHORIZED PERSONAL ONLY";
+                    this.imagenInformation.texture = this.texturaEspanol;
                 }
-                else
+
+                if (lenguaje == 1)
                 {
-                    this.textoArcade.text = "SOLO PERSONAL AUTORIZADO";
+                    this.imagenInformation.texture = this.texturaIngles;
                 }
             }
 
