@@ -6,7 +6,6 @@
     <e p="C:\Users\usuario\VirusInfectsUnityUISergio" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="cardCounter.cs" t="Include" />
         <e p="GoInicio.cs" t="Include" />
         <e p="OpenInventory.cs" t="Include" />
         <e p="OpenMenu.cs" t="Include" />
@@ -122,15 +121,23 @@
               <e p="Virus1.cs" t="Include" />
             </e>
             <e p="CardScene" t="Include">
+              <e p="cardCounter.cs" t="Include" />
+              <e p="CardScoreGB.cs" t="Include" />
               <e p="DestroyCard.cs" t="Include" />
+              <e p="SetearDatosTarjeta.cs" t="Include" />
+              <e p="ValidatorArcade.cs" t="Include" />
             </e>
             <e p="ColisionTree" t="Include">
+              <e p="ActivateSoundTree.cs" t="Include" />
               <e p="ChargeLifeTree.cs" t="Include" />
+              <e p="CollisionTreeNoLife.cs" t="Include" />
             </e>
             <e p="MovementPersonajes" t="Include">
               <e p="ActivateAudio.cs" t="Include" />
               <e p="CameraPlayer.cs" t="Include" />
               <e p="FollowOne.cs" t="Include" />
+              <e p="FollowPlayerTwo.cs" t="Include" />
+              <e p="InstantiatePrefab.cs" t="Include" />
               <e p="MovementPlayerNewWorld.cs" t="Include" />
               <e p="SimpleMovement.cs" t="Include" />
             </e>
@@ -216,6 +223,7 @@
               <e p="ShootingPointsBar.cs" t="Include" />
             </e>
             <e p="UI Tree" t="Include">
+              <e p="ActivatePanelNoChargeEnergy.cs" t="Include" />
               <e p="ActivateSound.cs" t="Include" />
               <e p="ActivateTreeEnergy.cs" t="Include" />
             </e>
@@ -226,6 +234,7 @@
               <e p="HabilitarBotones.cs" t="Include" />
               <e p="PanelAccessNoAutorized.cs" t="Include" />
               <e p="PanelBattleUIAccess.cs" t="Include" />
+              <e p="PanelValidatorArcade.cs" t="Include" />
             </e>
           </e>
         </e>

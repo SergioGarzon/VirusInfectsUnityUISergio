@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
-  m_SizeDelta: {x: -0.7999878, y: 13.800003}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.000011444092}
+  m_SizeDelta: {x: -0.8, y: -0.000022888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27048520
 MonoBehaviour:
@@ -4205,10 +4205,10 @@ RectTransform:
   m_Father: {fileID: 336676026}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0044975, y: 0.000015259}
-  m_SizeDelta: {x: 313.19, y: 67.9}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.002532959, y: 0.0000038146973}
+  m_SizeDelta: {x: 0, y: -0.0000076294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878419998
 MonoBehaviour:
@@ -6965,6 +6965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369115543}
   - component: {fileID: 1369115544}
+  - component: {fileID: 1369115545}
   m_Layer: 0
   m_Name: SeteoDatos
   m_TagString: Untagged
@@ -6998,6 +6999,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aab59087d487b4690b38b95bc85ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1369115545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369115542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5438c263f286453458213d8f27657ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tarjetaBlack: {fileID: 11400000, guid: c1c6a3aa647da684183b5e5b026f1ca2, type: 2}
+  tarjetaGold: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
+  tarjetaBlue: {fileID: 11400000, guid: 941884cc9788ceb458a08c3e7e53b90e, type: 2}
+  tarjetaVioleta: {fileID: 11400000, guid: c6919e0812dc3e34e94425c5f46fe110, type: 2}
+  tarjetaGreen: {fileID: 11400000, guid: 368ab10765758224eb7dae613095dbc2, type: 2}
 --- !u!1 &1399195816
 GameObject:
   m_ObjectHideFlags: 0

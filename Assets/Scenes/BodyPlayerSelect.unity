@@ -289,6 +289,17 @@ MonoBehaviour:
           m_StringArgument: menuOptionsGame
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetObjetoElegido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &189743905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 609c4017b6626944d8148841d8f1a015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 423594842}
 --- !u!1 &558119364
 GameObject:
   m_ObjectHideFlags: 0

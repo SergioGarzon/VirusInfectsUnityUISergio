@@ -8,21 +8,12 @@ public class DropDownLanguage : MonoBehaviour
     public Text lblLabelLanguage, txtSound, lblActivateSound,
         txtVolumeSound, txtTextSoundAux, txtTextVolumeAux, txtTextActiveSoundAux, txtButtonText;
     public Dropdown ddLanguage;
-    private int valor;
-
-
-    void Start()
+    private int valor = 10;
+ 
+    void Update()
     {
         this.valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
 
-        if (this.valor == 0)
-            TextoIngles();
-        else
-            TextoEspanol();        
-    }
-
-    void Update()
-    {
         if (this.ddLanguage.value == 0)        
             this.TextoIngles();        
         else

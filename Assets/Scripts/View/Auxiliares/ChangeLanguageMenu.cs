@@ -16,7 +16,7 @@ public class ChangeLanguageMenu : MonoBehaviour
             "INICIAR JUEGO", "OPCIONES", "CARGAR JUEGO", "CREDITOS","SALIR"};
 
 
-        value = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        
         /*
         if (!PlayerPrefs.HasKey("LenguajeGuardado"))
         {
@@ -25,14 +25,21 @@ public class ChangeLanguageMenu : MonoBehaviour
             PlayerPrefs.Save();
         }*/
 
+        
+    }
+
+
+    void Update()
+    {
         CargarDatosBotones();
     }
 
 
     private void CargarDatosBotones()
     {
-        
-        Debug.Log(value);
+
+        value = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+
 
         if (this.txtBtnBack == null && this.txtBtnContinue == null)
         {
@@ -59,7 +66,12 @@ public class ChangeLanguageMenu : MonoBehaviour
             if (j < 5)
                 this.textoBotonesVector[i].text = this.texto[j];
 
+
+            Debug.Log("Inglés: " + this.texto[j]);
+
             j++;
+
+            
         }
     }
 
@@ -71,6 +83,8 @@ public class ChangeLanguageMenu : MonoBehaviour
         {
             if (j < 10)
                 this.textoBotonesVector[i].text = this.texto[j];
+
+            Debug.Log("Español: " + this.texto[j]);
 
             j++;
         }

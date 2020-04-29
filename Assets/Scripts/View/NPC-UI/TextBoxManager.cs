@@ -172,5 +172,11 @@ public class TextBoxManager : MonoBehaviour
 	}
 
 
+	public void DesactivatePanelDialog()
+	{
+		this.objetoPanel.gameObject.SetActive(false);
+	}
+
+
 }
 
