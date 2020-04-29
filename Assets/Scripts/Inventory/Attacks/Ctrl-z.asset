@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce96c4164e1afa498a79bacc4f5d519, type: 3}
   m_Name: Ctrl-z
   m_EditorClassIdentifier: 
-  itemName: Ctrl-z
+  itemName: Ctrl-Z
   description: 
   player: Charlie
   id: 7
