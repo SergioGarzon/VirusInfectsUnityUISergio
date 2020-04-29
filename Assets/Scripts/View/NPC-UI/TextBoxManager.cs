@@ -34,6 +34,8 @@ public class TextBoxManager : MonoBehaviour
 
 	public int valorActivadorBotones;
 
+	public GameObject objetoPanelShop;
+
 
 	// Use this for initialization
 	void Start()
@@ -120,6 +122,9 @@ public class TextBoxManager : MonoBehaviour
 
 		this.objetoPanel.gameObject.SetActive(false);
 		theText.text = "";
+
+		if(this.objetoPanelShop != null && this.lineasNPCGuardia == 2)
+			this.objetoPanelShop.gameObject.SetActive(true);
 
 		StartCoroutine(toggleActive());
 	}

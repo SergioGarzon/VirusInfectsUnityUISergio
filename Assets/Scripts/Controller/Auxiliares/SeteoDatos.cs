@@ -10,6 +10,7 @@ public class SeteoDatos : MonoBehaviour
         PlayerPrefs.SetInt("ObjetoElegido", 0); 
         PlayerPrefs.SetInt("TarjetaShop", 0);
         PlayerPrefs.SetInt("TarjetaAccesoArcade", 0);
+        PlayerPrefs.SetInt("TarjetaAccesoPanal", 0);
     }
 
 }

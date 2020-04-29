@@ -23,8 +23,6 @@ public class DestroyCard : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("AQUI ENTRA");
-
             if (this.VerificarLenguaje() == 0)
             {
                 this.imagen.texture = this.texturaIngles;
@@ -50,6 +48,9 @@ public class DestroyCard : MonoBehaviour
 
             if (this.valorTarjeta == 4)
                 PlayerPrefs.SetInt("TarjetaAccesoArcade", valorTarjeta);
+
+            if (this.valorTarjeta == 5)
+                PlayerPrefs.SetInt("TarjetaAccesoPanal", valorTarjeta);
         }
     }
     private int VerificarLenguaje()
