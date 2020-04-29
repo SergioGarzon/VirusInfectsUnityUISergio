@@ -15,7 +15,6 @@ public class ValidatorArcade : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Si colisiona contra el objeto");
             this.validatorArcade = true;
         }
     }
