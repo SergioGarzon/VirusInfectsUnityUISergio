@@ -19,6 +19,7 @@ public class ActivatorPanelGameOver : MonoBehaviour
     }
 
 
+    /*
     void Update()
     {
         if (this.sldEnergyClass.getLostGameBattleMachine()  && !validar)
@@ -32,7 +33,7 @@ public class ActivatorPanelGameOver : MonoBehaviour
         }
     }
 
-
+    */
 
 
 }

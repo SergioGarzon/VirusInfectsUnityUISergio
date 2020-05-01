@@ -7,10 +7,11 @@ public class CardScoreGB : MonoBehaviour
     [SerializeField] [Range(1, 3)] public int valorTarjeta;  //1 Tarjeta Black, 2 - Tarjeta Golden
     public InventoryItem Card;
     private InventoryScript _inventoryScript;
+    public GameObject inventary;
 
     private void Start()
     {
-        _inventoryScript = new InventoryScript();
+        _inventoryScript = inventary.GetComponent<InventoryScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -18,12 +19,14 @@ public class CardScoreGB : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             if (this.valorTarjeta == 1)
-                Card.amount += 10;
+                Card.amount += 1;
             if (this.valorTarjeta == 2)
-                Card.amount += 100;
+                Card.amount += 1;
             if (this.valorTarjeta == 3)
                 GuardarValorTarjetaShop();
-
+            
+            _inventoryScript.LoadCards();
+            
             Destroy(this.gameObject);
 
         }

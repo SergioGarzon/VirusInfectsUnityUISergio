@@ -17,12 +17,14 @@ public class ActivatePanelUIBattle : MonoBehaviour
 
     void Update()
     {
+        /*
         if(this.accesoPanel.RetornarActivacionPanelUIBattle())
         {
             this.cameraOpenWorld.gameObject.SetActive(false);
             this.cameraBattlaScene.gameObject.SetActive(true);
             this.panelActivar.gameObject.SetActive(true);
         }
+        */
     }
 
 

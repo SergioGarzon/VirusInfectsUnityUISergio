@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\usuario\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\usuario\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VirusInfectsUnityUISergio-master.86319700.00" t="ExcludeRecursive" />
-    <e p="D:\Blackmoon\VirusInfectsUnityUISergio-master" t="IncludeRecursive">
+    <e p="C:\Users\usuario\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_VirusInfectsUnityUISergio-master.-1957892425.00" t="ExcludeRecursive" />
+    <e p="D:\TLP-IDFS\VirusInfectsUnityUISergio-master" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="GoInicio.cs" t="Include" />
@@ -127,6 +127,12 @@
               <e p="SetearDatosTarjeta.cs" t="Include" />
               <e p="ValidatorArcade.cs" t="Include" />
             </e>
+            <e p="Colision Building" t="Include">
+              <e p="CollisionValidateBuilding.cs" t="Include" />
+            </e>
+            <e p="ColisionShop" t="Include">
+              <e p="ValidatorShop.cs" t="Include" />
+            </e>
             <e p="ColisionTree" t="Include">
               <e p="ActivateSoundTree.cs" t="Include" />
               <e p="ChargeLifeTree.cs" t="Include" />
@@ -159,6 +165,7 @@
             <e p="InventoryItem.cs" t="Include" />
             <e p="InventoryScript.cs" t="Include" />
             <e p="Item.cs" t="Include" />
+            <e p="ItemController.cs" t="Include" />
             <e p="ItemSlotDrop.cs" t="Include" />
             <e p="OpenCards.cs" t="Include" />
           </e>
@@ -201,8 +208,12 @@
             </e>
             <e p="BattleUI" t="Include">
               <e p="ActivatorPanelGameOver.cs" t="Include" />
+              <e p="ActivatorPanelUI.cs" t="Include" />
               <e p="ButtonSelectPlayerAttack.cs" t="Include" />
               <e p="SliderEnergy.cs" t="Include" />
+            </e>
+            <e p="Building" t="Include">
+              <e p="PanelPersonalAutorizadoShop.cs" t="Include" />
             </e>
             <e p="Eventos" t="Include">
               <e p="ActionsButton.cs" t="Include" />
@@ -215,6 +226,9 @@
             <e p="Panel" t="Include">
               <e p="ChangeScene.cs" t="Include" />
               <e p="OpenPanel.cs" t="Include" />
+            </e>
+            <e p="Shop" t="Include">
+              <e p="PanelUIShop.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
               <e p="GameplayTime.cs" t="Include" />

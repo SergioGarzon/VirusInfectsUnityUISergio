@@ -17,12 +17,13 @@ public class PanelAccessNoAutorized : MonoBehaviour
 
     void Update()
     {
+        /*
         if (this.accesoBattleValidation.RetornarValorActivacionPanel())        
             this.panelValidacionAcceso.SetActive(true);
 
         if (!this.accesoBattleValidation.RetornarValorActivacionPanel())
             this.panelValidacionAcceso.SetActive(false);
-            
+          */  
     }
 
 

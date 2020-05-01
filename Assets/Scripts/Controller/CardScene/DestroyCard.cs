@@ -13,10 +13,11 @@ public class DestroyCard : MonoBehaviour
     public RawImage imagen;
     public InventoryItem Card;
     private InventoryScript _inventoryScript;
+    public GameObject inventary;
 
     private void Start()
     {
-        _inventoryScript = new InventoryScript();
+        _inventoryScript = inventary.GetComponent<InventoryScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -36,10 +37,10 @@ public class DestroyCard : MonoBehaviour
             panel.gameObject.SetActive(true);
 
             if (this.valorTarjeta == 8)
-                Card.amount += 10;
+                Card.amount += 1;
             if (this.valorTarjeta == 7)
-                Card.amount += 8;
-
+                Card.amount += 1;
+            _inventoryScript.LoadCards();
             Destroy(this.gameObject);
 
 
