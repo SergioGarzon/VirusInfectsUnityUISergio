@@ -5,116 +5,75 @@ using UnityEngine.AI;
 
 public class AccessBattlePanal : MonoBehaviour
 {
-    [SerializeField] private Transform panelBattle; //Objeto de la posicion del player en batalla
-    [SerializeField] private Transform magoBattlePosition; //Objeto de la posicion del mago en batalla
+    [SerializeField] private Transform objectBattleOnePlayer; //Objeto de la posicion del player en batalla (Arriba del panal)
+    [SerializeField] private Transform objectBattleTwoPlayer; //Objeto de la posicion del mago en batalla (Arriba del panal)
     [SerializeField] private Transform initialPosition;  //Objeto posicion inicial
 
-    public GameObject objetoMago;
-    //private SimpleMovement movimientoSimple;
-    private FollowOne seguirMagoAPlayer;
-    //private NavMeshAgent navMeshPlayer;
-    public GameObject objetoActivarBattleMachine;
-    public GameObject playerPersonaje;
+    //Objetos personajes
+    public GameObject objetoActivarBattleMachine; //Objeto que activa la batalla arriba del Panal
+    public GameObject objetoPlayerOne;
+    public GameObject objetoPlayerTwo;
 
-    private bool activatePanelUIBattle;
-    private bool activatePanelAccessNoAutorized;
+    private bool accesoAutorizadoNO;
+    private bool ingresarPanal;
+
 
     void Start()
     {
-        //this.movimientoSimple = this.GetComponent<SimpleMovement>();
-        this.seguirMagoAPlayer = this.objetoMago.GetComponent<FollowOne>();
-        //this.navMeshPlayer = this.gameObject.GetComponent<NavMeshAgent>();
-
-        //this.movimientoSimple = this.playerPersonaje.GetComponent<SimpleMovement>();
-        
-
-        this.activatePanelUIBattle = false;
-        this.activatePanelAccessNoAutorized = false;
+        this.accesoAutorizadoNO = false;
+        this.ingresarPanal = false;
     }
-
 
 
     public void OnCollisionEnter(Collision other)
     {
-
-
-        //this.navMeshPlayer.enabled = false; //Deshabilito el NavMesh
-
-        //float actualAceleracion = this.navMeshPlayer.acceleration;
-
-        Debug.Log("Antes de la colision llega");
-
-        if(other.gameObject.CompareTag("Teleport1"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Despues de la colision no llega");
+            validarTarjetaAcceso();
 
-            if(ValidadorTarjetaAcceso())
-            {
-                this.activatePanelUIBattle = true;
-                this.activatePanelAccessNoAutorized = false;
-                this.objetoActivarBattleMachine.gameObject.SetActive(true); 
-                this.SetearDatos();
-            } else
-            {
-                this.activatePanelUIBattle = false;
-                this.activatePanelAccessNoAutorized = true;
+            if (this.ingresarPanal)
+            {                
+                this.objetoPlayerOne.SetActive(false);
+                this.objetoPlayerTwo.SetActive(false);
+                //this.objetoPlayerOne.transform.position = this.objetoPlayerOne.transform.position;
+                //this.objectBattleTwoPlayer.transform.position = this.objetoPlayerTwo.transform.position;
             }
-
-            
         }
-
-        if(this.ValidadorTarjetaAcceso())
-        {
-            //this.movimientoSimple.speed = 0;
-            //this.navMeshPlayer.acceleration = 0f;
-            //this.navMeshPlayer.enabled = true;
-
-            //this.movimientoSimple.speed = 15;
-            //this.navMeshPlayer.acceleration = actualAceleracion;
-        }
-        
-
     }
 
     public void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.CompareTag("Teleport1"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            this.activatePanelAccessNoAutorized = false;
+            this.accesoAutorizadoNO = false;
         }
     }
 
-    private void SetearDatos()
+    public bool getAccesoAutorizadoNO()
     {
-        //Acá lo que hago es setear las posiciones del player y mago
-        this.transform.position = panelBattle.position;
-        this.objetoMago.transform.position = this.magoBattlePosition.position;
-        
-        //Deshabilita el movimiento del player y el mago
-        //this.movimientoSimple.enabled = false;
-       //this.seguirMagoAPlayer.enabled = false;
+        return this.accesoAutorizadoNO;
     }
 
-    public bool RetornarActivacionPanelUIBattle()
+    public bool getIngresoPanal()
     {
-        return this.activatePanelUIBattle;
+        return this.ingresarPanal;
+    }
+
+    private void validarTarjetaAcceso()
+    {
+        int tarjetaAccesoPanal = PlayerPrefs.GetInt("TarjetaAccesoPanal", 0);
+
+        if (tarjetaAccesoPanal != 5)
+            this.accesoAutorizadoNO = true;
+        else
+        {
+            this.ingresarPanal = true;
+            this.accesoAutorizadoNO = false;
+        }
+
+
     }
 
 
-    public bool RetornarValorActivacionPanel()
-    {
-        return this.activatePanelAccessNoAutorized;
-    }
-
-    private bool ValidadorTarjetaAcceso()
-    {
-        int valor = PlayerPrefs.GetInt("ValorGuardadoTarjeta", 0);
-        bool resultado = false;
-
-        if (valor != 2) resultado = false;
-        if (valor == 2) resultado = true;    
-
-        return resultado;
-    }
-
+    
 }
