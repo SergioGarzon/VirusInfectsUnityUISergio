@@ -20,13 +20,13 @@ public class CreditsSpanishEnglish : MonoBehaviour
         if (valor == 0)
             texto = "* Andrea Massimino (Game Designer & Artist) \n\n" +
                     "* Daniela Rosales (Producer & Artist)  \n\n" +
-                    "* Laura Velazquez (Programmer Back End) \n\n" +
-                    "* Sergio Garzón (Programmer Front End)";
+                    "* Laura Velazquez (Programmer) \n\n" +
+                    "* Sergio Garzón (Programmer)";
         else
             texto = "* Andrea Massimino (Game Designer - Artista) \n\n" +
                     "* Daniela Rosales (Productora - Artista) \n\n" +
-                    "* Laura Velazquez (Prograadora Back End) \n\n" +
-                    "* Sergio Garzón (Programador Front End)";
+                    "* Laura Velazquez (Prograadora) \n\n" +
+                    "* Sergio Garzón (Programador)";
 
 
         this.textLanguage.text = texto;

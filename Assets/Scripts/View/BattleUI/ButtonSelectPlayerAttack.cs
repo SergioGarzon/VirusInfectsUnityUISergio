@@ -5,45 +5,51 @@ using UnityEngine;
 public class ButtonSelectPlayerAttack : MonoBehaviour
 {
     public GameObject objetoActivadorBotones;
-    public HabilitarBotones botones;
-
+    private HabilitarBotones botones;
 
     void Start()
     {
         this.botones = this.objetoActivadorBotones.GetComponent<HabilitarBotones>();
     }
 
-    public void SelectHacker()
+    public void ActivarAtaquesCharlie()
     {
-        this.botones.ActivarCharlie();
+        this.botones.ActivarBotonesAtaqueCharlie();
     }
 
-    public void SelectAtif()
+    public void ActivarAtaquesAtif()
     {
-        this.botones.ActivarAtif();
+        this.botones.ActivarBotonesAtaquesAtif();
     }
 
-    /*
-    public void SelectMago()
+    public void ActivarAtaqueBug()
     {
-        this.botones.ActivarAtif();
+        this.botones.ActivarBotonesMaquinaBatalla(3);
     }
 
-    
-
-
-    public void SelectAtackHacker(int valor)
+    public void ActivarSteal()
     {
-        this.botones.ActivarAtaqueHacker(valor);
+        this.botones.ActivarBotonesMaquinaBatalla(4);
     }
 
-    public void SeleccionarVirus(int valor) {
-        this.botones.ActivarAtaqueVirus(valor, 1);
-    }
-
-    public void SeleccionarVirus2(int valor)
+    public void ActivarPixel()
     {
-        this.botones.ActivarAtaqueVirus(valor, 2);
+        this.botones.ActivarBotonesMaquinaBatalla(5);
     }
-    */
+
+    public void ActivarShock()
+    {
+        this.botones.ActivarBotonesMaquinaBatalla(6);
+    }
+
+    public void ActivarElectricity()
+    {
+        this.botones.ActivarBotonesMaquinaBatalla(7);
+    }
+
+    public void ActivarLighting()
+    {
+        this.botones.ActivarBotonesMaquinaBatalla(8);
+    }
+
 }
