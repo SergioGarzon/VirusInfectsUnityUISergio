@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class AccessBattlePanal : MonoBehaviour
 {
@@ -16,12 +17,19 @@ public class AccessBattlePanal : MonoBehaviour
 
     private bool accesoAutorizadoNO;
     private bool ingresarPanal;
+    private bool chargeEnergy;
+    private int valor;
+
+    public ScoreData score;
+
 
 
     void Start()
     {
         this.accesoAutorizadoNO = false;
         this.ingresarPanal = false;
+        this.chargeEnergy = true;
+        this.valor = 0;
     }
 
 
@@ -32,11 +40,18 @@ public class AccessBattlePanal : MonoBehaviour
             validarTarjetaAcceso();
 
             if (this.ingresarPanal)
-            {                
-                this.objetoPlayerOne.SetActive(false);
-                this.objetoPlayerTwo.SetActive(false);
-                //this.objetoPlayerOne.transform.position = this.objetoPlayerOne.transform.position;
-                //this.objectBattleTwoPlayer.transform.position = this.objetoPlayerTwo.transform.position;
+            {
+                if(this.score.mLife >= 100 && this.score.hLife >= 100)
+                {
+                    this.objetoPlayerOne.SetActive(false);
+                    this.objetoPlayerTwo.SetActive(false);
+                    this.chargeEnergy = false;
+                    this.valor = 1;
+                }                
+                else
+                {
+                    this.chargeEnergy = true;
+                }
             }
         }
     }
@@ -46,6 +61,7 @@ public class AccessBattlePanal : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             this.accesoAutorizadoNO = false;
+            this.chargeEnergy = false;
         }
     }
 
@@ -59,6 +75,16 @@ public class AccessBattlePanal : MonoBehaviour
         return this.ingresarPanal;
     }
 
+    public bool getChargeEnergy()
+    {
+        return this.chargeEnergy;
+    }
+
+    public int getValorReturn()
+    {
+        return this.valor;
+    }
+
     private void validarTarjetaAcceso()
     {
         int tarjetaAccesoPanal = PlayerPrefs.GetInt("TarjetaAccesoPanal", 0);
@@ -70,10 +96,10 @@ public class AccessBattlePanal : MonoBehaviour
             this.ingresarPanal = true;
             this.accesoAutorizadoNO = false;
         }
-
-
     }
 
 
-    
+
+
+
 }

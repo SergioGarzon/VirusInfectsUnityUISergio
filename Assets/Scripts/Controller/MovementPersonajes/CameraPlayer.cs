@@ -19,7 +19,7 @@ public class CameraPlayer : MonoBehaviour
     private bool validationBattle;
     private bool validation1;
     private bool validation2;
-    
+
 
     void Start()
     {
@@ -37,47 +37,46 @@ public class CameraPlayer : MonoBehaviour
             this.targetPlayer = this.objectCubo1.transform;
         }
 
-        
-        
-        if(this.validation1)
+
+
+        if (this.validation1)
         {
             this.targetPlayer = this.objectCubo2.transform;
-            this.validation2 = true;   
+            this.validation2 = true;
         }
 
     }
 
     void LateUpdate()
     {
-        
-        //if(this.objectPlayer != null && !this.validationBattle)
-        //{
-            
-            //this.distanceCamera = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * +sensibilidad, Vector3.up) * this.distanceCamera;
 
-            
-        if(this.validationBattle == false)
+        if (this.validationBattle == false)
         {
             transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, lerpValue);
             this.distanceCamera = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * +sensibilidad, Vector3.up) * this.distanceCamera;
+            transform.LookAt(this.targetPlayer);
         }
         else
         {
             transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, Time.deltaTime * 0.2f);
             StartCoroutine(CorrutinaEspera());
             this.validation1 = true;
+            transform.LookAt(this.targetPlayer);
         }
 
-        
-        if(this.validation2 == true)
+
+        if (this.validation2 == true)
         {
             transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, Time.deltaTime * 1f);
             this.distanceCamera = new Vector3(-10, 1.2f, 5);
+            this.validation2 = false;
+            transform.LookAt(this.targetPlayer);
         }
 
 
-        transform.LookAt(this.targetPlayer);            
-       
+
+
+
     }
 
     IEnumerator CorrutinaEspera()
