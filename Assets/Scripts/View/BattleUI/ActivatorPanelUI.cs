@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivatorPanelUI : MonoBehaviour
 {
@@ -12,8 +13,9 @@ public class ActivatorPanelUI : MonoBehaviour
     //Esete es el panel de BATALLA UI
     public GameObject panalBattleUI;
 
-    //Desactivamos el Panel DE LAS TARJETAS
-    public GameObject desactivarPanelGB;
+    public RawImage imagen1;
+    public RawImage imagen2;
+
 
     //Desactivamos el canvas de LAURA
     public Canvas canvasLaura;
@@ -42,7 +44,8 @@ public class ActivatorPanelUI : MonoBehaviour
             {
                 this.panelActivateEnergy.gameObject.SetActive(false);
                 this.canvasLaura.gameObject.SetActive(false);
-                this.desactivarPanelGB.gameObject.SetActive(false);
+                this.imagen1.gameObject.SetActive(false);
+                this.imagen2.gameObject.SetActive(false);
                 this.panalBattleUI.gameObject.SetActive(true);
             }
         }

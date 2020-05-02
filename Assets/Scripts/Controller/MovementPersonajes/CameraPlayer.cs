@@ -20,6 +20,8 @@ public class CameraPlayer : MonoBehaviour
     private bool validation1;
     private bool validation2;
 
+    private bool canMoveCamera;
+
 
     void Start()
     {
@@ -27,61 +29,69 @@ public class CameraPlayer : MonoBehaviour
         this.validationBattle = false;
         this.validation1 = false;
         this.validation2 = false;
+        this.canMoveCamera = true;
     }
 
     void Update()
     {
-        if (!this.objectPlayer.gameObject.activeSelf)
+        if (this.canMoveCamera)
         {
-            this.validationBattle = true;
-            this.targetPlayer = this.objectCubo1.transform;
+            if (!this.objectPlayer.gameObject.activeSelf)
+            {
+                this.validationBattle = true;
+                this.targetPlayer = this.objectCubo1.transform;
+            }
+
+            if (this.validation1)
+            {
+                this.targetPlayer = this.objectCubo2.transform;
+                this.validation2 = true;
+            }
         }
 
-
-
-        if (this.validation1)
-        {
-            this.targetPlayer = this.objectCubo2.transform;
-            this.validation2 = true;
-        }
 
     }
 
     void LateUpdate()
     {
-
-        if (this.validationBattle == false)
+        if (this.canMoveCamera)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, lerpValue);
-            this.distanceCamera = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * +sensibilidad, Vector3.up) * this.distanceCamera;
-            transform.LookAt(this.targetPlayer);
+            if (this.validationBattle == false)
+            {
+                transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, lerpValue);
+                this.distanceCamera = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * +sensibilidad, Vector3.up) * this.distanceCamera;
+                transform.LookAt(this.targetPlayer);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, Time.deltaTime * 0.2f);
+                StartCoroutine(CorrutinaEspera());
+                this.validation1 = true;
+                transform.LookAt(this.targetPlayer);
+            }
+
+
+            if (this.validation2 == true)
+            {
+                transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, Time.deltaTime * 1f);
+                this.distanceCamera = new Vector3(-10, 1.2f, 5);
+                this.validation2 = false;
+                transform.LookAt(this.targetPlayer);
+            }
         }
-        else
-        {
-            transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, Time.deltaTime * 0.2f);
-            StartCoroutine(CorrutinaEspera());
-            this.validation1 = true;
-            transform.LookAt(this.targetPlayer);
-        }
-
-
-        if (this.validation2 == true)
-        {
-            transform.position = Vector3.Lerp(transform.position, targetPlayer.position + distanceCamera, Time.deltaTime * 1f);
-            this.distanceCamera = new Vector3(-10, 1.2f, 5);
-            this.validation2 = false;
-            transform.LookAt(this.targetPlayer);
-        }
-
-
-
-
 
     }
+
+
 
     IEnumerator CorrutinaEspera()
     {
         yield return new WaitForSeconds(100f);
+    }
+
+    public void setCameraMovement(bool camaraCanMove)
+    {
+        this.canMoveCamera = camaraCanMove;
     }
 
 }

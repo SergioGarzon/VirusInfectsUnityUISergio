@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonSelectPlayerAttack : MonoBehaviour
+public class ButtonPlayerSelectPrincipalBattle : MonoBehaviour
 {
     public GameObject objetoActivadorBotones;
-    private HabilitarBotones botones;
+    private HabilitarBotonesBatalla botones;
 
     void Start()
     {
-        this.botones = this.objetoActivadorBotones.GetComponent<HabilitarBotones>();
+        this.botones = this.objetoActivadorBotones.GetComponent<HabilitarBotonesBatalla>();
     }
 
     public void ActivarAtaquesCharlie()
@@ -45,12 +45,10 @@ public class ButtonSelectPlayerAttack : MonoBehaviour
     public void ActivarElectricity()
     {
         this.botones.ActivarBotonesMaquinaBatalla(7);
-
     }
 
     public void ActivarLighting()
     {
         this.botones.ActivarBotonesMaquinaBatalla(8);
     }
-
 }

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-//Estos son los estados
-public enum BattleStates
+public enum BattleStates2
 {
     Start,
     PlayerSelection,
@@ -17,12 +15,8 @@ public enum BattleStates
     Won,
     Lost
 }
-
-
-//Esta es la clase Battle Machine
-public class BattleMachine : MonoBehaviour
+public class BattleMachineNewWorld : MonoBehaviour
 {
-
     public GameObject mago, hacker, virus1;
     private Player _player;
 
@@ -30,7 +24,7 @@ public class BattleMachine : MonoBehaviour
 
     public static bool OnPlayerTurn = true;
 
-    public BattleStates states;
+    public BattleStates2 states;
 
 
     public ScoreData scoreData;
@@ -58,14 +52,10 @@ public class BattleMachine : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     void Start()
     {
-        states = BattleStates.Start;
+        states = BattleStates2.Start;
         StartCoroutine(SetUpBattle());
 
         this.botonesActivados = 0;
@@ -78,36 +68,36 @@ public class BattleMachine : MonoBehaviour
     {
         switch (states)
         {
-            case BattleStates.Start:
+            case BattleStates2.Start:
                 this.veracidad = 0;
                 break;
 
-            case BattleStates.PlayerSelection:
+            case BattleStates2.PlayerSelection:
                 PlayerSelection();
                 break;
 
-            case BattleStates.EnemySelection:
+            case BattleStates2.EnemySelection:
                 EnemySelection();
                 break;
 
-            case BattleStates.EnemySelect:
+            case BattleStates2.EnemySelect:
                 SeleccionarEnemigo();
                 break;
 
 
-            case BattleStates.EnemySelectPlayer:
+            case BattleStates2.EnemySelectPlayer:
                 EnemySelectPlayer();
                 break;
 
 
 
-            case BattleStates.SkillSelection:
+            case BattleStates2.SkillSelection:
                 //Acá va a ir Skill Selection
                 SkillSelection();
                 break;
 
 
-            case BattleStates.Enemyturn:
+            case BattleStates2.Enemyturn:
                 EnemyTurnMethod();
                 break;
 
@@ -129,7 +119,7 @@ public class BattleMachine : MonoBehaviour
             Player.IsHackerPlaying = true;
             Player.IsMagoPlaying = false;
             dialogText.text = "You selected hacker";
-            states = BattleStates.EnemySelection;
+            states = BattleStates2.EnemySelection;
         }
 
         if (this.botonesActivados == 2)
@@ -137,7 +127,7 @@ public class BattleMachine : MonoBehaviour
             dialogText.text = "You selected mago";
             Player.IsHackerPlaying = false;
             Player.IsMagoPlaying = true;
-            states = BattleStates.EnemySelection;
+            states = BattleStates2.EnemySelection;
         }
     }
 
@@ -154,19 +144,19 @@ public class BattleMachine : MonoBehaviour
                 _damage = 5;
                 Debug.Log("2-Invisibility");
                 Enemy.IsVirus1Playing = false;
-                states = BattleStates.EnemySelectPlayer;
+                states = BattleStates2.EnemySelectPlayer;
                 break;
             case 2:
                 _damage = 10;
                 Debug.Log("2-Attack");
                 Enemy.IsVirus1Playing = false;
-                states = BattleStates.EnemySelectPlayer;
+                states = BattleStates2.EnemySelectPlayer;
                 break;
             case 3:
                 _damage = 15;
                 Debug.Log("2-Scanner");
                 Enemy.IsVirus1Playing = false;
-                states = BattleStates.EnemySelectPlayer;
+                states = BattleStates2.EnemySelectPlayer;
                 break;
 
             default:
@@ -179,36 +169,36 @@ public class BattleMachine : MonoBehaviour
     private void EnemySelection()
     {
         this.dialogText.text = ("Attack to Virus 1");
-        states = BattleStates.SkillSelection;
+        states = BattleStates2.SkillSelection;
 
 
         if (lifeBattleVirus1 <= 0)
         {
-            states = BattleStates.Won;
+            states = BattleStates2.Won;
             EndBattle();
         }
     }
 
     private void EnemySelectPlayer()
     {
-        int valor = UnityEngine.Random.Range(1, 10);
+        int valor = Random.Range(1, 10);
 
         if (valor % 2 == 0)
         {
             scoreData.hLife = scoreData.hLife - _damage;
-            states = BattleStates.PlayerSelection;
+            states = BattleStates2.PlayerSelection;
         }
         else
         {
             scoreData.mLife = scoreData.mLife - _damage;
-            states = BattleStates.PlayerSelection;
+            states = BattleStates2.PlayerSelection;
         }
 
         this.veracidad = 0;
 
         if (scoreData.hLife <= 0 & scoreData.mLife <= 0) //el score es la vida de los players
         {
-            states = BattleStates.Lost;
+            states = BattleStates2.Lost;
             EndBattle();
         }
     }
@@ -231,7 +221,7 @@ public class BattleMachine : MonoBehaviour
                 this.dialogText.text = ("pixel");
                 Player.IsMagoPlaying = false;
                 RestScore();
-                states = BattleStates.Enemyturn;
+                states = BattleStates2.Enemyturn;
             }
             else if (this.botonesActivados == 7 && Mago.Instance._electricityLimit > 0)
             {
@@ -241,7 +231,7 @@ public class BattleMachine : MonoBehaviour
                 Player.IsMagoPlaying = false;
                 Mago.Instance._electricityLimit--;
                 RestScore();
-                states = BattleStates.Enemyturn;
+                states = BattleStates2.Enemyturn;
             }
             else if (this.botonesActivados == 8 && scoreData.shootingPoints == 100)
             {
@@ -250,12 +240,12 @@ public class BattleMachine : MonoBehaviour
                 this.dialogText.text = ("Light");
                 Player.IsMagoPlaying = false;
                 RestScore();
-                states = BattleStates.Enemyturn;
+                states = BattleStates2.Enemyturn;
                 scoreData.shootingPoints = 0;
             }
             if (lifeBattleVirus1 <= 0)
             {
-                states = BattleStates.Won;
+                states = BattleStates2.Won;
             }
         }
 
@@ -268,7 +258,7 @@ public class BattleMachine : MonoBehaviour
             {
                 _damage = 5;
                 this.dialogText.text = ("1");
-                states = BattleStates.Enemyturn;
+                states = BattleStates2.Enemyturn;
                 Player.IsHackerPlaying = false;
             }
 
@@ -277,7 +267,7 @@ public class BattleMachine : MonoBehaviour
                 _damage = 10;
                 this.dialogText.text = ("2");
                 Hacker.Instance._damage = 10;
-                states = BattleStates.Enemyturn;
+                states = BattleStates2.Enemyturn;
                 Player.IsHackerPlaying = false;
             }
 
@@ -285,7 +275,7 @@ public class BattleMachine : MonoBehaviour
             {
                 _damage = 15;
                 this.dialogText.text = ("3");
-                states = BattleStates.Enemyturn;
+                states = BattleStates2.Enemyturn;
                 Player.IsHackerPlaying = false;
             }
         }
@@ -304,7 +294,7 @@ public class BattleMachine : MonoBehaviour
             dialogText.text = "Virus 1 Attacking!";
             Virus1 virus1Controller = virus1.GetComponent<Virus1>();
             Enemy.IsVirus1Playing = true;
-            states = BattleStates.EnemySelect;
+            states = BattleStates2.EnemySelect;
         }
 
         contador++;
@@ -318,17 +308,17 @@ public class BattleMachine : MonoBehaviour
         dialogText.text = "Battle 1";
         yield return new WaitForSeconds(1f);
 
-        states = BattleStates.PlayerSelection;
+        states = BattleStates2.PlayerSelection;
     }
 
     void EndBattle()
     {
-        if (states == BattleStates.Won)
+        if (states == BattleStates2.Won)
         {
             dialogText.text = "You won the battle!";
 
         }
-        else if (states == BattleStates.Lost)
+        else if (states == BattleStates2.Lost)
         {
             dialogText.text = "You loose";
         }
@@ -358,4 +348,3 @@ public class BattleMachine : MonoBehaviour
         return this.veracidad;
     }
 }
-

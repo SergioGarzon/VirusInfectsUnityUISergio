@@ -8,51 +8,42 @@ public class HabilitarBotones : MonoBehaviour
     public Button BtnEscapeBack, BtnCharlie, BtnAtif, BtnBack, BtnBug, BtnSteal, BtnPixel,
         BtnShock, BtnLighning, BtnElectricity;
     public GameObject objetoBattalla;
-    private BattleMachine batallaScript;
-
+    private BattleMachineNewWorld batallaScript;
+    public int tipoBatalla;
 
 
     void Start()
     {
-        this.batallaScript = this.objetoBattalla.GetComponent<BattleMachine>();
+        this.batallaScript = this.objetoBattalla.GetComponent<BattleMachineNewWorld>();
         BotonesIniciales();
-
     }
 
     public void BotonesIniciales()
     {
-        this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false);           
+
+        this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false);
+
+
     }
 
     public void ActivarBotonesAtaqueCharlie()
     {
         this.batallaScript.setBotonesHabilitados(1);
+        this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false);
 
-        if (this.batallaScript.getReturnVeracidad() == 1) {
-            
-            this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false);
-        }        
     }
 
 
     public void ActivarBotonesAtaquesAtif()
     {
         this.batallaScript.setBotonesHabilitados(2);
-
-        if (this.batallaScript.getReturnVeracidad() == 1)
-        {
-            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true);                    
-        }            
+        this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true);
     }
 
     public void ActivarBotonesMaquinaBatalla(int x)
     {
         this.batallaScript.setBotonesHabilitados(x);
-
-        if (this.batallaScript.getReturnVeracidad() == 0)
-        {
-            BotonesIniciales();
-        }
+        BotonesIniciales();
     }
 
 
@@ -72,67 +63,10 @@ public class HabilitarBotones : MonoBehaviour
     }
 
 
-    /*
-    void Update()
+    public void setTipoBatalla(int valor)
     {
-        /*
-        if (this.battleMachine.isActiveAndEnabled && this.battleMachine.ActivateButtonStatePlayerEnemy() == 1)
-        {
-            
-        }*/
-    /*
-    if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 1)
-    {
-        BotonesIniciales();
+        this.tipoBatalla = valor;
     }
-
-
-    if(this.battleMachine.getActivateButtonStatePlayerEnemy() == 2)
-    {
-        this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);          
-    }
-}
-
-
-
-public void BotonesIniciales()
-{
-    if (this.objetoVirus1.activeSelf && this.objetoVirus2.activeSelf)
-    {
-        this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false, false, false);
-    }
-    else
-    {
-        this.PanelesVeracidadActivacion(false, false, false, false, false, false, false, false, false, false, false, false);
-    }
-
-}
-
-
-public void ActivarCharlie()
-{
-    ActivarBotonesVirus(1);
-}
-
-public void ActivarAtif()
-{
-    ActivarBotonesVirus(2);
-}
-
-private void ActivarBotonesVirus(int valor)
-{
-    if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
-    {
-        Debug.Log("Hasta aqui ingresa!");
-        this.battleMachine.setBotonPresionado(valor);
-    }        
-}
-
-
-
-
-
-*/
 }
 
 

@@ -78,14 +78,6 @@ public class TextBoxManager : MonoBehaviour
 
 		currentLine += 1;
 
-
-		if (currentLine == 2 && this.lineasNPCGuardia == 2) 
-		{
-			this.boton1.gameObject.SetActive(true);
-			this.boton2.gameObject.SetActive(true);
-			this.boton3.gameObject.SetActive(true);
-		}
-
 		if (currentLine > endAtLine)
 		{
 			DisableTextBox();
@@ -115,9 +107,6 @@ public class TextBoxManager : MonoBehaviour
 	public void DisableTextBox()
 	{
 		textBox.SetActive(false);
-		this.boton1.gameObject.SetActive(false);
-		this.boton2.gameObject.SetActive(false);
-		this.boton3.gameObject.SetActive(false);
 		this.valorActivadorBotones = 0;
 
 		this.objetoPanel.gameObject.SetActive(false);
