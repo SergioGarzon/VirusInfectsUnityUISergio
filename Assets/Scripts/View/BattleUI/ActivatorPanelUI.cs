@@ -44,8 +44,8 @@ public class ActivatorPanelUI : MonoBehaviour
             {
                 this.panelActivateEnergy.gameObject.SetActive(false);
                 this.canvasLaura.gameObject.SetActive(false);
-                this.imagen1.gameObject.SetActive(false);
-                this.imagen2.gameObject.SetActive(false);
+                //this.imagen1.gameObject.SetActive(false);
+                //this.imagen2.gameObject.SetActive(false);
                 this.panalBattleUI.gameObject.SetActive(true);
             }
         }

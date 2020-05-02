@@ -7,6 +7,9 @@ public class HabilitarBotonesBatalla : MonoBehaviour
 {
     public Button BtnEscapeBack, BtnCharlie, BtnAtif, BtnBack, BtnBug, BtnSteal, BtnPixel,
         BtnShock, BtnLighning, BtnElectricity;
+    public Button btnAtaques;
+    public ShopData shopd;
+
     public GameObject objetoBattalla;
     private BattleMachine batallaScript;
     public int tipoBatalla;
@@ -41,7 +44,9 @@ public class HabilitarBotonesBatalla : MonoBehaviour
     public void ActivarBotonesMaquinaBatalla(int x)
     {
         this.batallaScript.setBotonesHabilitados(x);
-        BotonesIniciales();
+
+        if(this.batallaScript.getRetornarActivacionBotones() == 0)
+            BotonesIniciales();
     }
 
 

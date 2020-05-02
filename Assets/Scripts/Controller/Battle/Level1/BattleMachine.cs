@@ -32,6 +32,8 @@ public class BattleMachine : MonoBehaviour
 
     public BattleStates states;
 
+    public ShopData shopdata;
+
 
     public ScoreData scoreData;
 
@@ -56,7 +58,9 @@ public class BattleMachine : MonoBehaviour
     private int botonesActivados;
     private int veracidad;
 
+    private int returnValorActivarBotones;
 
+    public GameObject objetoPanel;
 
     private void Awake()
     {
@@ -70,6 +74,7 @@ public class BattleMachine : MonoBehaviour
 
         this.botonesActivados = 0;
         this.veracidad = 0;
+        this.returnValorActivarBotones = 0;
 
 
     }
@@ -119,22 +124,16 @@ public class BattleMachine : MonoBehaviour
     private void PlayerSelection()
     {
         //BattleStates.PlayerSelection:
-        this.dialogText.text = "Vida del Hacker: " + scoreData.hLife + ", Vida del Mago: " + scoreData.mLife + "\n" +
-        "Vida del Virus 1: " + this.lifeBattleVirus1 + "\n\n" +
-        "Seleccione o Player (G) o Mago (H)";
-
-
+        
         if (this.botonesActivados == 1)
         {
             Player.IsHackerPlaying = true;
             Player.IsMagoPlaying = false;
-            dialogText.text = "You selected hacker";
             states = BattleStates.EnemySelection;
         }
 
         if (this.botonesActivados == 2)
         {
-            dialogText.text = "You selected mago";
             Player.IsHackerPlaying = false;
             Player.IsMagoPlaying = true;
             states = BattleStates.EnemySelection;
@@ -146,7 +145,6 @@ public class BattleMachine : MonoBehaviour
     {
         RandomState.StateLimits = 3;
         RandomState.RandomStateMethod();
-        this.dialogText.text = "Virus is choosing";
 
         switch (RandomState.StateE)
         {
@@ -178,7 +176,6 @@ public class BattleMachine : MonoBehaviour
 
     private void EnemySelection()
     {
-        this.dialogText.text = ("Attack to Virus 1");
         states = BattleStates.SkillSelection;
 
 
@@ -216,38 +213,33 @@ public class BattleMachine : MonoBehaviour
     private void SkillSelection()
     {
         //Skill Selection
-        this.dialogText.text = ("Select an action Player(B,N,M) - Mago(J,K,L)");
 
         this.veracidad = 1;
 
         if (Player.IsMagoPlaying)
         {
-            this.dialogText.text = "YOU SELECT MAGO (B,N,M)";
 
             if (this.botonesActivados == 6)
             {
                 // _states.Pixeling();
                 _damage = 5;
-                this.dialogText.text = ("pixel");
                 Player.IsMagoPlaying = false;
                 RestScore();
                 states = BattleStates.Enemyturn;
             }
-            else if (this.botonesActivados == 7 && Mago.Instance._electricityLimit > 0)
+            else if (this.botonesActivados == 7 /* && Mago.Instance._electricityLimit > 0*/)
             {
                 _damage = 10;
                 //_states.Electricity();
-                this.dialogText.text = ("Electricity");
                 Player.IsMagoPlaying = false;
                 Mago.Instance._electricityLimit--;
                 RestScore();
                 states = BattleStates.Enemyturn;
             }
-            else if (this.botonesActivados == 8 && scoreData.shootingPoints == 100)
+            else if (this.botonesActivados == 8/* && scoreData.shootingPoints == 100*/)
             {
                 _damage = 15;
                 //_states.Light();
-                this.dialogText.text = ("Light");
                 Player.IsMagoPlaying = false;
                 RestScore();
                 states = BattleStates.Enemyturn;
@@ -257,12 +249,13 @@ public class BattleMachine : MonoBehaviour
             {
                 states = BattleStates.Won;
             }
+
+
         }
 
 
         if (Player.IsHackerPlaying)
         {
-            this.dialogText.text = "YOU SELECT PLAYER (J,K,L)";
 
             if (this.botonesActivados == 3)
             {
@@ -294,8 +287,6 @@ public class BattleMachine : MonoBehaviour
 
     private void EnemyTurnMethod()
     {
-        dialogText.text = "Enemy Turn";
-
 
 
         if (contador % 2 == 0)
@@ -325,12 +316,20 @@ public class BattleMachine : MonoBehaviour
     {
         if (states == BattleStates.Won)
         {
-            dialogText.text = "You won the battle!";
+            dialogText.text = "WIN!";
+            this.returnValorActivarBotones = 2;
+            this.virus1.gameObject.SetActive(false);
 
+            this.objetoPanel.gameObject.SetActive(true);
         }
         else if (states == BattleStates.Lost)
         {
-            dialogText.text = "You loose";
+            dialogText.text = "GAME OVER";
+            this.returnValorActivarBotones = 1;
+            this.mago.gameObject.SetActive(false);
+            this.hacker.gameObject.SetActive(false);
+
+            this.objetoPanel.gameObject.SetActive(true);
         }
     }
 
@@ -346,6 +345,10 @@ public class BattleMachine : MonoBehaviour
         return lifeBattleVirus1;
     }
 
+    public int getRetornarActivacionBotones()
+    {
+        return this.returnValorActivarBotones;
+    }
 
     public void setBotonesHabilitados(int valor)
     {

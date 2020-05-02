@@ -20,6 +20,8 @@ public class MovementPlayerNewWorld : MonoBehaviour
     private Vector3 movePlayer;
     private bool canMovePlayer;
 
+    
+
     void Start()
     {
         controlerPlayer = GetComponent<CharacterController>();

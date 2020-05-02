@@ -109,22 +109,16 @@ public class BattleMachineNewWorld : MonoBehaviour
     private void PlayerSelection()
     {
         //BattleStates.PlayerSelection:
-        this.dialogText.text = "Vida del Hacker: " + scoreData.hLife + ", Vida del Mago: " + scoreData.mLife + "\n" +
-        "Vida del Virus 1: " + this.lifeBattleVirus1 + "\n\n" +
-        "Seleccione o Player (G) o Mago (H)";
-
 
         if (this.botonesActivados == 1)
         {
             Player.IsHackerPlaying = true;
             Player.IsMagoPlaying = false;
-            dialogText.text = "You selected hacker";
             states = BattleStates2.EnemySelection;
         }
 
         if (this.botonesActivados == 2)
         {
-            dialogText.text = "You selected mago";
             Player.IsHackerPlaying = false;
             Player.IsMagoPlaying = true;
             states = BattleStates2.EnemySelection;
@@ -136,31 +130,26 @@ public class BattleMachineNewWorld : MonoBehaviour
     {
         RandomState.StateLimits = 3;
         RandomState.RandomStateMethod();
-        this.dialogText.text = "Virus is choosing";
 
         switch (RandomState.StateE)
         {
             case 1:
                 _damage = 5;
-                Debug.Log("2-Invisibility");
                 Enemy.IsVirus1Playing = false;
                 states = BattleStates2.EnemySelectPlayer;
                 break;
             case 2:
                 _damage = 10;
-                Debug.Log("2-Attack");
                 Enemy.IsVirus1Playing = false;
                 states = BattleStates2.EnemySelectPlayer;
                 break;
             case 3:
                 _damage = 15;
-                Debug.Log("2-Scanner");
                 Enemy.IsVirus1Playing = false;
                 states = BattleStates2.EnemySelectPlayer;
                 break;
 
             default:
-                Debug.Log("No anda el virus");
                 Enemy.IsVirus1Playing = false;
                 break;
         }
@@ -168,7 +157,6 @@ public class BattleMachineNewWorld : MonoBehaviour
 
     private void EnemySelection()
     {
-        this.dialogText.text = ("Attack to Virus 1");
         states = BattleStates2.SkillSelection;
 
 
@@ -205,20 +193,15 @@ public class BattleMachineNewWorld : MonoBehaviour
 
     private void SkillSelection()
     {
-        //Skill Selection
-        this.dialogText.text = ("Select an action Player(B,N,M) - Mago(J,K,L)");
-
         this.veracidad = 1;
 
         if (Player.IsMagoPlaying)
         {
-            this.dialogText.text = "YOU SELECT MAGO (B,N,M)";
 
             if (this.botonesActivados == 6)
             {
                 // _states.Pixeling();
                 _damage = 5;
-                this.dialogText.text = ("pixel");
                 Player.IsMagoPlaying = false;
                 RestScore();
                 states = BattleStates2.Enemyturn;
@@ -227,7 +210,6 @@ public class BattleMachineNewWorld : MonoBehaviour
             {
                 _damage = 10;
                 //_states.Electricity();
-                this.dialogText.text = ("Electricity");
                 Player.IsMagoPlaying = false;
                 Mago.Instance._electricityLimit--;
                 RestScore();
@@ -237,7 +219,6 @@ public class BattleMachineNewWorld : MonoBehaviour
             {
                 _damage = 15;
                 //_states.Light();
-                this.dialogText.text = ("Light");
                 Player.IsMagoPlaying = false;
                 RestScore();
                 states = BattleStates2.Enemyturn;
@@ -252,12 +233,10 @@ public class BattleMachineNewWorld : MonoBehaviour
 
         if (Player.IsHackerPlaying)
         {
-            this.dialogText.text = "YOU SELECT PLAYER (J,K,L)";
 
             if (this.botonesActivados == 3)
             {
                 _damage = 5;
-                this.dialogText.text = ("1");
                 states = BattleStates2.Enemyturn;
                 Player.IsHackerPlaying = false;
             }
@@ -265,7 +244,6 @@ public class BattleMachineNewWorld : MonoBehaviour
             if (this.botonesActivados == 4)
             {
                 _damage = 10;
-                this.dialogText.text = ("2");
                 Hacker.Instance._damage = 10;
                 states = BattleStates2.Enemyturn;
                 Player.IsHackerPlaying = false;
@@ -274,7 +252,6 @@ public class BattleMachineNewWorld : MonoBehaviour
             if (this.botonesActivados == 5)//añadir condicion 
             {
                 _damage = 15;
-                this.dialogText.text = ("3");
                 states = BattleStates2.Enemyturn;
                 Player.IsHackerPlaying = false;
             }
@@ -284,14 +261,10 @@ public class BattleMachineNewWorld : MonoBehaviour
 
     private void EnemyTurnMethod()
     {
-        dialogText.text = "Enemy Turn";
-
 
 
         if (contador % 2 == 0)
         {
-            this.dialogText.text = ("Enemy 1 Selected");
-            dialogText.text = "Virus 1 Attacking!";
             Virus1 virus1Controller = virus1.GetComponent<Virus1>();
             Enemy.IsVirus1Playing = true;
             states = BattleStates2.EnemySelect;
@@ -302,10 +275,8 @@ public class BattleMachineNewWorld : MonoBehaviour
 
     IEnumerator SetUpBattle()
     {
-        dialogText.text = "SetUp Battle";
         yield return new WaitForSeconds(1f);
 
-        dialogText.text = "Battle 1";
         yield return new WaitForSeconds(1f);
 
         states = BattleStates2.PlayerSelection;
@@ -315,12 +286,12 @@ public class BattleMachineNewWorld : MonoBehaviour
     {
         if (states == BattleStates2.Won)
         {
-            dialogText.text = "You won the battle!";
+            dialogText.text = "BATTLE WIN!";
 
         }
         else if (states == BattleStates2.Lost)
         {
-            dialogText.text = "You loose";
+            dialogText.text = "BATTLE LOST";
         }
     }
 
