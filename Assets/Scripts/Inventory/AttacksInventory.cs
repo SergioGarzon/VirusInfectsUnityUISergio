@@ -185,10 +185,11 @@ public class AttacksInventory: MonoBehaviour
             updateNameSelected = nombre;
 
             gridIsChoosed = false;
+            UpdatingData(boton1seleccionado,boton2seleccionado);
+            UpdateFlags();
         }
         Debug.Log(item.itemName);
-        UpdatingData(boton1seleccionado,boton2seleccionado);
-        UpdateFlags();
+        
          }
 
     void OnButtonSelectedAttackClick(AttackItem item, GameObject gO)

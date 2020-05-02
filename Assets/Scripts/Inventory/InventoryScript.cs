@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -22,10 +23,16 @@ public class InventoryScript: MonoBehaviour
     public GameObject panel;
     public Texture texturaEspanolAzul;
     public Texture texturaInglesAzul;
+    public Texture textura2EspanolAzul;
+    public Texture textura2InglesAzul;
+    public Texture textura3EspanolAzul;
+    public Texture textura3InglesAzul;
     public RawImage imagenAzul;
     
     public Texture texturaEspanolVerde;
     public Texture texturaInglesVerde;
+    public Texture textura2EspanolVerde;
+    public Texture textura2InglesVerde;
     public RawImage imagenVerde;
     
     public Texture texturaEspanolVioleta;
@@ -71,30 +78,85 @@ public class InventoryScript: MonoBehaviour
             } 
         }
     }
-
+    int i = 0;
     void OnButtonClick(InventoryItem item)
-    {
+    { 
+        if(panel.active=true)
+            panel.gameObject.SetActive(false);
+        
         Debug.Log(item.name);
-
+        
         if (this.VerificarLenguaje() == 0 && item.itemName=="Blue")
         {
-            this.imagenAzul.texture = this.texturaInglesAzul;
+            if (i == 0)
+            {
+                this.imagenAzul.texture = this.texturaInglesAzul;
+                i++;
+            }
+            else if (i == 1)
+            {
+                this.imagenAzul.texture = this.textura2InglesAzul;
+                i++;
+            }
+            else
+            {
+                this.imagenAzul.texture = this.textura3InglesAzul;
+                i -= 2;
+            }
             panel.gameObject.SetActive(true);
         }
         else if (item.itemName=="Blue")
         {
-            this.imagenAzul.texture = this.texturaEspanolAzul;
+            if (i == 0)
+            {
+                this.imagenAzul.texture = this.texturaEspanolAzul;
+                i++;
+            }
+            else if (i == 1)
+            {
+                this.imagenAzul.texture = this.textura2EspanolAzul;
+                i++;
+            }
+            else
+            {
+                this.imagenAzul.texture = this.textura3EspanolAzul;
+                i -= 2;
+            }
+            
             panel.gameObject.SetActive(true);
         }
         if (this.VerificarLenguaje() == 0 && item.itemName=="Green")
         {
-            this.imagenVerde.texture = this.texturaInglesVerde;
+            if (i == 0)
+            {
+                this.imagenVerde.texture = this.texturaInglesVerde;
+                i++;
+            }
+            else 
+            {
+                this.imagenVerde.texture = this.textura2InglesVerde;
+                Debug.Log("segunda fto");
+                i--;
+            }
+            
             panel.gameObject.SetActive(true);
         }
         else if(item.itemName=="Green")
         {
-            this.imagenVerde.texture = this.texturaEspanolVerde;
+            if (i == 0)
+            {
+                this.imagenVerde.texture = this.texturaEspanolVerde;
+                i++;
+            }
+            else
+            {
+                this.imagenVerde.texture = this.textura2EspanolVerde;
+                Debug.Log("segunda fto");
+                i--;
+            }
+            
             panel.gameObject.SetActive(true);
+            i++;
         }
         if (this.VerificarLenguaje() == 0 && item.itemName=="Violet")
         {
@@ -106,7 +168,7 @@ public class InventoryScript: MonoBehaviour
             this.imagenVioleta.texture = this.texturaEspanolVioleta;
             panel.gameObject.SetActive(true);
         }
-
+        
     }
     private int VerificarLenguaje()
     {

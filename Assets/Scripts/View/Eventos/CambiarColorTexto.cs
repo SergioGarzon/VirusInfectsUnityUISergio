@@ -14,12 +14,12 @@ public class CambiarColorTexto : MonoBehaviour
 
     public void CambiarElColorTexto()
     {
-        this.txtButton.color = Color.red;
+        this.txtButton.color = new Color(191f, 243f, 237f);
     }
 
     public void volverColorActual()
     {
-        this.txtButton.color = Color.white;
+        this.txtButton.color = new Color(191f, 243f, 237f);
     }
 
 }

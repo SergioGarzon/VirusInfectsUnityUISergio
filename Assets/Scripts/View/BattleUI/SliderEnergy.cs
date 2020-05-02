@@ -19,23 +19,26 @@ public class SliderEnergy : MonoBehaviour
     void Start()
     {
         this.batMachine = this.objectBattle.GetComponent<BattleMachine>();
+    }
 
+    private void Update()
+    {
         this.energyPlayerCharlie.value = score.hLife;
         this.energyPlayerAtif.value = score.mLife;
-        this.energyBoot.value = batMachine.lifeBattleVirus1;
+        this.energyBoot.value = batMachine.getRetornarVidaEnemigo();
     }
-    
+
 
 
 
     // Update is called once per frame
 
-        /*
-    void Update()
-    {
-        /*
-        if (!getLostGameBattleMachine())
-            this.ActualiceSliderEnergy();*/
+    /*
+void Update()
+{
+    /*
+    if (!getLostGameBattleMachine())
+        this.ActualiceSliderEnergy();*/
 
 
     //}

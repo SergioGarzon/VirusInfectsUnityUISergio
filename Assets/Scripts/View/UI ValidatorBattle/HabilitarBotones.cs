@@ -6,102 +6,58 @@ using UnityEngine.UI;
 public class HabilitarBotones : MonoBehaviour
 {
     public Button BtnEscapeBack, BtnCharlie, BtnAtif, BtnBack, BtnBug, BtnSteal, BtnPixel,
-        BtnShock, BtnLighning, BtnElectricity, BtnVirusOne, BtnVirusTwo;
+        BtnShock, BtnLighning, BtnElectricity;
+    public GameObject objetoBattalla;
+    private BattleMachine batallaScript;
 
-    public static int particulasActivador;
-    public static bool activarParticulaVirus;
-
-    private int valorParaActivar;
-    public static int valorVirusAtacado;
-
-    public GameObject objetoVirus1;
-    public GameObject objetoVirus2;
-
-    private int valorRetornarActivarTexto;
-
-    public GameObject objetoBattleMachine;
-    public BattleMachine battleMachine;
-
-    public GameObject playerObject;
-    public Player clasePlayer;
-    public GameObject objetoPlayer;
-    public Hacker hackerDatos;
-    public GameObject objetoMago;
-    public Mago magoDatos;
 
 
     void Start()
     {
-        HabilitarBotones.particulasActivador = 0;
-        HabilitarBotones.activarParticulaVirus = false;
-        this.valorRetornarActivarTexto = 0;
+        this.batallaScript = this.objetoBattalla.GetComponent<BattleMachine>();
+        BotonesIniciales();
 
-        this.battleMachine = this.objetoBattleMachine.GetComponent<BattleMachine>();
-        this.clasePlayer = this.playerObject.GetComponent<Player>();
-        this.hackerDatos = this.objetoPlayer.GetComponent<Hacker>();
-        this.magoDatos = this.objetoMago.GetComponent<Mago>();
     }
-
-
-    void Update()
-    {
-        /*
-        if (this.battleMachine.isActiveAndEnabled && this.battleMachine.ActivateButtonStatePlayerEnemy() == 1)
-        {
-            
-        }*/
-        if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 1)
-        {
-            BotonesIniciales();
-        }
-
-
-        if(this.battleMachine.getActivateButtonStatePlayerEnemy() == 2)
-        {
-            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);          
-        }
-    }
-
-
 
     public void BotonesIniciales()
     {
-        if (this.objetoVirus1.activeSelf && this.objetoVirus2.activeSelf)
-        {
-            this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false, false, false);
-        }
-        else
-        {
-            this.PanelesVeracidadActivacion(false, false, false, false, false, false, false, false, false, false, false, false);
-        }
-        
+        this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false);           
     }
 
-
-    public void ActivarCharlie()
+    public void ActivarBotonesAtaqueCharlie()
     {
-        ActivarBotonesVirus(1);
-    }
+        this.batallaScript.setBotonesHabilitados(1);
 
-    public void ActivarAtif()
-    {
-        ActivarBotonesVirus(2);
-    }
-
-    private void ActivarBotonesVirus(int valor)
-    {
-        if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
-        {
-            Debug.Log("Hasta aqui ingresa!");
-            this.battleMachine.setBotonPresionado(valor);
+        if (this.batallaScript.getReturnVeracidad() == 1) {
+            
+            this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false);
         }        
     }
 
 
+    public void ActivarBotonesAtaquesAtif()
+    {
+        this.batallaScript.setBotonesHabilitados(2);
+
+        if (this.batallaScript.getReturnVeracidad() == 1)
+        {
+            this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true);                    
+        }            
+    }
+
+    public void ActivarBotonesMaquinaBatalla(int x)
+    {
+        this.batallaScript.setBotonesHabilitados(x);
+
+        if (this.batallaScript.getReturnVeracidad() == 0)
+        {
+            BotonesIniciales();
+        }
+    }
 
 
     public void PanelesVeracidadActivacion(bool pnlEsc, bool pnlCharlie, bool pnlAtif, bool pnlBack, bool pnlBug,
-        bool pnlSteal, bool pnlPixel, bool pnlShock, bool pnlLight, bool pnlElect, bool pnlVirus1, bool pnlVirus2)
+        bool pnlSteal, bool pnlPixel, bool pnlShock, bool pnlLight, bool pnlElect)
     {
         this.BtnEscapeBack.gameObject.SetActive(pnlEsc);
         this.BtnCharlie.gameObject.SetActive(pnlCharlie);
@@ -113,10 +69,70 @@ public class HabilitarBotones : MonoBehaviour
         this.BtnShock.gameObject.SetActive(pnlShock);
         this.BtnLighning.gameObject.SetActive(pnlLight);
         this.BtnElectricity.gameObject.SetActive(pnlElect);
-        this.BtnVirusOne.gameObject.SetActive(pnlVirus1);
-        this.BtnVirusTwo.gameObject.SetActive(pnlVirus2);
     }
 
+
+    /*
+    void Update()
+    {
+        /*
+        if (this.battleMachine.isActiveAndEnabled && this.battleMachine.ActivateButtonStatePlayerEnemy() == 1)
+        {
+            
+        }*/
+    /*
+    if (this.battleMachine.getActivateButtonStatePlayerEnemy() == 1)
+    {
+        BotonesIniciales();
+    }
+
+
+    if(this.battleMachine.getActivateButtonStatePlayerEnemy() == 2)
+    {
+        this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, false, false, false, true, true);          
+    }
+}
+
+
+
+public void BotonesIniciales()
+{
+    if (this.objetoVirus1.activeSelf && this.objetoVirus2.activeSelf)
+    {
+        this.PanelesVeracidadActivacion(true, true, true, false, false, false, false, false, false, false, false, false);
+    }
+    else
+    {
+        this.PanelesVeracidadActivacion(false, false, false, false, false, false, false, false, false, false, false, false);
+    }
+
+}
+
+
+public void ActivarCharlie()
+{
+    ActivarBotonesVirus(1);
+}
+
+public void ActivarAtif()
+{
+    ActivarBotonesVirus(2);
+}
+
+private void ActivarBotonesVirus(int valor)
+{
+    if (this.objetoVirus1.activeSelf || this.objetoVirus2.activeSelf)
+    {
+        Debug.Log("Hasta aqui ingresa!");
+        this.battleMachine.setBotonPresionado(valor);
+    }        
+}
+
+
+
+
+
+*/
 }
 
 
