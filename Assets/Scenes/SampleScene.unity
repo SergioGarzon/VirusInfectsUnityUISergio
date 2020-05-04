@@ -12279,6 +12279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetoPlayer: {fileID: 1928343312}
   objetoPlayerTwo: {fileID: 761589541}
+  camaraPosition: {fileID: 956975050}
 --- !u!4 &461305335
 Transform:
   m_ObjectHideFlags: 0
@@ -12777,6 +12778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetoPlayer: {fileID: 1928343312}
   objetoPlayerTwo: {fileID: 761589541}
+  camaraPosition: {fileID: 956975050}
 --- !u!1 &489127118
 GameObject:
   m_ObjectHideFlags: 0
