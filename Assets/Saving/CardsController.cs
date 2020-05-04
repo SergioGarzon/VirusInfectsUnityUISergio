@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CardsController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CardsController : MonoBehaviour
         
     }
 
+
     public void Load()
     {
         foreach (var amount in _cards) {
@@ -22,9 +24,15 @@ public class CardsController : MonoBehaviour
         //fijarse en esto
         scoreData.Load();
         shopData.Load();
+        SavePosition.cargarPosicionInicial = 1;
+
         
+
+
         Debug.Log("Violet "+SessionData.Data.cardsAmount[0]);
         Debug.Log("despues load:"+SessionData.Data.resettingSold);
+
+        SceneManager.LoadScene("SampleScene");
     }
     
     public void Save(int id) {
