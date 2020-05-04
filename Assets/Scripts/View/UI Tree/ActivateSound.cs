@@ -16,7 +16,7 @@ public class ActivateSound : MonoBehaviour
 
     void Update()
     {
-        if (this.objetoScriptArbol.getActivarBarraEnergia() && audioActivar.isPlaying)
+        if (audioActivar.isPlaying)
         {
             audioActivar.Play(0);
         }            

@@ -9,12 +9,10 @@ public class ActivatorPanelUI : MonoBehaviour
     public GameObject objetoValidadorAcceso;
     private AccessBattlePanal battleNewWorld;
     public GameObject panelActivateEnergy;
+    public GameObject panelTarjetasGB;
 
     //Esete es el panel de BATALLA UI
     public GameObject panalBattleUI;
-
-    public RawImage imagen1;
-    public RawImage imagen2;
 
 
     //Desactivamos el canvas de LAURA
@@ -44,9 +42,8 @@ public class ActivatorPanelUI : MonoBehaviour
             {
                 this.panelActivateEnergy.gameObject.SetActive(false);
                 this.canvasLaura.gameObject.SetActive(false);
-                //this.imagen1.gameObject.SetActive(false);
-                //this.imagen2.gameObject.SetActive(false);
                 this.panalBattleUI.gameObject.SetActive(true);
+                this.panelTarjetasGB.gameObject.SetActive(false);
             }
         }
 

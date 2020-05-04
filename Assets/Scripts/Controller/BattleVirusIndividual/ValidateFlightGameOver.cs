@@ -8,6 +8,8 @@ public class ValidateFlightGameOver : MonoBehaviour
     public GameObject panelBattle; //Panal de batalla
     public GameObject panelGameOver; //Panel game over
 
+    public GameObject panelTarjetasGB;
+
 
     //Estos se debe a que se congela el movimiento del personaje
     public GameObject objetoPlayer;
@@ -20,13 +22,12 @@ public class ValidateFlightGameOver : MonoBehaviour
 
     public Canvas canvasLaura; //canvas de Laura
 
-    public RawImage imagen1;
-    public RawImage imagen2;
-
 
     public GameObject virusColisionPlayer;  //Objeto de la maquina de estados batalla
     private VirusColisionPlayer colisionVirus;
 
+
+   
 
     private int valor; //Variable entera
 
@@ -50,16 +51,14 @@ public class ValidateFlightGameOver : MonoBehaviour
         {
             this.panelBattle.gameObject.SetActive(false);  //aun no desactiva
             this.canvasLaura.gameObject.SetActive(true);
-            this.imagen1.gameObject.SetActive(true);
-            this.imagen2.gameObject.SetActive(true);
+            this.panelTarjetasGB.gameObject.SetActive(true);
         }
 
 
         if (this.valor == 2)
         {
             this.canvasLaura.gameObject.SetActive(false);
-            this.imagen1.gameObject.SetActive(false);
-            this.imagen2.gameObject.SetActive(false);
+            this.panelTarjetasGB.gameObject.SetActive(false);
         }
 
 
@@ -69,8 +68,7 @@ public class ValidateFlightGameOver : MonoBehaviour
             this.movimientoPlayer.setMovementPlayer(false);
             this.camaraPlayer.setCameraMovement(false);
             this.canvasLaura.gameObject.SetActive(false);
-            this.imagen1.gameObject.SetActive(false);
-            this.imagen2.gameObject.SetActive(false);
+            this.panelTarjetasGB.gameObject.SetActive(false);
         }
 
 
@@ -78,8 +76,7 @@ public class ValidateFlightGameOver : MonoBehaviour
         {
             this.panelBattle.gameObject.SetActive(true);
             this.canvasLaura.gameObject.SetActive(false);
-            this.imagen1.gameObject.SetActive(false);
-            this.imagen2.gameObject.SetActive(false);
+            this.panelTarjetasGB.gameObject.SetActive(false);
             this.valor = 0;
         }
 

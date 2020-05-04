@@ -34,6 +34,7 @@ public class SavePosition : MonoBehaviour
             PlayerPrefs.GetFloat("yCam"), PlayerPrefs.GetFloat("zCam"));
 
 
+            SavePosition.cargarPosicionInicial = 2;
 
         }
 
