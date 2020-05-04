@@ -6,19 +6,18 @@ using UnityEngine.UI;
 public class DropDownLanguage : MonoBehaviour
 {
     public Text lblLabelLanguage, txtSound, lblActivateSound,
-        txtVolumeSound, txtTextSoundAux, txtTextVolumeAux, txtTextActiveSoundAux, txtButtonText;
+        txtVolumeSound, txtButtonText;
     public Dropdown ddLanguage;
-    private int valor = 10;
+    
 
     void Update()
     {
-        this.valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
-
+        int valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        
         if (this.ddLanguage.value == 0)
             this.TextoIngles();
         else
             this.TextoEspanol();
-
     }
 
 
@@ -29,13 +28,9 @@ public class DropDownLanguage : MonoBehaviour
         this.txtSound.text = "Sonido";
         this.lblActivateSound.text = "Activar";
         this.txtVolumeSound.text = "Volumen Sonido";
-        this.txtTextSoundAux.text = "Sonido Auxiliar";
-        this.txtTextVolumeAux.text = "Volumen Auxiliar";
-        this.txtTextActiveSoundAux.text = "Activar";
         this.txtButtonText.text = "VOLVER";
 
-        PlayerPrefs.SetInt("LenguajeGuardado", 1);
-        PlayerPrefs.Save();
+        this.SaveChanges(1);
 
     }
 
@@ -45,15 +40,17 @@ public class DropDownLanguage : MonoBehaviour
         this.txtSound.text = "Sound";
         this.lblActivateSound.text = "Activate";
         this.txtVolumeSound.text = "Volume Sound";
-        this.txtTextSoundAux.text = "Sound Aux";
-        this.txtTextVolumeAux.text = "Volume Aux";
-        this.txtTextActiveSoundAux.text = "Activate";
         this.txtButtonText.text = "BACK";
 
-        PlayerPrefs.SetInt("LenguajeGuardado", 0);
-        PlayerPrefs.Save();
+        this.SaveChanges(0);
+
     }
 
+
+    private void SaveChanges(int value) {
+        PlayerPrefs.SetInt("LenguajeGuardado", value);
+        PlayerPrefs.Save();
+    }
 
 
 

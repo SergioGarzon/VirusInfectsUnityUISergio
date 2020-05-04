@@ -10,17 +10,11 @@ public class TextHistory : MonoBehaviour
 {
     public UnityEngine.UI.Text textScene;
     private string texto;
-    public UnityEngine.UI.Slider sldProgressBarChargeScene;
-
-    void Awake()
-    {
-    }
-
 
     private void Start() {
         this.texto = "";
 
-        int x = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        int x = PlayerPrefs.GetInt("LenguajeGuardado", 0);//0 Ingles, 1 Español
 
         if (x == 0)
         {
@@ -41,16 +35,10 @@ public class TextHistory : MonoBehaviour
              "Ahora, luego de la gran explosión causada por el enjambre, miles de datos provenientes de esta compañía se esparcen por la ciudad." +
              "¿Qué papel ocuparas tu en el medio del caos y la crisis? " +
              "Restaura la energía del sistema y recolecta estos datos para avanzar y descubrir la historia detrás de este nuevo orde.";
-        }
-        //0 Ingles, 1 Español
+        }        
 
         StartCoroutine(FraseTexto(this.texto));
 
-    }
-
-
-    void Update() {
-        this.sldProgressBarChargeScene.value += 100;//0.05f;        
     }
 
     IEnumerator FraseTexto(string frase) {

@@ -78,10 +78,15 @@ public class InventoryScript: MonoBehaviour
             } 
         }
     }
+   
+    
     int i = 0;
+
+
     void OnButtonClick(InventoryItem item)
     { 
-        if(panel.active=true)
+
+        if(panel.activeSelf ==true)
             panel.gameObject.SetActive(false);
         
         Debug.Log(item.name);

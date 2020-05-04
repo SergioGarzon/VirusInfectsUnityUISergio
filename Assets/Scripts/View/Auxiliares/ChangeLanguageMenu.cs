@@ -5,27 +5,16 @@ using UnityEngine.UI;
 
 public class ChangeLanguageMenu : MonoBehaviour
 {
-    public UnityEngine.UI.Text txtBtnPlayGame, txtBtnOptions, txtBtnScores, txtBtnCredits, txtBtnQuitGame, txtBtnBack, txtBtnContinue;
+    public Text txtBtnPlayGame, txtBtnLoadGame, txtBtnOptions
+        , txtBtnCredits, txtBtnQuitGame, txtBtnBack, txtBtnContinue;
     private string[] texto;
     private Text[] textoBotonesVector;
     private int value;
 
     void Start()
     {
-        texto = new string[] {"PLAY GAME", "OPTIONS", "LOAD GAME", "CREDITS", "QUIT GAME",
-            "INICIAR JUEGO", "OPCIONES", "CARGAR JUEGO", "CREDITOS","SALIR"};
-
-
-        
-        /*
-        if (!PlayerPrefs.HasKey("LenguajeGuardado"))
-        {
-            //No entra acá ya que si existe
-            PlayerPrefs.SetInt("LenguajeGuardado", 0);
-            PlayerPrefs.Save();
-        }*/
-
-        
+        texto = new string[] {"PLAY GAME", "LOAD GAME", "OPTIONS", "CREDITS", "QUIT GAME",
+            "INICIAR JUEGO", "CARGAR JUEGO", "OPTIONS", "CREDITOS", "SALIR"};
     }
 
 
@@ -43,7 +32,8 @@ public class ChangeLanguageMenu : MonoBehaviour
 
         if (this.txtBtnBack == null && this.txtBtnContinue == null)
         {
-            this.textoBotonesVector = new Text[] { this.txtBtnPlayGame, this.txtBtnOptions, this.txtBtnScores, this.txtBtnCredits, this.txtBtnQuitGame };
+            this.textoBotonesVector = new Text[] { this.txtBtnPlayGame, this.txtBtnLoadGame,this.txtBtnOptions,
+                this.txtBtnCredits, this.txtBtnQuitGame };
 
 
             if (value == 0)
