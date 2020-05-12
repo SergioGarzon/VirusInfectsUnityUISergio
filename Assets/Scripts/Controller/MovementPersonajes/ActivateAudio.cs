@@ -21,11 +21,8 @@ public class ActivateAudio : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Aqui entro");
-
         if (other.gameObject == this.objetoPlayer)
         {
-            Debug.Log("Aqui entro para reproducir audio");
             this.objeto.SetActive(false);
             this.audio.Play();
             
@@ -38,8 +35,6 @@ public class ActivateAudio : MonoBehaviour
         
         if (other.gameObject == this.objetoPlayer)
         {
-
-            Debug.Log("Aqui entro para reproducir audio");
 
             this.audio.Stop();
             this.objeto.SetActive(true);

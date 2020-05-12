@@ -8,8 +8,6 @@ public class CoursorGame : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(Application.dataPath);
-
         Vector2 vec = new Vector2(this.textureImage.width * 0.5f, this.textureImage.height * 0.5f);
         Cursor.SetCursor(this.textureImage, vec, CursorMode.ForceSoftware);
     }

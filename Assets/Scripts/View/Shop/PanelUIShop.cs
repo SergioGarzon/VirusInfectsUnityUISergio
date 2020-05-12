@@ -41,7 +41,6 @@ public class PanelUIShop : MonoBehaviour
     {
         if (this.validadorColider.getValidatorActive())
         {
-            Debug.Log("Hasta aqui ingresa");
             Debug.Log(this.validadorColider.getTipoShop());
             this.txtMessage.text = this.validadorColider.getTipoShop();
             this.objectPanel.SetActive(true);
@@ -58,8 +57,6 @@ public class PanelUIShop : MonoBehaviour
     {
         if (this.validadorColider2.getValidatorActive())
         {
-            Debug.Log("Hasta aqui ingresa");
-            Debug.Log(this.validadorColider2.getTipoShop());
             this.txtMessage.text = this.validadorColider2.getTipoShop();
             this.objectPanel.SetActive(true);
         }

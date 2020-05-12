@@ -93,7 +93,6 @@ public class TextBoxManager : MonoBehaviour
 		this.textPanelInformationClick.text = "";
 		textBox.gameObject.SetActive(true);
 		theText.text = textLines[currentLine];
-		Debug.Log("dialog start line: " + currentLine.ToString());
 		StartCoroutine(delayActive());
 
 	}
